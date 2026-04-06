@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1E3A8A;
+  --color-mint: #A8E6CF;
+  --color-accent: #FF9F1C;
+  --color-background: #F8FAFC;
+  --font-fredoka: var(--font-fredoka-one);
+  --font-baloo: var(--font-baloo-2);
+}
+
+:root {
+  --background: #F8FAFC;
+  --foreground: #1a1a2e;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-baloo-2), 'Baloo 2', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-fredoka-one), 'Fredoka One', cursive;
+}

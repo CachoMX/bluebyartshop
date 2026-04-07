@@ -37,8 +37,7 @@ export default function ContactPage() {
     <div style={{ backgroundColor: "#F8FAFC", minHeight: "100vh" }}>
       {/* Header */}
       <section
-        className="py-16 px-4 sm:px-6 lg:px-8 text-center"
-        style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #2d4fc0 100%)" }}
+        className="py-16 px-4 sm:px-6 lg:px-8 text-center hero-gradient"
       >
         <h1
           className="text-5xl text-white mb-4"
@@ -46,7 +45,7 @@ export default function ContactPage() {
         >
           Say Hello!
         </h1>
-        <p className="text-blue-200 text-lg max-w-xl mx-auto">
+        <p className="text-blue-100 text-lg max-w-xl mx-auto">
           We&apos;d love to hear from you. Whether it&apos;s a question, a wholesale inquiry, or just a
           note to say hi — we read every message.
         </p>
@@ -60,7 +59,7 @@ export default function ContactPage() {
               <h2
                 className="text-3xl mb-6"
                 style={{
-                  color: "#1E3A8A",
+                  color: "#2563EB",
                   fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
                 }}
               >
@@ -97,14 +96,14 @@ export default function ContactPage() {
               <div key={item.title} className="flex items-start gap-4">
                 <div
                   className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"
-                  style={{ backgroundColor: "#EFF6FF" }}
+                  style={{ backgroundColor: "#D4F7F7" }}
                 >
                   {item.icon}
                 </div>
                 <div>
                   <h4
                     className="font-semibold text-lg mb-1"
-                    style={{ color: "#1E3A8A" }}
+                    style={{ color: "#2563EB" }}
                   >
                     {item.title}
                   </h4>
@@ -121,7 +120,7 @@ export default function ContactPage() {
             <div>
               <h4
                 className="font-semibold text-lg mb-3"
-                style={{ color: "#1E3A8A" }}
+                style={{ color: "#2563EB" }}
               >
                 Follow Us
               </h4>
@@ -137,7 +136,7 @@ export default function ContactPage() {
                     href="#"
                     title={s.label}
                     className="w-10 h-10 rounded-full flex items-center justify-center text-lg transition-transform hover:scale-110"
-                    style={{ backgroundColor: "#EFF6FF" }}
+                    style={{ backgroundColor: "#D4F7F7" }}
                   >
                     {s.icon}
                   </a>
@@ -158,7 +157,7 @@ export default function ContactPage() {
                   <h3
                     className="text-3xl mb-4"
                     style={{
-                      color: "#1E3A8A",
+                      color: "#2563EB",
                       fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
                     }}
                   >
@@ -174,7 +173,7 @@ export default function ContactPage() {
                       setForm({ name: "", email: "", subject: "", message: "" });
                     }}
                     className="px-6 py-3 rounded-full font-bold text-white transition-all hover:scale-105"
-                    style={{ backgroundColor: "#1E3A8A" }}
+                    style={{ backgroundColor: "#0390AC" }}
                   >
                     Send Another Message
                   </button>
@@ -184,7 +183,7 @@ export default function ContactPage() {
                   <h3
                     className="text-2xl mb-6"
                     style={{
-                      color: "#1E3A8A",
+                      color: "#2563EB",
                       fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
                     }}
                   >
@@ -264,7 +263,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       className="w-full py-4 rounded-full font-bold text-white text-lg transition-all hover:scale-[1.02] hover:opacity-90"
-                      style={{ backgroundColor: "#FF9F1C" }}
+                      style={{ backgroundColor: "#FB923C" }}
                     >
                       Send Message
                     </button>

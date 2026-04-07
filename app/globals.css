@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1E3A8A;
-  --color-mint: #A8E6CF;
-  --color-accent: #FF9F1C;
+  --color-primary: #2563EB;
+  --color-mint: #D4F7F7;
+  --color-accent: #FB923C;
   --color-background: #F8FAFC;
   --font-fredoka: var(--font-fredoka-one);
   --font-baloo: var(--font-baloo-2);
@@ -22,4 +22,8 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-fredoka-one), 'Fredoka One', cursive;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #0390AC 0%, #2563EB 100%);
 }

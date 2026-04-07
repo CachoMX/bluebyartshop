@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#1E3A8A" }} className="text-white mt-20">
+    <footer style={{ backgroundColor: "#2563EB" }} className="text-white mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
@@ -73,19 +73,19 @@ export default function Footer() {
                   href="#"
                   title={s.label}
                   className="w-10 h-10 rounded-full flex items-center justify-center text-lg transition-transform hover:scale-110"
-                  style={{ backgroundColor: "rgba(168,230,207,0.2)" }}
+                  style={{ backgroundColor: "rgba(212,247,247,0.2)" }}
                 >
                   {s.icon}
                 </a>
               ))}
             </div>
             <p className="text-blue-200 text-sm mt-4">
-              Tag us <span className="text-mint font-semibold" style={{ color: "#A8E6CF" }}>#BlueByArtShop</span> to be featured!
+              Tag us <span className="font-semibold" style={{ color: "#D4F7F7" }}>#BlueByArtShop</span> to be featured!
             </p>
           </div>
         </div>
 
-        <div className="border-t border-blue-700 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-blue-300 text-sm">
+        <div className="border-t border-blue-400 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-blue-200 text-sm">
           <p>© {new Date().getFullYear()} Blue By Art Shop — A VIXI Company. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

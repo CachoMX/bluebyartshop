@@ -47,7 +47,7 @@ const products = [
     category: "plaster" as Category,
     age: "5-7" as AgeFilter,
     emoji: "🐠",
-    color: "#CCF5F0",
+    color: "#D4F7F7",
     desc: "Sea turtle, clownfish, and starfish figures.",
     badge: null,
   },
@@ -160,7 +160,7 @@ const products = [
     category: "party" as Category,
     age: "5-7" as AgeFilter,
     emoji: "🎁",
-    color: "#E0F7FA",
+    color: "#D4F7F7",
     desc: "Curated birthday kit with figure, paints, and ribbon.",
     badge: null,
   },
@@ -219,8 +219,7 @@ export default function ShopPage() {
     <div style={{ backgroundColor: "#F8FAFC", minHeight: "100vh" }}>
       {/* Header */}
       <section
-        className="py-16 px-4 sm:px-6 lg:px-8 text-center"
-        style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #2d4fc0 100%)" }}
+        className="py-16 px-4 sm:px-6 lg:px-8 text-center hero-gradient"
       >
         <h1
           className="text-5xl text-white mb-4"
@@ -228,7 +227,7 @@ export default function ShopPage() {
         >
           The Art Shop
         </h1>
-        <p className="text-blue-200 text-lg max-w-xl mx-auto">
+        <p className="text-blue-100 text-lg max-w-xl mx-auto">
           One-time kits, party packs, and wholesale orders for every creative kid.
         </p>
       </section>
@@ -242,9 +241,9 @@ export default function ShopPage() {
               onClick={() => setCat(tab.key)}
               className="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200"
               style={{
-                backgroundColor: cat === tab.key ? "#1E3A8A" : "#fff",
-                color: cat === tab.key ? "#fff" : "#1E3A8A",
-                border: "2px solid #1E3A8A",
+                backgroundColor: cat === tab.key ? "#0390AC" : "#fff",
+                color: cat === tab.key ? "#fff" : "#2563EB",
+                border: "2px solid #0390AC",
               }}
             >
               {tab.emoji} {tab.label}
@@ -260,10 +259,10 @@ export default function ShopPage() {
               onClick={() => setAge(tab.key)}
               className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
               style={{
-                backgroundColor: age === tab.key ? "#FF9F1C" : "#fff",
+                backgroundColor: age === tab.key ? "#FB923C" : "#fff",
                 color: age === tab.key ? "#fff" : "#64748b",
                 border: "2px solid",
-                borderColor: age === tab.key ? "#FF9F1C" : "#e2e8f0",
+                borderColor: age === tab.key ? "#FB923C" : "#e2e8f0",
               }}
             >
               {tab.label}
@@ -287,8 +286,16 @@ export default function ShopPage() {
             {filtered.map((product) => (
               <div
                 key={product.id}
-                className="bg-white rounded-3xl overflow-hidden shadow-sm border hover:shadow-md transition-all duration-200 flex flex-col"
-                style={{ borderColor: "#e2e8f0" }}
+                className="bg-white rounded-3xl overflow-hidden shadow-sm border transition-all duration-200 flex flex-col"
+                style={{
+                  borderColor: "#e2e8f0",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = "0 0 0 2px #58C0FF";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = "";
+                }}
               >
                 {/* Image placeholder */}
                 <div
@@ -299,7 +306,7 @@ export default function ShopPage() {
                   {product.badge && (
                     <span
                       className="absolute top-3 right-3 px-2 py-0.5 rounded-full text-xs font-bold text-white"
-                      style={{ backgroundColor: "#FF9F1C" }}
+                      style={{ backgroundColor: "#FB923C" }}
                     >
                       {product.badge}
                     </span>
@@ -310,7 +317,7 @@ export default function ShopPage() {
                   <h3
                     className="text-lg font-semibold mb-1"
                     style={{
-                      color: "#1E3A8A",
+                      color: "#2563EB",
                       fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
                     }}
                   >
@@ -318,12 +325,12 @@ export default function ShopPage() {
                   </h3>
                   <p className="text-gray-500 text-sm mb-3 flex-1">{product.desc}</p>
                   <div className="flex items-center justify-between mt-auto">
-                    <span className="text-xl font-bold" style={{ color: "#1E3A8A" }}>
+                    <span className="text-xl font-bold" style={{ color: "#2563EB" }}>
                       ${product.price.toFixed(2)}
                     </span>
                     <button
                       className="px-4 py-2 rounded-full text-sm font-bold text-white transition-all duration-200 hover:scale-105"
-                      style={{ backgroundColor: "#FF9F1C" }}
+                      style={{ backgroundColor: "#FB923C" }}
                     >
                       Add to Cart
                     </button>
@@ -337,7 +344,7 @@ export default function ShopPage() {
         {/* Wholesale callout */}
         <div
           className="mt-16 rounded-3xl p-10 text-center"
-          style={{ backgroundColor: "#1E3A8A" }}
+          style={{ backgroundColor: "#2563EB" }}
         >
           <h3
             className="text-3xl text-white mb-3"
@@ -352,7 +359,7 @@ export default function ShopPage() {
           <a
             href="/contact"
             className="inline-block px-8 py-3 rounded-full font-bold text-white transition-all hover:scale-105"
-            style={{ backgroundColor: "#FF9F1C" }}
+            style={{ backgroundColor: "#FB923C" }}
           >
             Get a Wholesale Quote
           </a>

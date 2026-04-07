@@ -33,8 +33,7 @@ export default function AboutPage() {
     <div style={{ backgroundColor: "#F8FAFC", minHeight: "100vh" }}>
       {/* Hero */}
       <section
-        className="py-20 px-4 sm:px-6 lg:px-8 text-center"
-        style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #2d4fc0 100%)" }}
+        className="py-20 px-4 sm:px-6 lg:px-8 text-center hero-gradient"
       >
         <h1
           className="text-5xl sm:text-6xl text-white mb-4"
@@ -42,7 +41,7 @@ export default function AboutPage() {
         >
           About Blue By Art Shop
         </h1>
-        <p className="text-blue-200 text-lg max-w-2xl mx-auto">
+        <p className="text-blue-100 text-lg max-w-2xl mx-auto">
           We believe every child is an artist. Our mission is to give them the tools to prove it.
         </p>
       </section>
@@ -54,7 +53,7 @@ export default function AboutPage() {
             <h2
               className="text-4xl mb-6"
               style={{
-                color: "#1E3A8A",
+                color: "#2563EB",
                 fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
               }}
             >
@@ -86,7 +85,7 @@ export default function AboutPage() {
           </div>
           <div
             className="rounded-3xl flex items-center justify-center p-12 text-9xl shadow-sm"
-            style={{ backgroundColor: "#EFF6FF" }}
+            style={{ backgroundColor: "#D4F7F7" }}
           >
             🎨
           </div>
@@ -94,13 +93,13 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#EFF6FF" }}>
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#D4F7F7" }}>
         <div className="max-w-3xl mx-auto text-center">
           <div className="text-6xl mb-6">💙</div>
           <h2
             className="text-4xl mb-6"
             style={{
-              color: "#1E3A8A",
+              color: "#2563EB",
               fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
             }}
           >
@@ -122,7 +121,7 @@ export default function AboutPage() {
           <h2
             className="text-4xl sm:text-5xl mb-4"
             style={{
-              color: "#1E3A8A",
+              color: "#2563EB",
               fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
             }}
           >
@@ -140,7 +139,7 @@ export default function AboutPage() {
               <h3
                 className="text-xl mb-3"
                 style={{
-                  color: "#1E3A8A",
+                  color: "#2563EB",
                   fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
                 }}
               >
@@ -153,13 +152,13 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#EFF6FF" }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#D4F7F7" }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2
               className="text-4xl sm:text-5xl mb-4"
               style={{
-                color: "#1E3A8A",
+                color: "#2563EB",
                 fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
               }}
             >
@@ -177,20 +176,20 @@ export default function AboutPage() {
               >
                 <div
                   className="w-24 h-24 rounded-full flex items-center justify-center text-5xl mx-auto mb-5"
-                  style={{ backgroundColor: "#EFF6FF" }}
+                  style={{ backgroundColor: "#D4F7F7" }}
                 >
                   {member.emoji}
                 </div>
                 <h3
                   className="text-2xl mb-1"
                   style={{
-                    color: "#1E3A8A",
+                    color: "#2563EB",
                     fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
                   }}
                 >
                   {member.name}
                 </h3>
-                <p className="text-sm font-semibold mb-4" style={{ color: "#FF9F1C" }}>
+                <p className="text-sm font-semibold mb-4" style={{ color: "#FB923C" }}>
                   {member.role}
                 </p>
                 <p className="text-gray-500 text-sm leading-relaxed">{member.bio}</p>
@@ -202,8 +201,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section
-        className="py-20 px-4 sm:px-6 lg:px-8 text-center"
-        style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #2d4fc0 100%)" }}
+        className="py-20 px-4 sm:px-6 lg:px-8 text-center hero-gradient"
       >
         <div className="max-w-3xl mx-auto">
           <h2
@@ -212,20 +210,20 @@ export default function AboutPage() {
           >
             Join the Blue By Family
           </h2>
-          <p className="text-blue-200 text-lg mb-8">
+          <p className="text-blue-100 text-lg mb-8">
             Start your child&apos;s creative journey today. First box ships within 48 hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/subscribe"
               className="px-8 py-4 rounded-full font-bold text-white transition-all hover:scale-105"
-              style={{ backgroundColor: "#FF9F1C" }}
+              style={{ backgroundColor: "#FB923C" }}
             >
               Start Subscribing
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-4 rounded-full font-bold border-2 border-white text-white hover:bg-white hover:text-blue-900 transition-all"
+              className="px-8 py-4 rounded-full font-bold border-2 border-white text-white transition-all hover:bg-white hover:text-blue-900"
             >
               Get in Touch
             </Link>

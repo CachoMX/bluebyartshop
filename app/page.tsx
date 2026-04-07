@@ -5,8 +5,8 @@ const tiers = [
     name: "Mini Artist",
     price: "$19.99",
     emoji: "🎨",
-    bgColor: "#A8E6CF",
-    textColor: "#1E3A8A",
+    bgColor: "#D4F7F7",
+    textColor: "#2563EB",
     features: [
       "2 plaster figures OR 10 coloring pages",
       "6 paint pots or colored pencils",
@@ -21,7 +21,7 @@ const tiers = [
     name: "Creative Explorer",
     price: "$29.99",
     emoji: "🖌️",
-    bgColor: "#1E3A8A",
+    bgColor: "#0390AC",
     textColor: "#fff",
     features: [
       "3 plaster figures OR 20 coloring pages",
@@ -37,7 +37,7 @@ const tiers = [
     name: "Master Creator",
     price: "$44.99",
     emoji: "🏆",
-    bgColor: "#FF9F1C",
+    bgColor: "#FB923C",
     textColor: "#fff",
     features: [
       "4 plaster figures OR 30 coloring pages",
@@ -125,25 +125,22 @@ export default function HomePage() {
     <div style={{ backgroundColor: "#F8FAFC" }}>
       {/* Hero */}
       <section
-        className="relative overflow-hidden"
-        style={{
-          background: "linear-gradient(135deg, #1E3A8A 0%, #2d4fc0 60%, #1E3A8A 100%)",
-          minHeight: "90vh",
-        }}
+        className="relative overflow-hidden hero-gradient"
+        style={{ minHeight: "90vh" }}
       >
         <div
           className="absolute top-10 right-10 w-64 h-64 rounded-full opacity-10"
-          style={{ backgroundColor: "#A8E6CF" }}
+          style={{ backgroundColor: "#D4F7F7" }}
         />
         <div
           className="absolute bottom-20 left-5 w-40 h-40 rounded-full opacity-10"
-          style={{ backgroundColor: "#FF9F1C" }}
+          style={{ backgroundColor: "#FB923C" }}
         />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center py-28">
           <span
             className="inline-block px-4 py-1 rounded-full text-sm font-semibold mb-6"
-            style={{ backgroundColor: "#FF9F1C", color: "#fff" }}
+            style={{ backgroundColor: "#FB923C", color: "#fff" }}
           >
             🎨 Monthly Art Kits for Kids 5-12
           </span>
@@ -154,7 +151,7 @@ export default function HomePage() {
           >
             Where Little Hands
             <br />
-            <span style={{ color: "#A8E6CF" }}>Create Big Wonders.</span>
+            <span style={{ color: "#D4F7F7" }}>Create Big Wonders.</span>
           </h1>
 
           <p className="text-blue-100 text-lg sm:text-xl max-w-2xl mb-10 leading-relaxed">
@@ -166,13 +163,15 @@ export default function HomePage() {
             <Link
               href="/subscribe"
               className="px-8 py-4 rounded-full text-lg font-bold shadow-lg transition-all duration-200 hover:scale-105"
-              style={{ backgroundColor: "#FF9F1C", color: "#fff" }}
+              style={{ backgroundColor: "#FB923C", color: "#fff" }}
             >
               Start Creating
             </Link>
             <Link
               href="/shop"
-              className="px-8 py-4 rounded-full text-lg font-bold border-2 border-white text-white hover:bg-white hover:text-blue-900 transition-all duration-200"
+              className="px-8 py-4 rounded-full text-lg font-bold border-2 border-white text-white transition-all duration-200"
+              style={{ transition: "background-color 0.2s, color 0.2s" }}
+              onMouseEnter={undefined}
             >
               Browse the Shop
             </Link>
@@ -198,7 +197,7 @@ export default function HomePage() {
           <h2
             className="text-4xl sm:text-5xl mb-4"
             style={{
-              color: "#1E3A8A",
+              color: "#2563EB",
               fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
             }}
           >
@@ -218,20 +217,20 @@ export default function HomePage() {
             >
               <div
                 className="w-20 h-20 rounded-full flex items-center justify-center text-4xl mb-5"
-                style={{ backgroundColor: "#EFF6FF" }}
+                style={{ backgroundColor: "#D4F7F7" }}
               >
                 {step.icon}
               </div>
               <div
                 className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold mb-4"
-                style={{ backgroundColor: "#FF9F1C" }}
+                style={{ backgroundColor: "#FB923C" }}
               >
                 {i + 1}
               </div>
               <h3
                 className="text-2xl mb-3"
                 style={{
-                  color: "#1E3A8A",
+                  color: "#2563EB",
                   fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
                 }}
               >
@@ -244,13 +243,13 @@ export default function HomePage() {
       </section>
 
       {/* Subscription Tiers */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#EFF6FF" }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#D4F7F7" }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2
               className="text-4xl sm:text-5xl mb-4"
               style={{
-                color: "#1E3A8A",
+                color: "#2563EB",
                 fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
               }}
             >
@@ -271,7 +270,7 @@ export default function HomePage() {
                 {tier.popular && (
                   <div
                     className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold"
-                    style={{ backgroundColor: "#FF9F1C", color: "#fff" }}
+                    style={{ backgroundColor: "#FB923C", color: "#fff" }}
                   >
                     Most Popular
                   </div>
@@ -309,7 +308,7 @@ export default function HomePage() {
                     href="/subscribe"
                     className="block text-center py-3 rounded-full font-bold text-sm transition-all duration-200 hover:scale-105 hover:opacity-90"
                     style={{
-                      backgroundColor: tier.popular ? "#FF9F1C" : "#1E3A8A",
+                      backgroundColor: tier.popular ? "#FB923C" : "#2563EB",
                       color: "#fff",
                     }}
                   >
@@ -328,7 +327,7 @@ export default function HomePage() {
           <h2
             className="text-4xl sm:text-5xl mb-4"
             style={{
-              color: "#1E3A8A",
+              color: "#2563EB",
               fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
             }}
           >
@@ -348,7 +347,7 @@ export default function HomePage() {
               <h4
                 className="text-lg font-semibold mb-1"
                 style={{
-                  color: "#1E3A8A",
+                  color: "#2563EB",
                   fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
                 }}
               >
@@ -361,13 +360,13 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#EFF6FF" }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#D4F7F7" }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2
               className="text-4xl sm:text-5xl mb-4"
               style={{
-                color: "#1E3A8A",
+                color: "#2563EB",
                 fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
               }}
             >
@@ -388,7 +387,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-3">
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm"
-                    style={{ backgroundColor: "#1E3A8A" }}
+                    style={{ backgroundColor: "#0390AC" }}
                   >
                     {t.name[0]}
                   </div>
@@ -409,7 +408,7 @@ export default function HomePage() {
           <h2
             className="text-4xl sm:text-5xl mb-4"
             style={{
-              color: "#1E3A8A",
+              color: "#2563EB",
               fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
             }}
           >
@@ -426,7 +425,7 @@ export default function HomePage() {
               <h4
                 className="text-lg font-semibold mb-2"
                 style={{
-                  color: "#1E3A8A",
+                  color: "#2563EB",
                   fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
                 }}
               >
@@ -440,8 +439,7 @@ export default function HomePage() {
 
       {/* CTA Banner */}
       <section
-        className="py-20 px-4 sm:px-6 lg:px-8 text-center"
-        style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #2d4fc0 100%)" }}
+        className="py-20 px-4 sm:px-6 lg:px-8 text-center hero-gradient"
       >
         <div className="max-w-3xl mx-auto">
           <h2
@@ -450,13 +448,13 @@ export default function HomePage() {
           >
             Ready to Create Something Amazing?
           </h2>
-          <p className="text-blue-200 text-lg mb-8">
+          <p className="text-blue-100 text-lg mb-8">
             Join thousands of families already creating together. First box ships within 48 hours.
           </p>
           <Link
             href="/subscribe"
             className="inline-block px-10 py-4 rounded-full text-lg font-bold shadow-lg transition-all duration-200 hover:scale-105"
-            style={{ backgroundColor: "#FF9F1C", color: "#fff" }}
+            style={{ backgroundColor: "#FB923C", color: "#fff" }}
           >
             Start Your Subscription
           </Link>

@@ -7,8 +7,8 @@ const tiers = [
     period: "/mo",
     emoji: "🎨",
     bgColor: "#fff",
-    headerColor: "#A8E6CF",
-    textColor: "#1E3A8A",
+    headerColor: "#D4F7F7",
+    textColor: "#2563EB",
     popular: false,
     description: "Perfect for beginners and kids just discovering their creative spark.",
     features: [
@@ -30,8 +30,8 @@ const tiers = [
     price: "$29.99",
     period: "/mo",
     emoji: "🖌️",
-    bgColor: "#1E3A8A",
-    headerColor: "#1E3A8A",
+    bgColor: "#0390AC",
+    headerColor: "#0390AC",
     textColor: "#fff",
     popular: true,
     description: "Our most popular tier — packed with variety and extras for growing artists.",
@@ -55,8 +55,8 @@ const tiers = [
     period: "/mo",
     emoji: "🏆",
     bgColor: "#fff",
-    headerColor: "#FF9F1C",
-    textColor: "#1E3A8A",
+    headerColor: "#FB923C",
+    textColor: "#2563EB",
     popular: false,
     description: "The ultimate kit for serious young artists who want to create and share their work.",
     features: [
@@ -80,8 +80,7 @@ export default function SubscribePage() {
     <div style={{ backgroundColor: "#F8FAFC", minHeight: "100vh" }}>
       {/* Header */}
       <section
-        className="py-16 px-4 sm:px-6 lg:px-8 text-center"
-        style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #2d4fc0 100%)" }}
+        className="py-16 px-4 sm:px-6 lg:px-8 text-center hero-gradient"
       >
         <h1
           className="text-5xl text-white mb-4"
@@ -89,7 +88,7 @@ export default function SubscribePage() {
         >
           Choose Your Art Adventure
         </h1>
-        <p className="text-blue-200 text-lg max-w-xl mx-auto">
+        <p className="text-blue-100 text-lg max-w-xl mx-auto">
           Monthly art subscription boxes for kids 5-12. Cancel anytime, no contracts.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-6 text-blue-100 text-sm">
@@ -110,13 +109,13 @@ export default function SubscribePage() {
               className="relative rounded-3xl overflow-hidden shadow-lg flex flex-col"
               style={{
                 backgroundColor: tier.bgColor,
-                border: tier.popular ? `3px solid #FF9F1C` : "3px solid #e2e8f0",
+                border: tier.popular ? `3px solid #FB923C` : "3px solid #e2e8f0",
               }}
             >
               {tier.popular && (
                 <div
                   className="text-center py-2 text-sm font-bold text-white"
-                  style={{ backgroundColor: "#FF9F1C" }}
+                  style={{ backgroundColor: "#FB923C" }}
                 >
                   ⭐ Most Popular — Best Value
                 </div>
@@ -131,7 +130,7 @@ export default function SubscribePage() {
                 <h2
                   className="text-3xl mb-2"
                   style={{
-                    color: tier.popular ? "#fff" : "#1E3A8A",
+                    color: tier.popular ? "#fff" : "#2563EB",
                     fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
                   }}
                 >
@@ -140,7 +139,7 @@ export default function SubscribePage() {
                 <div className="flex items-baseline justify-center gap-1">
                   <span
                     className="text-5xl font-bold"
-                    style={{ color: tier.popular ? "#fff" : "#1E3A8A" }}
+                    style={{ color: tier.popular ? "#fff" : "#2563EB" }}
                   >
                     {tier.price}
                   </span>
@@ -178,7 +177,7 @@ export default function SubscribePage() {
                 <Link
                   href="/subscribe/checkout"
                   className="mt-8 block text-center py-4 rounded-full font-bold text-white transition-all duration-200 hover:scale-105"
-                  style={{ backgroundColor: tier.popular ? "#FF9F1C" : "#1E3A8A" }}
+                  style={{ backgroundColor: tier.popular ? "#FB923C" : "#2563EB" }}
                 >
                   Get Started — {tier.price}/mo
                 </Link>
@@ -215,7 +214,7 @@ export default function SubscribePage() {
               <h4
                 className="text-lg font-semibold mb-2"
                 style={{
-                  color: "#1E3A8A",
+                  color: "#2563EB",
                   fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
                 }}
               >

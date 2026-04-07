@@ -15,7 +15,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav style={{ backgroundColor: "#1E3A8A" }} className="sticky top-0 z-50 shadow-lg">
+    <nav style={{ backgroundColor: "#2563EB" }} className="sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -45,7 +45,7 @@ export default function Navbar() {
               href="/subscribe"
               className="ml-2 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 hover:scale-105"
               style={{
-                backgroundColor: "#FF9F1C",
+                backgroundColor: "#FB923C",
                 color: "#fff",
                 fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif",
               }}
@@ -75,7 +75,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div style={{ backgroundColor: "#162d6e" }} className="md:hidden px-4 pb-4 pt-2">
+        <div style={{ backgroundColor: "#1d4ed8" }} className="md:hidden px-4 pb-4 pt-2">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -92,7 +92,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             className="block mt-3 px-4 py-2 rounded-full text-center text-sm font-bold"
             style={{
-              backgroundColor: "#FF9F1C",
+              backgroundColor: "#FB923C",
               color: "#fff",
               fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif",
             }}

@@ -1,5 +1,30 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
+import { JsonLd } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "Subscribe to Kids Art Kits | Monthly Art Box for Children",
+  description:
+    "Start your child's monthly art subscription today. Choose from Mini Artist ($19.99), Creative Explorer ($29.99), or Master Creator ($44.99). Non-toxic art kits for kids 5–12. Cancel anytime. Ships in 2–3 days.",
+  alternates: {
+    canonical: "https://bluebyartshop.com/subscribe",
+  },
+  openGraph: {
+    title: "Kids Art Subscription Box | Blue By Art Shop — Choose Your Plan",
+    description:
+      "Monthly art boxes for kids 5–12 starting at $19.99/mo. Non-toxic plaster figures, coloring books, 3D prints. Cancel anytime. Join 400+ families.",
+    url: "https://bluebyartshop.com/subscribe",
+    images: [
+      {
+        url: "/images/hero-unboxing.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Blue By Art Shop subscription box unboxing",
+      },
+    ],
+  },
+};
 
 const tiers = [
   {
@@ -102,7 +127,7 @@ export default function SubscribePage() {
       </section>
 
       {/* Pricing cards */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FFFFFF" }}>
+      <section aria-label="Subscription plans and pricing" className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
             {tiers.map((tier, i) => (
@@ -215,6 +240,119 @@ export default function SubscribePage() {
           </div>
         </div>
       </section>
+
+      {/* One-time purchase CTA */}
+      <section className="py-14 px-4 sm:px-6 lg:px-8 text-center" style={{ backgroundColor: "#FFFFFF" }}>
+        <div className="max-w-2xl mx-auto">
+          <p style={{ color: "#64748B", fontSize: "1rem", marginBottom: "1rem" }}>
+            Not ready for a subscription? Browse our one-time art kits — no subscription required.
+          </p>
+          <Link href="/shop" className="btn-outline" style={{ fontSize: "0.9375rem" }}>
+            Browse the Shop →
+          </Link>
+        </div>
+      </section>
+
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Blue By Art Shop Subscription Plans",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Product",
+              "name": "Mini Artist Monthly Art Subscription Box",
+              "description": "Monthly art kit for kids ages 5-7. Includes 2 plaster figures or 10 coloring pages, 6 non-toxic paint pots, brush, step-by-step instructions, and sticker sheet. Cancel anytime.",
+              "url": "https://bluebyartshop.com/subscribe",
+              "image": "https://bluebyartshop.com/images/hero-unboxing.jpg",
+              "brand": { "@type": "Brand", "name": "Blue By Art Shop" },
+              "offers": {
+                "@type": "Offer",
+                "price": "19.99",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "seller": { "@type": "Organization", "name": "Blue By Art Shop" },
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": "19.99",
+                  "priceCurrency": "USD",
+                  "billingIncrement": 1,
+                  "unitCode": "MON",
+                },
+              },
+              "audience": { "@type": "PeopleAudience", "suggestedMinAge": 5, "suggestedMaxAge": 7 },
+              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "112", "bestRating": "5" },
+            },
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Product",
+              "name": "Creative Explorer Monthly Art Subscription Box",
+              "description": "Most popular monthly art kit for kids ages 5-12. Includes 3 plaster figures or 20 coloring pages, 1 mini 3D print, 12 paint pots, brush set, sealant, activity card, digital banner template. Cancel anytime.",
+              "url": "https://bluebyartshop.com/subscribe",
+              "image": "https://bluebyartshop.com/images/hero-unboxing.jpg",
+              "brand": { "@type": "Brand", "name": "Blue By Art Shop" },
+              "offers": {
+                "@type": "Offer",
+                "price": "29.99",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "seller": { "@type": "Organization", "name": "Blue By Art Shop" },
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": "29.99",
+                  "priceCurrency": "USD",
+                  "billingIncrement": 1,
+                  "unitCode": "MON",
+                },
+              },
+              "audience": { "@type": "PeopleAudience", "suggestedMinAge": 5, "suggestedMaxAge": 12 },
+              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "187", "bestRating": "5" },
+            },
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Product",
+              "name": "Master Creator Monthly Art Subscription Box",
+              "description": "Premium monthly art kit for kids ages 5-12. Includes 4 plaster figures or 30 coloring pages, 2 mini 3D prints, 18 paint pots with metallics, illustrated storybook, display stand, and resell kit. Cancel anytime.",
+              "url": "https://bluebyartshop.com/subscribe",
+              "image": "https://bluebyartshop.com/images/hero-unboxing.jpg",
+              "brand": { "@type": "Brand", "name": "Blue By Art Shop" },
+              "offers": {
+                "@type": "Offer",
+                "price": "44.99",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "seller": { "@type": "Organization", "name": "Blue By Art Shop" },
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": "44.99",
+                  "priceCurrency": "USD",
+                  "billingIncrement": 1,
+                  "unitCode": "MON",
+                },
+              },
+              "audience": { "@type": "PeopleAudience", "suggestedMinAge": 5, "suggestedMaxAge": 12 },
+              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "94", "bestRating": "5" },
+            },
+          },
+        ],
+      }} />
+
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bluebyartshop.com" },
+          { "@type": "ListItem", "position": 2, "name": "Subscribe", "item": "https://bluebyartshop.com/subscribe" },
+        ],
+      }} />
 
     </div>
   );

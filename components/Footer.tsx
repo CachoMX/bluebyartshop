@@ -33,6 +33,7 @@ export default function Footer() {
               <li><Link href="/shop" className="hover:text-white transition-colors">All Products</Link></li>
               <li><Link href="/shop?cat=plaster" className="hover:text-white transition-colors">Plaster Kits</Link></li>
               <li><Link href="/shop?cat=coloring" className="hover:text-white transition-colors">Coloring Books</Link></li>
+              <li><Link href="/shop?cat=3d" className="hover:text-white transition-colors">3D Print Figures</Link></li>
               <li><Link href="/shop?cat=party" className="hover:text-white transition-colors">Party Kits</Link></li>
               <li><Link href="/shop?cat=wholesale" className="hover:text-white transition-colors">Wholesale</Link></li>
             </ul>

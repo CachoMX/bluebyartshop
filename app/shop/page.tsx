@@ -1,29 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
 
 type Category = "all" | "plaster" | "coloring" | "3d" | "party" | "wholesale";
 type AgeFilter = "all" | "5-7" | "8-10" | "11-12";
 
-const products = [
-  { id: 1, name: "Unicorn Plaster Figure Kit", price: 14.99, category: "plaster" as Category, age: "5-7" as AgeFilter, emoji: "🦄", gradientFrom: "#FFD6E0", gradientTo: "#FFC8D3", image: "/images/product-unicorn.jpg", desc: "Paint your own magical unicorn plaster figure.", badge: "Bestseller" },
-  { id: 2, name: "Dinosaur Plaster Set (3-pack)", price: 19.99, category: "plaster" as Category, age: "8-10" as AgeFilter, emoji: "🦕", gradientFrom: "#D4EDDA", gradientTo: "#B8DFBE", image: "/images/product-dinosaur.jpg", desc: "Three dino figures ready to paint and display.", badge: null },
-  { id: 3, name: "Space Explorer Plaster Kit", price: 17.99, category: "plaster" as Category, age: "8-10" as AgeFilter, emoji: "🚀", gradientFrom: "#CCE5FF", gradientTo: "#B0D4FF", image: "/images/product-space.jpg", desc: "Rocket, astronaut, and planet figures in one set.", badge: null },
-  { id: 4, name: "Ocean Animals Plaster Set", price: 16.99, category: "plaster" as Category, age: "5-7" as AgeFilter, emoji: "🐠", gradientFrom: "#D4F7F7", gradientTo: "#B0EDED", image: "/images/product-ocean.jpg", desc: "Sea turtle, clownfish, and starfish figures.", badge: null },
-  { id: 5, name: "Enchanted Forest Coloring Book", price: 9.99, category: "coloring" as Category, age: "5-7" as AgeFilter, emoji: "🌲", gradientFrom: "#E8F5E9", gradientTo: "#C8E6C9", image: "/images/product-coloring-book.jpg", desc: "32 pages of magical forest scenes for young artists.", badge: null },
-  { id: 6, name: "Adventure Heroes Coloring Pack", price: 12.99, category: "coloring" as Category, age: "8-10" as AgeFilter, emoji: "🦸", gradientFrom: "#FFF3CD", gradientTo: "#FFE082", image: null, desc: "40 pages featuring original superhero characters.", badge: "New" },
-  { id: 7, name: "Manga & Comics Coloring Book", price: 14.99, category: "coloring" as Category, age: "11-12" as AgeFilter, emoji: "📖", gradientFrom: "#F3E5F5", gradientTo: "#E1BEE7", image: null, desc: "Anime-style characters and comic panel layouts.", badge: "New" },
-  { id: 8, name: "Mini Dragon 3D Print", price: 12.99, category: "3d" as Category, age: "8-10" as AgeFilter, emoji: "🐉", gradientFrom: "#FFE0B2", gradientTo: "#FFCC80", image: "/images/product-3d-dragon.jpg", desc: "Custom printed mini dragon figure — paint it your way.", badge: null },
-  { id: 9, name: "Robot Buddy 3D Figure", price: 11.99, category: "3d" as Category, age: "8-10" as AgeFilter, emoji: "🤖", gradientFrom: "#E3F2FD", gradientTo: "#BBDEFB", image: null, desc: "Articulated robot figure ready for painting.", badge: null },
-  { id: 10, name: "Mini Keychain Pack", price: 9.99, category: "3d" as Category, age: "11-12" as AgeFilter, emoji: "🔑", gradientFrom: "#F8BBD9", gradientTo: "#F48FB1", image: null, desc: "5-pack of mini keychains — paint and keep or gift.", badge: null },
-  { id: 11, name: "Party Kit 15-pack", price: 89.0, category: "party" as Category, age: "5-7" as AgeFilter, emoji: "🎉", gradientFrom: "#FFFDE7", gradientTo: "#FFF9C4", image: "/images/product-party-kit.jpg", desc: "15 paint-your-own kits perfect for birthday parties.", badge: null },
-  { id: 12, name: "Party Kit 25-pack", price: 139.0, category: "party" as Category, age: "8-10" as AgeFilter, emoji: "🎂", gradientFrom: "#FCE4EC", gradientTo: "#F8BBD9", image: "/images/product-party-kit.jpg", desc: "25 kits — great for classroom events and big parties.", badge: "Popular" },
-  { id: 13, name: "Party Kit 50-pack", price: 249.0, category: "party" as Category, age: "11-12" as AgeFilter, emoji: "🎊", gradientFrom: "#E8EAF6", gradientTo: "#C5CAE9", image: "/images/product-party-kit.jpg", desc: "50-kit bundle for large events and school programs.", badge: "Best Value" },
-  { id: 14, name: "Birthday Box", price: 34.99, category: "party" as Category, age: "5-7" as AgeFilter, emoji: "🎁", gradientFrom: "#D4F7F7", gradientTo: "#A8EDEC", image: null, desc: "Curated birthday kit with figure, paints, and ribbon.", badge: null },
-  { id: 15, name: "Wholesale Starter Pack (50 units)", price: 600.0, category: "wholesale" as Category, age: "all" as AgeFilter, emoji: "📦", gradientFrom: "#F5F5F5", gradientTo: "#E0E0E0", image: "/images/shop-supplies-flatlay.jpg", desc: "50 units at $12/unit — branded kits for resellers.", badge: "Wholesale" },
-  { id: 16, name: "Wholesale Premium Pack (50 units)", price: 1400.0, category: "wholesale" as Category, age: "all" as AgeFilter, emoji: "🏭", gradientFrom: "#ECEFF1", gradientTo: "#CFD8DC", image: "/images/shop-supplies-flatlay.jpg", desc: "50 premium units at $28/unit — full Master Creator set.", badge: "Wholesale" },
+interface Product {
+  id: number;
+  slug: string;
+  name: string;
+  price: number;
+  category: Category;
+  age: AgeFilter;
+  emoji: string;
+  gradientFrom: string;
+  gradientTo: string;
+  image: string | null;
+  desc: string;
+  badge: string | null;
+}
+
+const products: Product[] = [
+  { id: 1, slug: "unicorn-plaster-figure-kit", name: "Unicorn Plaster Figure Kit", price: 14.99, category: "plaster", age: "5-7", emoji: "🦄", gradientFrom: "#FFD6E0", gradientTo: "#FFC8D3", image: "/images/product-unicorn.jpg", desc: "Paint your own magical unicorn plaster figure.", badge: "Bestseller" },
+  { id: 2, slug: "dinosaur-plaster-set", name: "Dinosaur Plaster Set (3-pack)", price: 19.99, category: "plaster", age: "8-10", emoji: "🦕", gradientFrom: "#D4EDDA", gradientTo: "#B8DFBE", image: "/images/product-dinosaur.jpg", desc: "Three dino figures ready to paint and display.", badge: null },
+  { id: 3, slug: "space-explorer-plaster-kit", name: "Space Explorer Plaster Kit", price: 17.99, category: "plaster", age: "8-10", emoji: "🚀", gradientFrom: "#CCE5FF", gradientTo: "#B0D4FF", image: "/images/product-space.jpg", desc: "Rocket, astronaut, and planet figures in one set.", badge: null },
+  { id: 4, slug: "ocean-animals-plaster-set", name: "Ocean Animals Plaster Set", price: 16.99, category: "plaster", age: "5-7", emoji: "🐠", gradientFrom: "#D4F7F7", gradientTo: "#B0EDED", image: "/images/product-ocean.jpg", desc: "Sea turtle, clownfish, and starfish figures.", badge: null },
+  { id: 5, slug: "enchanted-forest-coloring-book", name: "Enchanted Forest Coloring Book", price: 9.99, category: "coloring", age: "5-7", emoji: "🌲", gradientFrom: "#E8F5E9", gradientTo: "#C8E6C9", image: "/images/product-coloring-book.jpg", desc: "32 pages of magical forest scenes for young artists.", badge: null },
+  { id: 6, slug: "adventure-heroes-coloring-pack", name: "Adventure Heroes Coloring Pack", price: 12.99, category: "coloring", age: "8-10", emoji: "🦸", gradientFrom: "#FFF3CD", gradientTo: "#FFE082", image: null, desc: "40 pages featuring original superhero characters.", badge: "New" },
+  { id: 7, slug: "manga-comics-coloring-book", name: "Manga & Comics Coloring Book", price: 14.99, category: "coloring", age: "11-12", emoji: "📖", gradientFrom: "#F3E5F5", gradientTo: "#E1BEE7", image: null, desc: "Anime-style characters and comic panel layouts.", badge: "New" },
+  { id: 8, slug: "mini-dragon-3d-print", name: "Mini Dragon 3D Print", price: 12.99, category: "3d", age: "8-10", emoji: "🐉", gradientFrom: "#FFE0B2", gradientTo: "#FFCC80", image: "/images/product-3d-dragon.jpg", desc: "Custom printed mini dragon figure — paint it your way.", badge: null },
+  { id: 9, slug: "robot-buddy-3d-figure", name: "Robot Buddy 3D Figure", price: 11.99, category: "3d", age: "8-10", emoji: "🤖", gradientFrom: "#E3F2FD", gradientTo: "#BBDEFB", image: null, desc: "Articulated robot figure ready for painting.", badge: null },
+  { id: 10, slug: "mini-keychain-pack", name: "Mini Keychain Pack", price: 9.99, category: "3d", age: "11-12", emoji: "🔑", gradientFrom: "#F8BBD9", gradientTo: "#F48FB1", image: null, desc: "5-pack of mini keychains — paint and keep or gift.", badge: null },
+  { id: 11, slug: "party-kit-15-pack", name: "Party Kit 15-pack", price: 89.0, category: "party", age: "5-7", emoji: "🎉", gradientFrom: "#FFFDE7", gradientTo: "#FFF9C4", image: "/images/product-party-kit.jpg", desc: "15 paint-your-own kits perfect for birthday parties.", badge: null },
+  { id: 12, slug: "party-kit-25-pack", name: "Party Kit 25-pack", price: 139.0, category: "party", age: "8-10", emoji: "🎂", gradientFrom: "#FCE4EC", gradientTo: "#F8BBD9", image: "/images/product-party-kit.jpg", desc: "25 kits — great for classroom events and big parties.", badge: "Popular" },
+  { id: 13, slug: "party-kit-50-pack", name: "Party Kit 50-pack", price: 249.0, category: "party", age: "11-12", emoji: "🎊", gradientFrom: "#E8EAF6", gradientTo: "#C5CAE9", image: "/images/product-party-kit.jpg", desc: "50-kit bundle for large events and school programs.", badge: "Best Value" },
+  { id: 14, slug: "birthday-box", name: "Birthday Box", price: 34.99, category: "party", age: "5-7", emoji: "🎁", gradientFrom: "#D4F7F7", gradientTo: "#A8EDEC", image: null, desc: "Curated birthday kit with figure, paints, and ribbon.", badge: null },
+  { id: 15, slug: "wholesale-starter-pack", name: "Wholesale Starter Pack (50 units)", price: 600.0, category: "wholesale", age: "all", emoji: "📦", gradientFrom: "#F5F5F5", gradientTo: "#E0E0E0", image: "/images/shop-supplies-flatlay.jpg", desc: "50 units at $12/unit — branded kits for resellers.", badge: "Wholesale" },
+  { id: 16, slug: "wholesale-premium-pack", name: "Wholesale Premium Pack (50 units)", price: 1400.0, category: "wholesale", age: "all", emoji: "🏭", gradientFrom: "#ECEFF1", gradientTo: "#CFD8DC", image: "/images/shop-supplies-flatlay.jpg", desc: "50 premium units at $28/unit — full Master Creator set.", badge: "Wholesale" },
 ];
 
 const categoryTabs: { key: Category; label: string; emoji: string }[] = [
@@ -50,9 +66,24 @@ const badgeColors: Record<string, string> = {
   Wholesale: "#64748B",
 };
 
+const validCategories: Category[] = ["all", "plaster", "coloring", "3d", "party", "wholesale"];
+const validAges: AgeFilter[] = ["all", "5-7", "8-10", "11-12"];
+
 export default function ShopPage() {
   const [cat, setCat] = useState<Category>("all");
   const [age, setAge] = useState<AgeFilter>("all");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const catParam = params.get("cat") as Category | null;
+    const ageParam = params.get("age") as AgeFilter | null;
+    if (catParam && validCategories.includes(catParam)) {
+      setCat(catParam);
+    }
+    if (ageParam && validAges.includes(ageParam)) {
+      setAge(ageParam);
+    }
+  }, []);
 
   const filtered = products.filter((p) => {
     const catMatch = cat === "all" || p.category === cat;
@@ -85,6 +116,13 @@ export default function ShopPage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        {/* SEO intro — visible and keyword-rich */}
+        <div className="mb-8 p-6 rounded-2xl" style={{ backgroundColor: "#F0F7FF", border: "1px solid #DBEAFE" }}>
+          <p style={{ color: "#334155", fontSize: "0.9375rem", lineHeight: 1.75 }}>
+            Browse our full collection of kids art kits from <strong>Blue By Art Shop</strong> — from paint-your-own plaster figures to themed coloring books, custom 3D print figures, birthday party art kits, and wholesale bundles for schools and studios. All materials are non-toxic and safe for children ages 5–12.
+          </p>
+        </div>
 
         {/* Filters */}
         <AnimateIn className="mb-10 space-y-4">
@@ -140,89 +178,91 @@ export default function ShopPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filtered.map((product, i) => (
               <AnimateIn key={product.id} delay={(i % 4) * 80} direction="up">
-                <div
-                  className="bg-white rounded-2xl overflow-hidden flex flex-col product-card"
-                  style={{
-                    boxShadow: "0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.05)",
-                    transition: "box-shadow 0.3s ease, transform 0.3s ease",
-                  }}
-                >
-                  {/* Product image area */}
+                <Link href={`/shop/${product.slug}`} style={{ textDecoration: "none", display: "block" }}>
                   <div
-                    className="h-48 relative overflow-hidden"
+                    className="bg-white rounded-2xl overflow-hidden flex flex-col product-card"
                     style={{
-                      background: `linear-gradient(135deg, ${product.gradientFrom}, ${product.gradientTo})`,
+                      boxShadow: "0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.05)",
+                      transition: "box-shadow 0.3s ease, transform 0.3s ease",
                     }}
                   >
-                    {product.image ? (
-                      <Image
-                        src={product.image}
-                        alt={product.name}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      />
-                    ) : (
-                      <>
-                        <div className="absolute top-2 left-2 w-16 h-16 rounded-full opacity-30" style={{ background: "rgba(255,255,255,0.5)" }} />
-                        <div className="absolute bottom-2 right-4 w-10 h-10 rounded-full opacity-20" style={{ background: "rgba(255,255,255,0.6)" }} />
-                        <div className="absolute inset-0 flex items-center justify-center" aria-label={product.name}>
-                          <span aria-hidden="true" className="text-6xl drop-shadow-sm">{product.emoji}</span>
-                        </div>
-                      </>
-                    )}
-
-                    {product.badge && (
-                      <span
-                        className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-bold text-white z-10"
-                        style={{
-                          backgroundColor: badgeColors[product.badge] || "#C2410C",
-                          boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
-                        }}
-                      >
-                        {product.badge}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="p-5 flex-1 flex flex-col">
-                    <h3
-                      className="mb-1.5"
+                    {/* Product image area */}
+                    <div
+                      className="h-48 relative overflow-hidden"
                       style={{
-                        fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
-                        color: "#1E293B",
-                        fontSize: "1.0625rem",
-                        fontWeight: 600,
-                        lineHeight: 1.25,
+                        background: `linear-gradient(135deg, ${product.gradientFrom}, ${product.gradientTo})`,
                       }}
                     >
-                      {product.name}
-                    </h3>
-                    <p className="flex-1 mb-4" style={{ color: "#64748B", fontSize: "0.8125rem", lineHeight: 1.6 }}>
-                      {product.desc}
-                    </p>
-                    <div className="flex items-center justify-between mt-auto">
-                      <span style={{
-                        fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
-                        fontSize: "1.5rem",
-                        fontWeight: 700,
-                        color: "#1E293B",
-                      }}>
-                        ${product.price.toFixed(2)}
-                      </span>
-                      <button
-                        className="px-4 py-2 rounded-full text-sm font-semibold text-white transition-all duration-200"
+                      {product.image ? (
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        />
+                      ) : (
+                        <>
+                          <div className="absolute top-2 left-2 w-16 h-16 rounded-full opacity-30" style={{ background: "rgba(255,255,255,0.5)" }} />
+                          <div className="absolute bottom-2 right-4 w-10 h-10 rounded-full opacity-20" style={{ background: "rgba(255,255,255,0.6)" }} />
+                          <div className="absolute inset-0 flex items-center justify-center" aria-label={product.name}>
+                            <span aria-hidden="true" className="text-6xl drop-shadow-sm">{product.emoji}</span>
+                          </div>
+                        </>
+                      )}
+
+                      {product.badge && (
+                        <span
+                          className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-bold text-white z-10"
+                          style={{
+                            backgroundColor: badgeColors[product.badge] ?? "#C2410C",
+                            boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
+                          }}
+                        >
+                          {product.badge}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="p-5 flex-1 flex flex-col">
+                      <h3
+                        className="mb-1.5"
                         style={{
-                          backgroundColor: "#C2410C",
-                          boxShadow: "0 4px 10px rgba(194,65,12,0.35)",
-                          fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif",
+                          fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
+                          color: "#1E293B",
+                          fontSize: "1.0625rem",
+                          fontWeight: 600,
+                          lineHeight: 1.25,
                         }}
                       >
-                        Add to Cart
-                      </button>
+                        {product.name}
+                      </h3>
+                      <p className="flex-1 mb-4" style={{ color: "#64748B", fontSize: "0.8125rem", lineHeight: 1.6 }}>
+                        {product.desc}
+                      </p>
+                      <div className="flex items-center justify-between mt-auto">
+                        <span style={{
+                          fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
+                          fontSize: "1.5rem",
+                          fontWeight: 700,
+                          color: "#1E293B",
+                        }}>
+                          ${product.price.toFixed(2)}
+                        </span>
+                        <span
+                          className="px-4 py-2 rounded-full text-sm font-semibold text-white transition-all duration-200"
+                          style={{
+                            backgroundColor: "#C2410C",
+                            boxShadow: "0 4px 10px rgba(194,65,12,0.35)",
+                            fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif",
+                          }}
+                        >
+                          View Details →
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </AnimateIn>
             ))}
           </div>
@@ -252,12 +292,25 @@ export default function ShopPage() {
                 Wholesale pricing at $12–$28/unit for orders of 50+ units. Custom branding available.
                 Perfect for schools, camps, and art studios.
               </p>
-              <a href="/contact" className="btn-primary" style={{ fontSize: "1rem" }}>
+              <Link href="/contact" className="btn-primary" style={{ fontSize: "1rem" }}>
                 Get a Wholesale Quote →
-              </a>
+              </Link>
             </div>
           </div>
         </AnimateIn>
+
+        {/* Hidden server-rendered product list for crawlers/LLMs */}
+        <noscript>
+          <div>
+            <h2>All Kids Art Kits</h2>
+            {products.map((p) => (
+              <div key={p.id}>
+                <h3><a href={`/shop/${p.slug}`}>{p.name}</a></h3>
+                <p>${p.price.toFixed(2)} — Ages {p.age === "all" ? "5–12" : p.age} — {p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </noscript>
       </div>
     </div>
   );

@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { AnimateIn } from "@/components/AnimateIn";
+import { JsonLd } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "About Blue By Art Shop | Kids Art Subscription Box — Our Story & Mission",
+  description: "Learn about Blue By Art Shop — founded to spark creativity in kids ages 5–12. Curated by educators and artists. Non-toxic materials, 400+ families served, 12,000+ kits delivered. Based in the United States.",
+  alternates: {
+    canonical: "https://bluebyartshop.com/about",
+  },
+  openGraph: {
+    title: "About Blue By Art Shop | Our Story, Mission & Team",
+    description: "Blue By Art Shop was founded to spark creativity in kids ages 5–12. Educator-curated, non-toxic art kits. 400+ families, 12,000+ kits delivered. 98% satisfaction.",
+    url: "https://bluebyartshop.com/about",
+    images: [{ url: "/images/about-family-art.jpg", width: 1200, height: 630, alt: "Blue By Art Shop family painting together" }],
+  },
+};
 
 const team = [
   { name: "Sofia V.", role: "Founder & Creative Director", emoji: "👩‍🎨", avatarBg: "linear-gradient(135deg,#2563EB,#0390AC)", bio: "Former art teacher turned entrepreneur. Sofia started Blue By Art Shop after seeing firsthand how much kids flourish when given quality art materials and the freedom to create." },
@@ -58,8 +74,41 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Brand Facts — for LLM citation and SEO entity clarity */}
+      <section aria-label="Brand Facts" className="py-14 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FFFFFF" }}>
+        <div className="max-w-4xl mx-auto">
+          <AnimateIn className="text-center mb-8">
+            <span className="eyebrow eyebrow-blue">By the Numbers</span>
+            <h2 style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", color: "#1E293B", fontWeight: 600 }}>
+              Blue By Art Shop at a Glance
+            </h2>
+          </AnimateIn>
+          <AnimateIn>
+            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { dt: "Founded", dd: "2024" },
+                { dt: "Headquarters", dd: "Chicago, IL, United States" },
+                { dt: "Age Range Served", dd: "5–12 years old" },
+                { dt: "Active Subscribers", dd: "400+ families" },
+                { dt: "Total Kits Delivered", dd: "12,000+" },
+                { dt: "Satisfaction Rate", dd: "98%" },
+                { dt: "Material Safety", dd: "Non-toxic, ASTM D-4236 compliant" },
+                { dt: "Subscription Tiers", dd: "Mini Artist, Creative Explorer, Master Creator" },
+                { dt: "Starting Price", dd: "$19.99/month" },
+                { dt: "Parent Company", dd: "VIXI Co." },
+              ].map(({ dt, dd }) => (
+                <div key={dt} className="flex items-start gap-3 p-4 rounded-xl" style={{ backgroundColor: "#F0F7FF", border: "1px solid #DBEAFE" }}>
+                  <dt className="text-sm font-semibold flex-shrink-0" style={{ color: "#2563EB", minWidth: "180px" }}>{dt}:</dt>
+                  <dd style={{ color: "#334155", fontSize: "0.9375rem" }}>{dd}</dd>
+                </div>
+              ))}
+            </dl>
+          </AnimateIn>
+        </div>
+      </section>
+
       {/* Story */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FFFFFF" }}>
+      <section aria-label="Our Story" className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <AnimateIn direction="right">
@@ -108,7 +157,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F0F7FF" }}>
+      <section aria-label="Our Mission" className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F0F7FF" }}>
         <AnimateIn className="max-w-3xl mx-auto text-center" direction="fade">
           <div
             className="w-20 h-20 rounded-full flex items-center justify-center text-3xl mx-auto mb-6"
@@ -136,7 +185,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FFFFFF" }}>
+      <section aria-label="Our Values" className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-6xl mx-auto">
           <AnimateIn className="text-center mb-14">
             <span className="eyebrow eyebrow-teal">Values</span>
@@ -224,6 +273,40 @@ export default function AboutPage() {
           </div>
         </AnimateIn>
       </section>
+
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "@id": "https://bluebyartshop.com/about",
+        "url": "https://bluebyartshop.com/about",
+        "name": "About Blue By Art Shop",
+        "description": "Blue By Art Shop creates premium monthly art subscription boxes for children ages 5-12, founded in 2024 by educators and artists committed to quality, safety, and creativity.",
+        "publisher": { "@id": "https://bluebyartshop.com/#organization" },
+        "mainEntity": {
+          "@type": "Organization",
+          "@id": "https://bluebyartshop.com/#organization",
+          "name": "Blue By Art Shop",
+          "url": "https://bluebyartshop.com",
+          "foundingDate": "2024",
+          "description": "Blue By Art Shop creates premium monthly art subscription boxes for children ages 5-12, featuring plaster figures, coloring books, 3D printed figures, and party art kits curated by educators and artists.",
+          "founder": { "@type": "Person", "name": "Sofia V.", "jobTitle": "Founder & Creative Director" },
+          "numberOfEmployees": { "@type": "QuantitativeValue", "value": "10" },
+          "address": { "@type": "PostalAddress", "addressLocality": "Chicago", "addressRegion": "IL", "addressCountry": "US" },
+          "email": "hello@bluebyartshop.com",
+          "slogan": "To inspire every child to create boldly, explore freely, and grow confidently through the power of art.",
+          "knowsAbout": ["children's art education", "plaster figure kits", "coloring books for kids", "3D print figures", "art subscription boxes"],
+          "parentOrganization": { "@type": "Organization", "name": "VIXI Co." }
+        }
+      }} />
+
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bluebyartshop.com" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://bluebyartshop.com/about" }
+        ]
+      }} />
 
     </div>
   );

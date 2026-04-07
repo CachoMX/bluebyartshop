@@ -16,7 +16,7 @@ export default function Footer() {
                 Blue By Art Shop
               </span>
             </div>
-            <p className="text-blue-200 text-sm leading-relaxed">
+            <p style={{ color: "rgba(255,255,255,0.88)", fontSize: "0.875rem", lineHeight: 1.65 }}>
               Where Little Hands Create Big Wonders. Safe, fun art kits for kids 5–12, delivered monthly.
             </p>
           </div>
@@ -24,12 +24,12 @@ export default function Footer() {
           {/* Shop */}
           <div>
             <h4
-              className="text-lg font-bold mb-4 text-white"
+              className="text-lg font-bold mb-4 text-white" role="heading" aria-level={3}
               style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive" }}
             >
               Shop
             </h4>
-            <ul className="space-y-2 text-blue-200 text-sm">
+            <ul className="space-y-2 text-sm" style={{ color: "rgba(255,255,255,0.85)" }}>
               <li><Link href="/shop" className="hover:text-white transition-colors">All Products</Link></li>
               <li><Link href="/shop?cat=plaster" className="hover:text-white transition-colors">Plaster Kits</Link></li>
               <li><Link href="/shop?cat=coloring" className="hover:text-white transition-colors">Coloring Books</Link></li>
@@ -41,12 +41,12 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h4
-              className="text-lg font-bold mb-4 text-white"
+              className="text-lg font-bold mb-4 text-white" role="heading" aria-level={3}
               style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive" }}
             >
               Company
             </h4>
-            <ul className="space-y-2 text-blue-200 text-sm">
+            <ul className="space-y-2 text-sm" style={{ color: "rgba(255,255,255,0.85)" }}>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/subscribe" className="hover:text-white transition-colors">Subscriptions</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
@@ -56,28 +56,28 @@ export default function Footer() {
           {/* Social */}
           <div>
             <h4
-              className="text-lg font-bold mb-4 text-white"
+              className="text-lg font-bold mb-4 text-white" role="heading" aria-level={3}
               style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive" }}
             >
               Follow Along
             </h4>
             <div className="flex gap-3">
-              {[
-                { icon: "📘", label: "Facebook" },
-                { icon: "📸", label: "Instagram" },
-                { icon: "🎵", label: "TikTok" },
-                { icon: "▶️", label: "YouTube" },
-              ].map((s) => (
-                <a
-                  key={s.label}
-                  href="#"
-                  title={s.label}
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-lg transition-transform hover:scale-110"
-                  style={{ backgroundColor: "rgba(212,247,247,0.2)" }}
-                >
-                  {s.icon}
-                </a>
-              ))}
+              {/* Facebook */}
+              <a href="#" title="Facebook" className="w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110" style={{ backgroundColor: "#1877F2" }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.931-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+              </a>
+              {/* Instagram */}
+              <a href="#" title="Instagram" className="w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110" style={{ background: "linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)" }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              {/* TikTok */}
+              <a href="#" title="TikTok" className="w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110" style={{ backgroundColor: "#010101" }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+              </a>
+              {/* YouTube */}
+              <a href="#" title="YouTube" className="w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110" style={{ backgroundColor: "#FF0000" }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
             </div>
             <p className="text-blue-200 text-sm mt-4">
               Tag us <span className="font-semibold" style={{ color: "#D4F7F7" }}>#BlueByArtShop</span> to be featured!

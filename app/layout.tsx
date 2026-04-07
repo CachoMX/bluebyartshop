@@ -33,8 +33,9 @@ export default function RootLayout({
         className={`${fredokaOne.variable} ${baloo2.variable} antialiased`}
         style={{ fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif" }}
       >
+        <a href="#main-content" className="skip-to-content">Skip to main content</a>
         <Navbar />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

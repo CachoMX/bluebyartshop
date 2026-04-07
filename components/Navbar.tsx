@@ -90,14 +90,16 @@ export function Navbar() {
             onClick={() => setOpen(!open)}
             className="md:hidden p-2 rounded-xl transition-colors duration-150"
             style={{ color: "#334155" }}
-            aria-label="Toggle menu"
+            aria-label="Toggle navigation menu"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
           >
             {open ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
@@ -108,6 +110,7 @@ export function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div
+          id="mobile-menu"
           className="md:hidden px-4 pb-5 pt-2 border-t"
           style={{ borderColor: "#E2E8F0", backgroundColor: "rgba(255,255,255,0.98)" }}
         >

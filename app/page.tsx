@@ -171,7 +171,7 @@ export default function HomePage() {
           <div className="hidden lg:block absolute right-72 top-24 bg-white rounded-2xl px-4 py-3"
             style={{ boxShadow: "0 8px 24px rgba(0,0,0,0.18)" }}>
             <div className="flex gap-0.5 mb-1">
-              {[1, 2, 3, 4, 5].map(i => <span key={i} style={{ color: "#C2410C", fontSize: "0.875rem" }}>★</span>)}
+              {[1, 2, 3, 4, 5].map(i => <span key={i} aria-hidden="true" style={{ color: "#C2410C", fontSize: "0.875rem" }}>★</span>)}
             </div>
             <div style={{ fontSize: "0.75rem", color: "#64748B", fontWeight: 600 }}>98% satisfaction</div>
           </div>
@@ -426,7 +426,9 @@ export default function HomePage() {
                   <div className="absolute top-5 right-6 select-none pointer-events-none"
                     style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "5rem", lineHeight: 1, color: "rgba(37,99,235,0.07)", fontWeight: 700 }}>&ldquo;</div>
                   <div className="flex gap-0.5 mb-4">
-                    {Array.from({ length: t.stars }).map((_, j) => <span key={j} style={{ color: "#C2410C", fontSize: "1.125rem" }}>★</span>)}
+                    <span aria-label={`${t.stars} out of 5 stars`} className="flex gap-0.5">
+                      {Array.from({ length: t.stars }).map((_, j) => <span key={j} aria-hidden="true" style={{ color: "#C2410C", fontSize: "1.125rem" }}>★</span>)}
+                    </span>
                   </div>
                   <p className="italic leading-relaxed mb-6" style={{ color: "#334155", fontSize: "0.9375rem" }}>&ldquo;{t.text}&rdquo;</p>
                   <div className="flex items-center gap-3">

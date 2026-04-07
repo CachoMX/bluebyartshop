@@ -166,8 +166,8 @@ export default function ShopPage() {
                       <>
                         <div className="absolute top-2 left-2 w-16 h-16 rounded-full opacity-30" style={{ background: "rgba(255,255,255,0.5)" }} />
                         <div className="absolute bottom-2 right-4 w-10 h-10 rounded-full opacity-20" style={{ background: "rgba(255,255,255,0.6)" }} />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-6xl drop-shadow-sm">{product.emoji}</span>
+                        <div className="absolute inset-0 flex items-center justify-center" aria-label={product.name}>
+                          <span aria-hidden="true" className="text-6xl drop-shadow-sm">{product.emoji}</span>
                         </div>
                       </>
                     )}

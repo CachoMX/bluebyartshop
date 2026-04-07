@@ -137,7 +137,7 @@ export default function ContactPage() {
               style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.07), 0 16px 40px rgba(0,0,0,0.06)" }}
             >
               {submitted ? (
-                <div className="text-center py-12">
+                <div role="status" aria-live="polite" className="text-center py-12">
                   <div className="text-7xl mb-6">🎉</div>
                   <h3
                     className="text-2xl mb-4"

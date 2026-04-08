@@ -101,7 +101,7 @@ const organizationJsonLd = {
     {
       "@type": "Organization",
       "@id": "https://bluebyartshop.com/#organization",
-      name: "Blue By Art Shop",
+      name: "Blueby",
       url: "https://bluebyartshop.com",
       logo: {
         "@type": "ImageObject",

@@ -167,7 +167,7 @@ export default function HomePage() {
 
             <h1 className="hero-title text-white leading-tight mb-6"
               style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "clamp(3rem, 6vw, 5rem)", fontWeight: 700, letterSpacing: "-0.02em", textShadow: "0 2px 24px rgba(0,0,0,0.25)" }}>
-              Where Little Hands<br />
+              ✨ Where Little Hands<br />
               <span style={{ color: "#D4F7F7" }}>Create Big Wonders.</span>
             </h1>
 

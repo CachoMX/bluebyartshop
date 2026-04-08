@@ -13,7 +13,7 @@ export default function Footer() {
                 className="text-xl font-bold"
                 style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive" }}
               >
-                Blue By Art Shop
+                Blueby
               </span>
             </div>
             <p style={{ color: "rgba(255,255,255,0.88)", fontSize: "0.875rem", lineHeight: 1.65 }}>
@@ -81,7 +81,7 @@ export default function Footer() {
               </a>
             </div>
             <p className="text-blue-200 text-sm mt-4">
-              Tag us <span className="font-semibold" style={{ color: "#D4F7F7" }}>#BlueByArtShop</span> to be featured!
+              Tag us <span className="font-semibold" style={{ color: "#D4F7F7" }}>#Blueby</span> to be featured!
             </p>
           </div>
         </div>

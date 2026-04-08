@@ -270,6 +270,32 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Wave dividers */
+.wave-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.wave-divider svg {
+  display: block;
+  width: 100%;
+}
+
+/* Paint splash organic shapes */
+.paint-blob {
+  border-radius: 60% 40% 70% 30% / 50% 60% 40% 70%;
+  filter: blur(40px);
+  opacity: 0.15;
+  animation: morphBlob 8s ease-in-out infinite;
+}
+
+@keyframes morphBlob {
+  0%, 100% { border-radius: 60% 40% 70% 30% / 50% 60% 40% 70%; }
+  25%       { border-radius: 40% 60% 30% 70% / 60% 40% 70% 30%; }
+  50%       { border-radius: 70% 30% 60% 40% / 40% 70% 30% 60%; }
+  75%       { border-radius: 30% 70% 40% 60% / 70% 30% 60% 40%; }
+}
+
 /* ── ACCESSIBILITY ────────────────────────────────────────── */
 
 /* Skip-to-content link */

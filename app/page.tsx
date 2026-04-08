@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimateIn } from "@/components/AnimateIn";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { JsonLd } from "@/components/JsonLd";
+import WaveDivider from '@/components/WaveDivider'
 
 export const metadata: Metadata = {
   title: "Kids Art Subscription Box | Blue By Art Shop — Monthly Art Kits Ages 5–12",
@@ -221,6 +222,7 @@ export default function HomePage() {
       </section>
 
       {/* ── LEAD CAPTURE — Email opt-in ──────────────────────── */}
+      <WaveDivider fill="#1E293B" />
       <section style={{ backgroundColor: "#1E293B" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 text-center">
           <span className="eyebrow" style={{ backgroundColor: "#C2410C", color: "#fff" }}>Limited Offer</span>
@@ -237,6 +239,7 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+      <WaveDivider fill="#1E293B" flip={true} />
 
       {/* ── HOW IT WORKS — Photo cards ──────────────────────── */}
       <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F0F7FF" }}>

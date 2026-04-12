@@ -9,6 +9,7 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 export async function GET(request: Request) {
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get("code");
+  const errorCode = requestUrl.searchParams.get("error_code");
   const baseUrl = resolveAppUrl(request);
   const nextPath = sanitizeNextPath(requestUrl.searchParams.get("next"));
   const redirectToSignIn = (reason: string) => {
@@ -17,6 +18,10 @@ export async function GET(request: Request) {
     signInUrl.searchParams.set("auth_error", reason);
     return NextResponse.redirect(signInUrl);
   };
+
+  if (errorCode) {
+    return redirectToSignIn(errorCode);
+  }
 
   if (!code) {
     return redirectToSignIn("missing_code");

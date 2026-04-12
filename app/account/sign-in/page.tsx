@@ -4,10 +4,14 @@ import { sanitizeNextPath } from "@/lib/app-url";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 
 const authMessageByKey: Record<string, string> = {
+  access_denied:
+    "That magic link was denied or already used. Request a fresh link below.",
   callback_failed:
     "That email link could not finish signing you in. Request a fresh link below.",
   missing_code:
     "That email link was incomplete. Request a fresh link below.",
+  otp_expired:
+    "That magic link has expired or was already used. Request a fresh link below.",
 };
 
 export default async function AccountSignInPage({

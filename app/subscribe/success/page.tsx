@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GtagFire } from "@/components/GtagFire";
 import { subscriptionTiers } from "@/lib/catalog";
 import { getStripeClient, isStripeConfigured } from "@/lib/stripe";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
@@ -33,6 +34,10 @@ export default async function SubscribeSuccessPage({
           .catch(() => null)
       : null;
   const hasVerifiedSession = Boolean(session);
+  const purchaseValue = session?.amount_total
+    ? session.amount_total / 100
+    : undefined;
+  const purchaseCurrency = session?.currency?.toUpperCase() ?? 'USD';
 
   const tierName =
     (session?.metadata?.tierKey
@@ -46,6 +51,12 @@ export default async function SubscribeSuccessPage({
 
   return (
     <div style={{ backgroundColor: "#F8FAFC", minHeight: "100vh" }}>
+      {hasVerifiedSession && (
+        <>
+          <GtagFire event="purchase" value={purchaseValue} currency={purchaseCurrency} transactionId={sessionId ?? undefined} />
+          <GtagFire event="subscribe" value={purchaseValue} currency={purchaseCurrency} />
+        </>
+      )}
       <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <div className="mb-6 text-7xl">{hasVerifiedSession ? "🎉" : "🧾"}</div>
         <h1

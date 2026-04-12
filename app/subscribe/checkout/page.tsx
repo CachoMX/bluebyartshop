@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GtagFire } from "@/components/GtagFire";
 import { PendingSubmitButton } from "@/components/PendingSubmitButton";
 import { startSubscriptionCheckoutAction } from "@/app/subscribe/checkout/actions";
 import { subscriptionTiers } from "@/lib/catalog";
@@ -319,6 +320,7 @@ export default async function CheckoutPage({
                 care of the secure payment step next.
               </p>
 
+              <GtagFire event="beginCheckout" value={tier.monthlyPrice} />
               <form action={startSubscriptionCheckoutAction} className="mt-6">
                 <input type="hidden" name="tierKey" value={tier.key} />
                 <PendingSubmitButton

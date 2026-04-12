@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fredoka, Baloo_2 } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
+import { GoogleAdsTag } from "@/components/GoogleAdsTag";
 import { JsonLd } from "@/components/JsonLd";
 import { Navbar } from "@/components/Navbar";
 import {
@@ -146,6 +147,7 @@ export default function RootLayout({
         className={`${fredokaOne.variable} ${baloo2.variable} antialiased`}
         style={{ fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif" }}
       >
+        <GoogleAdsTag />
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>

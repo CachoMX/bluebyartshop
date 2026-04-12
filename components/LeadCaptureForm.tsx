@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { submitLeadCaptureAction } from "@/app/actions/forms";
 import { PendingSubmitButton } from "@/components/PendingSubmitButton";
 import { initialFormSubmissionState } from "@/lib/form-submission";
+import { fireConversion, CONVERSION_LABELS } from "@/lib/gtag";
 
 export function LeadCaptureForm() {
   const [state, formAction] = useActionState(
@@ -13,6 +14,12 @@ export function LeadCaptureForm() {
   );
   const firstNameError = state.fieldErrors?.firstName?.[0];
   const emailError = state.fieldErrors?.email?.[0];
+
+  useEffect(() => {
+    if (state.status === "success") {
+      fireConversion(CONVERSION_LABELS.lead, { value: 5.00, currency: 'USD' });
+    }
+  }, [state.status]);
 
   if (state.status === "success") {
     return (

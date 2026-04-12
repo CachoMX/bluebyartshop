@@ -1,41 +1,49 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { AnimateIn } from "@/components/AnimateIn";
 import { JsonLd } from "@/components/JsonLd";
+import { MarketingImage } from "@/components/MarketingImage";
+import {
+  BRAND_EMAIL,
+  BRAND_LOGO_PATH,
+  BRAND_NAME,
+  SITE_URL,
+} from "@/lib/brand";
 
 export const metadata: Metadata = {
-  title: "About Blue By Art Shop | Kids Art Subscription Box — Our Story & Mission",
-  description: "Learn about Blue By Art Shop — founded to spark creativity in kids ages 5–12. Curated by educators and artists. Non-toxic materials, 400+ families served, 12,000+ kits delivered. Based in the United States.",
+  title: `About ${BRAND_NAME} | Kids Art Subscription Box — Our Story & Mission`,
+  description:
+    "Learn how Blue By Art Shop approaches kids art subscriptions, one-time creative kits, and hands-on project-based art time for ages 5–12.",
   alternates: {
-    canonical: "https://bluebyartshop.com/about",
+    canonical: `${SITE_URL}/about`,
   },
   openGraph: {
-    title: "About Blue By Art Shop | Our Story, Mission & Team",
-    description: "Blue By Art Shop was founded to spark creativity in kids ages 5–12. Educator-curated, non-toxic art kits. 400+ families, 12,000+ kits delivered. 98% satisfaction.",
-    url: "https://bluebyartshop.com/about",
-    images: [{ url: "/images/about-family-art.jpg", width: 1200, height: 630, alt: "Blue By Art Shop family painting together" }],
+    title: `About ${BRAND_NAME} | Our Story, Mission & Team`,
+    description:
+      "Blue By Art Shop focuses on kids art subscriptions, one-time creative kits, and project-based art experiences for ages 5–12.",
+    url: `${SITE_URL}/about`,
+    images: [{ url: BRAND_LOGO_PATH, width: 1200, height: 630, alt: `${BRAND_NAME} logo` }],
   },
 };
 
 const team = [
-  { name: "Sofia V.", role: "Founder & Creative Director", emoji: "👩‍🎨", avatarBg: "linear-gradient(135deg,#2563EB,#0390AC)", bio: "Former art teacher turned entrepreneur. Sofia started Blue By Art Shop after seeing firsthand how much kids flourish when given quality art materials and the freedom to create." },
-  { name: "Marco L.", role: "Head of Product Design", emoji: "🧑‍🎨", avatarBg: "linear-gradient(135deg,#0390AC,#059669)", bio: "3D design and product development specialist. Marco curates every kit with an eye for educational value, safety, and pure fun factor." },
-  { name: "Priya N.", role: "Community & Partnerships", emoji: "👩‍💼", avatarBg: "linear-gradient(135deg,#FB923C,#F97316)", bio: "Priya builds relationships with schools, studios, and families. She's the heart of the Blue By community and runs our social presence." },
+  { name: "Creative Planning", role: "Theme and project direction", emoji: "👩‍🎨", avatarBg: "linear-gradient(135deg,#2563EB,#0390AC)", bio: "This part of the brand focuses on the monthly themes, project ideas, and the overall creative direction behind each box and kit." },
+  { name: "Product Development", role: "Kit design and assortment", emoji: "🧑‍🎨", avatarBg: "linear-gradient(135deg,#0390AC,#059669)", bio: "This work centers on selecting the mix of activities, art formats, and product categories that appear across subscriptions and one-time kits." },
+  { name: "Customer Care", role: "Support and wholesale follow-up", emoji: "👩‍💼", avatarBg: "linear-gradient(135deg,#FB923C,#F97316)", bio: "This team handles support questions, wholesale conversations, and the account-side communication that keeps the storefront usable for families and partners." },
 ];
 
 const values = [
   { icon: "🎨", title: "Creativity First", desc: "Every product is designed to spark imagination, not just follow instructions.", bg: "#EBF5FF", color: "#2563EB" },
-  { icon: "🛡️", title: "Safety Always", desc: "All materials are non-toxic, child-safe, and tested to international standards.", bg: "#ECFDF5", color: "#059669" },
+  { icon: "🛡️", title: "Safety Always", desc: "We aim for kid-friendly materials and age-aware project design across the catalog.", bg: "#ECFDF5", color: "#059669" },
   { icon: "🌱", title: "Grow Together", desc: "Our tiers evolve with your child's skills — no need to switch boxes, just upgrade.", bg: "#E0F7FA", color: "#0390AC" },
-  { icon: "♻️", title: "Eco-Conscious", desc: "Packaging is 100% recyclable. We partner with eco-friendly suppliers wherever possible.", bg: "#F3F0FF", color: "#7C3AED" },
+  { icon: "♻️", title: "Thoughtful Packaging", desc: "We keep packaging and presentation practical so kits feel giftable without overwhelming the project itself.", bg: "#F3F0FF", color: "#7C3AED" },
 ];
 
 const stats = [
-  { value: "400+", label: "Active Families" },
-  { value: "12K+", label: "Kits Delivered" },
-  { value: "98%", label: "Satisfaction Rate" },
+  { value: "3", label: "Subscription Plans" },
+  { value: "16", label: "One-Time Products" },
   { value: "5-12", label: "Age Range" },
+  { value: "Online", label: "Storefront Support" },
 ];
 
 export default function AboutPage() {
@@ -86,16 +94,14 @@ export default function AboutPage() {
           <AnimateIn>
             <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { dt: "Founded", dd: "2024" },
-                { dt: "Headquarters", dd: "Chicago, IL, United States" },
                 { dt: "Age Range Served", dd: "5–12 years old" },
-                { dt: "Active Subscribers", dd: "400+ families" },
-                { dt: "Total Kits Delivered", dd: "12,000+" },
-                { dt: "Satisfaction Rate", dd: "98%" },
-                { dt: "Material Safety", dd: "Non-toxic, ASTM D-4236 compliant" },
+                { dt: "Subscription Plans", dd: "Mini Artist, Creative Explorer, Master Creator" },
+                { dt: "Catalog Size", dd: "16 one-time products across five categories" },
+                { dt: "Support Model", dd: "Online account, checkout, and contact flows" },
+                { dt: "Pricing", dd: "Subscriptions from $19.99/month" },
+                { dt: "Contact", dd: BRAND_EMAIL },
                 { dt: "Subscription Tiers", dd: "Mini Artist, Creative Explorer, Master Creator" },
-                { dt: "Starting Price", dd: "$19.99/month" },
-                { dt: "Parent Company", dd: "VIXI Co." },
+                { dt: "Policy Pages", dd: "Privacy, terms, and shipping/returns are published on-site" },
               ].map(({ dt, dd }) => (
                 <div key={dt} className="flex items-start gap-3 p-4 rounded-xl" style={{ backgroundColor: "#F0F7FF", border: "1px solid #DBEAFE" }}>
                   <dt className="text-sm font-semibold flex-shrink-0" style={{ color: "#2563EB", minWidth: "180px" }}>{dt}:</dt>
@@ -121,13 +127,19 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4" style={{ color: "#334155", lineHeight: 1.75, fontSize: "0.9375rem" }}>
                 <p>
-                  Blue By Art Shop was born inside the <strong>VIXI</strong> family of brands — a company built around creating meaningful experiences for kids and families. The name <strong>&ldquo;Blue By&rdquo;</strong> comes from the idea that every great artwork starts with a single stroke.
+                  Blue By Art Shop was created to make it easier for families to
+                  find art projects that feel fun, hands-on, and age-appropriate
+                  without piecing together materials from multiple places.
                 </p>
                 <p>
-                  We noticed a gap: parents wanted quality art activities for their kids, but most kits on the market were either too simple, used cheap materials, or didn&apos;t grow with the child. So we built something better.
+                  The storefront brings together recurring subscription options,
+                  one-time kits, party packs, and wholesale bundles so families,
+                  schools, and studios can choose the format that fits the moment.
                 </p>
                 <p>
-                  Every Blue By kit is thoughtfully curated by educators and artists. We source non-toxic, premium materials and design projects that challenge kids just enough to feel proud — without frustrating them.
+                  The goal is simple: give kids a clear project they can finish,
+                  display, and feel proud of, while giving adults a cleaner way to
+                  browse, subscribe, and get support when they need it.
                 </p>
               </div>
             </AnimateIn>
@@ -135,7 +147,7 @@ export default function AboutPage() {
             {/* Family art photo */}
             <AnimateIn direction="left" delay={150}>
               <div className="rounded-3xl relative overflow-hidden" style={{ height: "360px" }}>
-                <Image
+                <MarketingImage
                   src="/images/about-family-art.jpg"
                   alt="Family painting together"
                   fill
@@ -147,8 +159,8 @@ export default function AboutPage() {
                   className="absolute bottom-5 left-5 px-4 py-3 rounded-2xl"
                   style={{ background: "rgba(255,255,255,0.92)", backdropFilter: "blur(8px)", boxShadow: "0 4px 16px rgba(0,0,0,0.15)" }}
                 >
-                  <p style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", color: "#2563EB", fontSize: "1.125rem", fontWeight: 600 }}>400+ Families</p>
-                  <p style={{ color: "#64748B", fontSize: "0.8125rem" }}>creating together every month</p>
+                  <p style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", color: "#2563EB", fontSize: "1.125rem", fontWeight: 600 }}>Project-Based Kits</p>
+                  <p style={{ color: "#64748B", fontSize: "0.8125rem" }}>subscriptions, one-time kits, and party formats</p>
                 </div>
               </div>
             </AnimateIn>
@@ -265,7 +277,8 @@ export default function AboutPage() {
             Join the Blue By Family
           </h2>
           <p className="mb-10" style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.0625rem" }}>
-            Start your child&apos;s creative journey today. First box ships within 48 hours.
+            Start your child&apos;s creative journey today with a subscription or
+            one-time kit that fits the way your family likes to create.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/subscribe" className="btn-primary" style={{ fontSize: "1rem" }}>Start Subscribing →</Link>
@@ -277,25 +290,20 @@ export default function AboutPage() {
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "@id": "https://bluebyartshop.com/about",
-        "url": "https://bluebyartshop.com/about",
-        "name": "About Blue By Art Shop",
-        "description": "Blue By Art Shop creates premium monthly art subscription boxes for children ages 5-12, founded in 2024 by educators and artists committed to quality, safety, and creativity.",
-        "publisher": { "@id": "https://bluebyartshop.com/#organization" },
+        "@id": `${SITE_URL}/about`,
+        "url": `${SITE_URL}/about`,
+        "name": `About ${BRAND_NAME}`,
+        "description": `${BRAND_NAME} creates monthly art subscriptions and one-time creative kits for kids ages 5-12.`,
+        "publisher": { "@id": `${SITE_URL}/#organization` },
         "mainEntity": {
           "@type": "Organization",
-          "@id": "https://bluebyartshop.com/#organization",
-          "name": "Blue By Art Shop",
-          "url": "https://bluebyartshop.com",
-          "foundingDate": "2024",
-          "description": "Blue By Art Shop creates premium monthly art subscription boxes for children ages 5-12, featuring plaster figures, coloring books, 3D printed figures, and party art kits curated by educators and artists.",
-          "founder": { "@type": "Person", "name": "Sofia V.", "jobTitle": "Founder & Creative Director" },
-          "numberOfEmployees": { "@type": "QuantitativeValue", "value": "10" },
-          "address": { "@type": "PostalAddress", "addressLocality": "Chicago", "addressRegion": "IL", "addressCountry": "US" },
-          "email": "hello@bluebyartshop.com",
+          "@id": `${SITE_URL}/#organization`,
+          "name": BRAND_NAME,
+          "url": SITE_URL,
+          "description": `${BRAND_NAME} offers monthly art subscription boxes, one-time creative kits, party packs, and wholesale bundles for kids ages 5-12.`,
+          "email": BRAND_EMAIL,
           "slogan": "To inspire every child to create boldly, explore freely, and grow confidently through the power of art.",
           "knowsAbout": ["children's art education", "plaster figure kits", "coloring books for kids", "3D print figures", "art subscription boxes"],
-          "parentOrganization": { "@type": "Organization", "name": "VIXI Co." }
         }
       }} />
 
@@ -303,8 +311,8 @@ export default function AboutPage() {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bluebyartshop.com" },
-          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://bluebyartshop.com/about" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": `${SITE_URL}/about` }
         ]
       }} />
 

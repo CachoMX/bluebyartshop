@@ -9,6 +9,22 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
+const artifactIgnores = [
+  ".claude/**",
+  ".sync-conflict-*",
+  "**/*.sync-conflict-*",
+  "coverage/**",
+  "logs/**",
+  "playwright-report/**",
+  "temp/**",
+  "test-results/**",
+  "tmp/**",
+  "*.log",
+  "**/*.log",
+  "*.tmp",
+  "**/*.tmp",
+];
+
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
@@ -18,6 +34,7 @@ const eslintConfig = [
       "out/**",
       "build/**",
       "next-env.d.ts",
+      ...artifactIgnores,
     ],
   },
 ];

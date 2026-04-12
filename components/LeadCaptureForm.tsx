@@ -1,30 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { useActionState } from "react";
+import { submitLeadCaptureAction } from "@/app/actions/forms";
+import { PendingSubmitButton } from "@/components/PendingSubmitButton";
+import { initialFormSubmissionState } from "@/lib/form-submission";
 
 export function LeadCaptureForm() {
-  const [step, setStep] = useState<"idle" | "loading" | "done">("idle");
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  const [state, formAction] = useActionState(
+    submitLeadCaptureAction,
+    initialFormSubmissionState,
+  );
+  const firstNameError = state.fieldErrors?.firstName?.[0];
+  const emailError = state.fieldErrors?.email?.[0];
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setStep("loading");
-    // Small artificial delay — replace with real API call / Klaviyo / MailChimp endpoint
-    await new Promise((r) => setTimeout(r, 900));
-    setStep("done");
-  }
-
-  if (step === "done") {
+  if (state.status === "success") {
     return (
-      <div className="text-center py-4">
+      <div className="text-center py-4" role="status" aria-live="polite">
         <div className="text-5xl mb-4">🎉</div>
         <p style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "1.5rem", fontWeight: 700, color: "#1E293B", marginBottom: "0.5rem" }}>
-          You&apos;re on the list!
+          You&apos;re on the list
         </p>
         <p style={{ color: "#64748B", fontSize: "0.9375rem" }}>
-          Check your inbox — your discount code is on its way.
+          {state.message}
         </p>
+        <div className="mt-5">
+          <Link href="/subscribe" className="btn-primary">
+            Compare Plans
+          </Link>
+        </div>
       </div>
     );
   }
@@ -33,52 +37,83 @@ export function LeadCaptureForm() {
     <form
       id="lead-capture-form"
       data-form="lead-optin"
-      onSubmit={handleSubmit}
+      action={formAction}
       className="flex flex-col sm:flex-row gap-3 w-full max-w-xl mx-auto"
+      noValidate
     >
-      <input
-        type="text"
-        name="first_name"
-        required
-        aria-label="First name"
-        placeholder="First name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        style={{
-          flex: "0 0 140px",
-          padding: "14px 18px",
-          borderRadius: "999px",
-          border: "2px solid #E2E8F0",
-          fontSize: "0.9375rem",
-          fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif",
-          outline: "none",
-          color: "#1E293B",
-          backgroundColor: "#fff",
-        }}
-      />
-      <input
-        type="email"
-        name="email"
-        required
-        aria-label="Email address"
-        placeholder="Your email address"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        style={{
-          flex: 1,
-          padding: "14px 18px",
-          borderRadius: "999px",
-          border: "2px solid #E2E8F0",
-          fontSize: "0.9375rem",
-          fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif",
-          outline: "none",
-          color: "#1E293B",
-          backgroundColor: "#fff",
-        }}
-      />
-      <button
-        type="submit"
-        disabled={step === "loading"}
+      <div className="sr-only" aria-hidden="true">
+        <label htmlFor="lead-website">Website</label>
+        <input id="lead-website" type="text" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
+
+      <div className="flex flex-col gap-1 sm:basis-[160px]">
+        <label htmlFor="lead-first-name" className="sr-only">
+          First name
+        </label>
+        <input
+          id="lead-first-name"
+          type="text"
+          name="first_name"
+          className="focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-200 focus-visible:border-orange-500"
+          aria-describedby={firstNameError ? "lead-first-name-error" : undefined}
+          aria-invalid={Boolean(firstNameError)}
+          autoComplete="given-name"
+          placeholder="First name"
+          style={{
+            flex: "0 0 140px",
+            padding: "14px 18px",
+            borderRadius: "999px",
+            border: `2px solid ${firstNameError ? "#DC2626" : "#E2E8F0"}`,
+            fontSize: "0.9375rem",
+            fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif",
+            outline: "none",
+            color: "#1E293B",
+            backgroundColor: "#fff",
+          }}
+        />
+        {firstNameError ? (
+          <p id="lead-first-name-error" className="text-left text-xs" style={{ color: "#FECACA" }}>
+            {firstNameError}
+          </p>
+        ) : null}
+      </div>
+
+      <div className="flex flex-1 flex-col gap-1">
+        <label htmlFor="lead-email" className="sr-only">
+          Email address
+        </label>
+        <input
+          id="lead-email"
+          type="email"
+          name="email"
+          required
+          className="focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-200 focus-visible:border-orange-500"
+          aria-describedby={emailError ? "lead-email-error" : undefined}
+          aria-invalid={Boolean(emailError)}
+          autoComplete="email"
+          placeholder="Your email address"
+          style={{
+            flex: 1,
+            padding: "14px 18px",
+            borderRadius: "999px",
+            border: `2px solid ${emailError ? "#DC2626" : "#E2E8F0"}`,
+            fontSize: "0.9375rem",
+            fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif",
+            outline: "none",
+            color: "#1E293B",
+            backgroundColor: "#fff",
+          }}
+        />
+        {emailError ? (
+          <p id="lead-email-error" className="text-left text-xs" style={{ color: "#FECACA" }}>
+            {emailError}
+          </p>
+        ) : null}
+      </div>
+
+      <PendingSubmitButton
+        label="Join the List"
+        pendingLabel="Saving..."
         style={{
           padding: "14px 28px",
           borderRadius: "999px",
@@ -88,14 +123,20 @@ export function LeadCaptureForm() {
           fontSize: "0.9375rem",
           fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif",
           border: "none",
-          cursor: step === "loading" ? "wait" : "pointer",
           boxShadow: "0 4px 14px rgba(194,65,12,0.45)",
           whiteSpace: "nowrap",
-          opacity: step === "loading" ? 0.75 : 1,
         }}
-      >
-        {step === "loading" ? "Sending…" : "Claim My Discount →"}
-      </button>
+      />
+
+      {state.status === "error" && state.message ? (
+        <p
+          className="w-full text-center text-sm sm:basis-full"
+          style={{ color: "#FECACA" }}
+          role="alert"
+        >
+          {state.message}
+        </p>
+      ) : null}
     </form>
   );
 }

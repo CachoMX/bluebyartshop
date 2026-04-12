@@ -1,12 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { BrandLogo } from "@/components/BrandLogo";
+import { BRAND_NAME } from "@/lib/brand";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Shop", href: "/shop" },
   { label: "Subscribe", href: "/subscribe" },
+  { label: "Account", href: "/account" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -35,22 +38,16 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center text-lg transition-transform duration-200 group-hover:scale-110"
-              style={{ background: "linear-gradient(135deg, #0390AC, #2563EB)" }}
-            >
-              🎨
-            </div>
-            <span
-              className="text-xl font-bold tracking-tight"
-              style={{
-                fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
-                color: "#2563EB",
-              }}
-            >
-              Blue By Art Shop
-            </span>
+          <Link
+            href="/"
+            className="group flex items-center"
+            aria-label={`${BRAND_NAME} home`}
+          >
+            <BrandLogo
+              width={132}
+              priority
+              className="h-10 w-auto transition-transform duration-200 group-hover:scale-[1.02]"
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -142,5 +139,3 @@ export function Navbar() {
     </nav>
   );
 }
-
-export default Navbar;

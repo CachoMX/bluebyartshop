@@ -1,29 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { AnimateIn } from "@/components/AnimateIn";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { JsonLd } from "@/components/JsonLd";
+import { MarketingImage } from "@/components/MarketingImage";
 import WaveDivider from '@/components/WaveDivider'
+import { BRAND_LOGO_PATH, BRAND_NAME, SITE_URL } from "@/lib/brand";
 
 export const metadata: Metadata = {
-  title: "Kids Art Subscription Box | Blue By Art Shop — Monthly Art Kits Ages 5–12",
+  title: `Kids Art Subscription Box | ${BRAND_NAME} — Monthly Art Kits Ages 5–12`,
   description:
-    "Discover Blue By Art Shop — premium monthly art subscription boxes for kids ages 5–12. Paint-your-own plaster figures, coloring books, 3D print kits, and party sets. Non-toxic. Starts at $19.99/mo. Join 400+ families.",
+    "Discover Blue By Art Shop monthly art subscription boxes for kids ages 5–12. Paint-your-own plaster figures, coloring books, 3D print kits, and party sets starting at $19.99/month.",
   alternates: {
-    canonical: "https://bluebyartshop.com",
+    canonical: SITE_URL,
   },
   openGraph: {
-    title: "Kids Art Subscription Box | Blue By Art Shop — Monthly Art Kits Ages 5–12",
+    title: `Kids Art Subscription Box | ${BRAND_NAME} — Monthly Art Kits Ages 5–12`,
     description:
-      "Discover Blue By Art Shop — premium monthly art subscription boxes for kids ages 5–12. Paint-your-own plaster figures, coloring books, 3D print kits, and party sets. Non-toxic. Starts at $19.99/mo. Join 400+ families.",
-    url: "https://bluebyartshop.com",
+      "Discover Blue By Art Shop monthly art subscription boxes for kids ages 5–12. Paint-your-own plaster figures, coloring books, 3D print kits, and party sets starting at $19.99/month.",
+    url: SITE_URL,
     images: [
       {
-        url: "/images/hero-kids-painting.jpg",
+        url: BRAND_LOGO_PATH,
         width: 1200,
         height: 630,
-        alt: "Happy children painting Blue By Art Shop art kits",
+        alt: `${BRAND_NAME} logo`,
       },
     ],
   },
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
 
 const tiers = [
   {
+    key: "mini-artist",
     name: "Mini Artist",
     price: "$19.99",
     emoji: "🎨",
@@ -46,6 +48,7 @@ const tiers = [
     popular: false,
   },
   {
+    key: "creative-explorer",
     name: "Creative Explorer",
     price: "$29.99",
     emoji: "🖌️",
@@ -61,6 +64,7 @@ const tiers = [
     popular: true,
   },
   {
+    key: "master-creator",
     name: "Master Creator",
     price: "$44.99",
     emoji: "🏆",
@@ -108,25 +112,37 @@ const howItWorks = [
 ];
 
 const categories = [
-  { image: "/images/product-unicorn.jpg", label: "Plaster Figures", desc: "Paint-your-own 3D figures", href: "/shop?cat=plaster" },
-  { image: "/images/product-coloring-book.jpg", label: "Coloring Books", desc: "Themed pages for all levels", href: "/shop?cat=coloring" },
-  { image: "/images/product-3d-dragon.jpg", label: "3D Print Figures", desc: "Custom minis to decorate", href: "/shop?cat=3d" },
-  { image: "/images/product-party-kit.jpg", label: "Party Kits", desc: "Perfect for birthdays & events", href: "/shop?cat=party" },
+  { image: "/images/product-unicorn.jpg", label: "Plaster Figures", desc: "Paint-your-own 3D figures", href: "/shop?cat=plaster", emoji: "🪆" },
+  { image: "/images/product-coloring-book.jpg", label: "Coloring Books", desc: "Themed pages for all levels", href: "/shop?cat=coloring", emoji: "📚" },
+  { image: "/images/product-3d-dragon.jpg", label: "3D Print Figures", desc: "Custom minis to decorate", href: "/shop?cat=3d", emoji: "🖨️" },
+  { image: "/images/product-party-kit.jpg", label: "Party Kits", desc: "Perfect for birthdays & events", href: "/shop?cat=party", emoji: "🎉" },
 ];
 
-const testimonials = [
-  { name: "Sarah M.", role: "Mom of two, ages 6 & 9", avatar: "/images/testimonial-mom.jpg", text: "My kids literally run to the mailbox on delivery day! The plaster figures are such high quality and the instructions are clear enough that even my 6-year-old can follow along independently.", stars: 5 },
-  { name: "David R.", role: "Dad of Mia, age 8", avatar: "/images/testimonial-dad.jpg", text: "We got the Creative Explorer box and Mia hasn't stopped painting since. The digital banner template was a sweet bonus — she designed her own art gallery wall. 10/10 would recommend.", stars: 5 },
-  { name: "Jessica T.", role: "Mom of three", avatar: "/images/testimonial-mom2.jpg", text: "Blue By Art Shop saved our weekends. Instead of screen time, all three of my kids sit at the table creating together. The Master Creator tier is absolutely worth every penny.", stars: 5 },
+const familyHighlights = [
+  {
+    emoji: "🧠",
+    title: "Projects That Grow With Kids",
+    text: "Three plan levels make it easier to match the project complexity to the child rather than forcing every family into the same kit.",
+  },
+  {
+    emoji: "📦",
+    title: "One-Time or Monthly",
+    text: "Families can start with a subscription or browse one-time kits, party packs, and wholesale options depending on the occasion.",
+  },
+  {
+    emoji: "✨",
+    title: "Hands-On Creative Time",
+    text: "The catalog focuses on paintable figures, coloring activities, and display-friendly projects that give kids something tangible to finish and share.",
+  },
 ];
 
 const faqs = [
-  { q: "What is the best art subscription box for kids?", a: "Blue By Art Shop is one of the best kids art subscription boxes for ages 5–12. Educator-curated, non-toxic monthly kits start at just $19.99/month. With three skill tiers, cancel-anytime flexibility, and a 98% parent satisfaction rate, it stands out from generic alternatives for its quality and developmental focus." },
+  { q: "What kind of art subscription box does Blue By Art Shop offer?", a: "Blue By Art Shop offers monthly art kits for kids ages 5–12 with three subscription tiers. Plans start at $19.99/month and focus on paintable figures, coloring projects, and hands-on creative activities." },
   { q: "How fast does it ship?", a: "All subscriptions ship within 2–3 business days of your billing date. Standard delivery takes 5–7 business days. Expedited options are available at checkout for faster delivery." },
   { q: "What age range is this for?", a: "Our kits are designed for kids ages 5–12. Each tier includes age-appropriate materials and instructions. The Mini Artist tier is optimized for ages 5–7, while Creative Explorer and Master Creator work great for ages 5–12." },
   { q: "Are Blue By Art Shop kits non-toxic?", a: "Yes — every material in every Blue By Art Shop kit is non-toxic, child-safe, and ASTM D-4236 compliant. All paints are washable and certified safe for children ages 5 and up. We source only from eco-conscious, safety-compliant suppliers." },
   { q: "Can I cancel anytime?", a: "Absolutely — no lock-in contracts. You can pause or cancel your subscription at any time from your account dashboard. Cancellations take effect the following billing cycle with no fees or penalties." },
-  { q: "Does Blue By Art Shop offer gift subscriptions?", a: "Yes! Gift subscriptions are available for all three tiers. A custom message card can be included, and every gift ships in beautiful, ready-to-give packaging within 2–3 business days. Perfect for birthdays and holidays." },
+  { q: "Does Blue By Art Shop offer gift subscriptions?", a: "Gift subscriptions can be arranged across all three tiers. If you need help choosing the right plan or order format, contact the team and we&apos;ll point you in the right direction." },
   { q: "What is included in the Mini Artist box?", a: "Mini Artist ($19.99/month, ages 5–7) includes: 2 paint-your-own plaster figures OR 10 coloring pages, 6 non-toxic paint pots, 1 brush, step-by-step illustrated instructions, and a fun themed sticker sheet." },
   { q: "What is included in the Creative Explorer box?", a: "Creative Explorer ($29.99/month, ages 5–12) includes: 3 plaster figures OR 20 coloring pages, 1 mini 3D print figure, 12 paint pots, full brush set, sealant to protect artwork, activity card, and a digital banner template." },
   { q: "What is included in the Master Creator box?", a: "Master Creator ($44.99/month, ages 5–12) includes: 4 plaster figures OR 30 coloring pages, 2 mini 3D print figures, 18 paint pots including metallics, premium brush set, sealant, illustrated storybook, display stand, and resell kit." },
@@ -142,7 +158,7 @@ export default function HomePage() {
       {/* ── HERO — Full-bleed photo background ──────────────── */}
       <section className="relative overflow-hidden" style={{ minHeight: "90vh" }}>
         {/* Background photo — fills the whole section */}
-        <Image
+        <MarketingImage
           src="/images/hero-kids-painting.jpg"
           alt="Happy children painting art kits"
           fill
@@ -197,7 +213,7 @@ export default function HomePage() {
           {/* Unboxing image — big card, right side */}
           <div className="hidden lg:block absolute right-10 top-20 w-80 h-60 rounded-3xl overflow-hidden"
             style={{ border: "4px solid rgba(255,255,255,0.95)", boxShadow: "0 16px 48px rgba(0,0,0,0.32)" }}>
-            <Image src="/images/hero-unboxing.jpg" alt="Art kit contents" fill className="object-cover" sizes="320px" />
+            <MarketingImage src="/images/hero-unboxing.jpg" alt="Art kit contents" fill className="object-cover" sizes="320px" />
           </div>
 
           {/* Rating badge — top-left of the unboxing card */}
@@ -206,7 +222,7 @@ export default function HomePage() {
             <div className="flex gap-0.5 mb-1">
               {[1, 2, 3, 4, 5].map(i => <span key={i} aria-hidden="true" style={{ color: "#C2410C", fontSize: "0.875rem" }}>★</span>)}
             </div>
-            <div style={{ fontSize: "0.75rem", color: "#64748B", fontWeight: 600 }}>98% satisfaction</div>
+            <div style={{ fontSize: "0.75rem", color: "#64748B", fontWeight: 600 }}>Flexible monthly plans</div>
           </div>
 
           {/* Families stat — bottom of unboxing card */}
@@ -214,8 +230,8 @@ export default function HomePage() {
             style={{ boxShadow: "0 8px 28px rgba(0,0,0,0.22)" }}>
             <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg" style={{ backgroundColor: "#EBF5FF" }}>🎨</div>
             <div>
-              <div style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "1.25rem", fontWeight: 700, color: "#2563EB", lineHeight: 1 }}>400+</div>
-              <div style={{ fontSize: "0.75rem", color: "#64748B" }}>Happy families</div>
+              <div style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "1.25rem", fontWeight: 700, color: "#2563EB", lineHeight: 1 }}>3</div>
+              <div style={{ fontSize: "0.75rem", color: "#64748B" }}>Subscription tiers</div>
             </div>
           </div>
         </div>
@@ -228,14 +244,14 @@ export default function HomePage() {
           <span className="eyebrow" style={{ backgroundColor: "#C2410C", color: "#fff" }}>Limited Offer</span>
           <h2 className="mt-4 mb-3 text-white"
             style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 700 }}>
-            Get 10% Off Your First Box
+            Join the Email List
           </h2>
           <p className="mb-8" style={{ color: "rgba(255,255,255,0.7)", fontSize: "1rem" }}>
-            Drop your email and we&apos;ll send your discount code instantly. No spam, cancel anytime.
+            Share your email for welcome-offer follow-ups and product updates. We save every request directly to the site backend.
           </p>
           <LeadCaptureForm />
           <p className="mt-4" style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.8125rem" }}>
-            🔒 Your info is safe. We hate spam as much as you do.
+            We only use this information for Blue By Art Shop updates and offer follow-up.
           </p>
         </div>
       </section>
@@ -260,7 +276,7 @@ export default function HomePage() {
                 <div className="bg-white rounded-3xl overflow-hidden flex flex-col" style={{ boxShadow: "0 4px 16px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.06)" }}>
                   {/* Photo */}
                   <div className="relative h-52 overflow-hidden">
-                    <Image src={step.image} alt={step.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+                    <MarketingImage src={step.image} alt={step.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                     {/* Gradient overlay */}
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%)" }} />
                     {/* Step number badge */}
@@ -297,13 +313,14 @@ export default function HomePage() {
               <AnimateIn key={cat.label} delay={i * 100} direction="up">
                 <Link href={cat.href} className="category-card group block rounded-2xl overflow-hidden relative" style={{ height: "260px", textDecoration: "none" }}>
                   {/* Photo */}
-                  <Image
+                  <MarketingImage
                     src={cat.image}
                     alt={cat.label}
                     fill
                     className="object-cover"
                     style={{ transition: "transform 0.5s ease" }}
                     sizes="(max-width: 640px) 50vw, 25vw"
+                    fallbackEmoji={cat.emoji}
                   />
                   {/* Gradient overlay */}
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,25,47,0.80) 0%, rgba(10,25,47,0.3) 55%, transparent 100%)" }} />
@@ -324,7 +341,7 @@ export default function HomePage() {
       {/* ── FAMILY FEATURE BANNER — Full-bleed photo ────────── */}
       <AnimateIn>
         <section className="relative overflow-hidden" style={{ height: "500px" }}>
-          <Image
+          <MarketingImage
             src="/images/about-family-art.jpg"
             alt="Family painting together at home"
             fill
@@ -402,7 +419,7 @@ export default function HomePage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/subscribe" className="pricing-cta block text-center py-3.5 rounded-full font-semibold text-sm"
+                  <Link href={`/subscribe/checkout?tier=${tier.key}`} className="pricing-cta block text-center py-3.5 rounded-full font-semibold text-sm"
                     style={{ backgroundColor: tier.popular ? "#C2410C" : "#2563EB", color: "#fff", fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif", letterSpacing: "0.02em", boxShadow: tier.popular ? "0 4px 14px rgba(194,65,12,0.4)" : "0 4px 14px rgba(37,99,235,0.3)" }}>
                     {tier.cta}
                   </Link>
@@ -418,7 +435,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <AnimateIn>
             <div className="rounded-3xl overflow-hidden relative" style={{ height: "320px" }}>
-              <Image
+              <MarketingImage
                 src="/images/shop-supplies-flatlay.jpg"
                 alt="Colorful art supplies from Blue By Art Shop"
                 fill
@@ -443,38 +460,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS — with real photos ──────────────────── */}
+      {/* ── BENEFITS ──────────────────────────────────────────── */}
       <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F0F7FF" }}>
         <div className="max-w-6xl mx-auto">
           <AnimateIn className="text-center mb-16">
-            <span className="eyebrow eyebrow-teal">Testimonials</span>
+            <span className="eyebrow eyebrow-teal">Highlights</span>
             <h2 className="mb-2" style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "clamp(2rem, 4vw, 2.75rem)", color: "#1E293B", fontWeight: 600 }}>
-              Parents Love It
+              Why Families Choose This Format
             </h2>
-            <p style={{ color: "#64748B", fontSize: "1.0625rem" }}>Real families, real creativity</p>
+            <p style={{ color: "#64748B", fontSize: "1.0625rem" }}>
+              Clear plan structure, flexible buying options, and hands-on art projects.
+            </p>
           </AnimateIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <AnimateIn key={t.name} delay={i * 120} direction="up">
+            {familyHighlights.map((highlight, i) => (
+              <AnimateIn key={highlight.title} delay={i * 120} direction="up">
                 <div className="relative bg-white rounded-2xl p-8" style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.05)" }}>
-                  <div className="absolute top-5 right-6 select-none pointer-events-none"
-                    style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "5rem", lineHeight: 1, color: "rgba(37,99,235,0.07)", fontWeight: 700 }}>&ldquo;</div>
-                  <div className="flex gap-0.5 mb-4">
-                    <span aria-label={`${t.stars} out of 5 stars`} className="flex gap-0.5">
-                      {Array.from({ length: t.stars }).map((_, j) => <span key={j} aria-hidden="true" style={{ color: "#C2410C", fontSize: "1.125rem" }}>★</span>)}
-                    </span>
+                  <div
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl mb-5"
+                    style={{ backgroundColor: "#EBF5FF" }}
+                  >
+                    {highlight.emoji}
                   </div>
-                  <p className="italic leading-relaxed mb-6" style={{ color: "#334155", fontSize: "0.9375rem" }}>&ldquo;{t.text}&rdquo;</p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
-                      <Image src={t.avatar} alt={t.name} width={48} height={48} className="w-full h-full object-cover" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-sm" style={{ color: "#1E293B" }}>{t.name}</p>
-                      <p className="text-xs" style={{ color: "#94A3B8" }}>{t.role}</p>
-                    </div>
-                  </div>
+                  <h3 className="text-xl mb-3" style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", color: "#1E293B", fontWeight: 600 }}>
+                    {highlight.title}
+                  </h3>
+                  <p className="leading-relaxed" style={{ color: "#475569", fontSize: "0.9375rem" }}>
+                    {highlight.text}
+                  </p>
                 </div>
               </AnimateIn>
             ))}
@@ -513,7 +527,6 @@ export default function HomePage() {
                     { feature: "Party kit bundles (up to 50)", us: "✅ Yes", them: "❌ Rare" },
                     { feature: "Wholesale for schools", us: "✅ $12–$28/unit", them: "❌ Rare" },
                     { feature: "Gift subscriptions", us: "✅ Yes", them: "Sometimes" },
-                    { feature: "Parent satisfaction rate", us: "✅ 98%", them: "Unknown" },
                   ].map((row, i) => (
                     <tr key={row.feature} style={{ backgroundColor: i % 2 === 0 ? "#F8FAFC" : "#fff", borderBottom: "1px solid #E2E8F0" }}>
                       <td style={{ padding: "14px 20px", color: "#334155", fontWeight: 500 }}>{row.feature}</td>
@@ -557,7 +570,7 @@ export default function HomePage() {
 
       {/* ── CTA BANNER — with art photo background ──────────── */}
       <section className="relative overflow-hidden" style={{ minHeight: "420px" }}>
-        <Image
+          <MarketingImage
           src="/images/about-kids-artwork.jpg"
           alt="Child proudly showing her painted artwork"
           fill
@@ -568,13 +581,13 @@ export default function HomePage() {
         <AnimateIn className="relative h-full flex items-center justify-center text-center py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <div className="blob-a absolute -top-12 -right-12 w-64 h-64 rounded-full pointer-events-none" style={{ background: "rgba(255,255,255,0.06)" }} />
-            <span className="eyebrow" style={{ backgroundColor: "rgba(255,255,255,0.2)", color: "#fff" }}>Join 400+ Families</span>
+            <span className="eyebrow" style={{ backgroundColor: "rgba(255,255,255,0.2)", color: "#fff" }}>Start When Ready</span>
             <h2 className="text-white mb-4 mt-4"
               style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700 }}>
               Ready to Create Something Amazing?
             </h2>
             <p className="mb-10" style={{ color: "rgba(255,255,255,0.88)", fontSize: "1.0625rem" }}>
-              Join hundreds of families already creating together. First box ships within 48 hours.
+              Pick a subscription tier or browse one-time kits whenever your family is ready to create.
             </p>
             <Link href="/subscribe" className="btn-primary" style={{ fontSize: "1.0625rem", padding: "16px 40px" }}>
               Start Your Subscription →
@@ -588,12 +601,12 @@ export default function HomePage() {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-          { "@type": "Question", "name": "What is the best art subscription box for kids?", "acceptedAnswer": { "@type": "Answer", "text": "Blue By Art Shop is one of the best kids art subscription boxes for ages 5–12. Educator-curated, non-toxic monthly kits start at just $19.99/month. With three skill tiers, cancel-anytime flexibility, and a 98% parent satisfaction rate, it stands out from generic alternatives for its quality and developmental focus." } },
+          { "@type": "Question", "name": "What kind of art subscription box does Blue By Art Shop offer?", "acceptedAnswer": { "@type": "Answer", "text": "Blue By Art Shop offers monthly art kits for kids ages 5–12 with three subscription tiers. Plans start at $19.99/month and focus on paintable figures, coloring projects, and hands-on creative activities." } },
           { "@type": "Question", "name": "How fast does it ship?", "acceptedAnswer": { "@type": "Answer", "text": "All subscriptions ship within 2–3 business days of your billing date. Standard delivery takes 5–7 business days. Expedited options are available at checkout." } },
           { "@type": "Question", "name": "What age range is this for?", "acceptedAnswer": { "@type": "Answer", "text": "Our kits are designed for kids ages 5–12. The Mini Artist tier is optimized for ages 5–7, while Creative Explorer and Master Creator work great for ages 5–12." } },
           { "@type": "Question", "name": "Are Blue By Art Shop kits non-toxic?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — every material is non-toxic, child-safe, and ASTM D-4236 compliant. All paints are washable and certified safe for children ages 5 and up." } },
           { "@type": "Question", "name": "Can I cancel anytime?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely — no lock-in contracts. You can pause or cancel your subscription at any time. Cancellations take effect the following billing cycle with no fees." } },
-          { "@type": "Question", "name": "Does Blue By Art Shop offer gift subscriptions?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Gift subscriptions are available for all three tiers with custom message cards, in gift-ready packaging, shipping within 2–3 business days." } },
+          { "@type": "Question", "name": "Does Blue By Art Shop offer gift subscriptions?", "acceptedAnswer": { "@type": "Answer", "text": "Gift subscriptions can be arranged across all three tiers. If you need help choosing the right plan or order format, contact the team for help." } },
           { "@type": "Question", "name": "What is included in the Mini Artist box?", "acceptedAnswer": { "@type": "Answer", "text": "Mini Artist ($19.99/month, ages 5–7) includes: 2 plaster figures OR 10 coloring pages, 6 non-toxic paint pots, 1 brush, instructions, and sticker sheet." } },
           { "@type": "Question", "name": "What is included in the Creative Explorer box?", "acceptedAnswer": { "@type": "Answer", "text": "Creative Explorer ($29.99/month, ages 5–12) includes: 3 plaster figures OR 20 coloring pages, 1 mini 3D print, 12 paint pots, brush set, sealant, activity card, and digital banner template." } },
           { "@type": "Question", "name": "What is included in the Master Creator box?", "acceptedAnswer": { "@type": "Answer", "text": "Master Creator ($44.99/month, ages 5–12) includes: 4 plaster figures OR 30 coloring pages, 2 mini 3D prints, 18 paint pots including metallics, storybook, display stand, and resell kit." } },

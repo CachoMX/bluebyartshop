@@ -1,60 +1,48 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
+import { BRAND_EMAIL, BRAND_NAME, SITE_URL, WHOLESALE_EMAIL } from "@/lib/brand";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Blue By Art Shop — Kids Art Subscription Boxes",
-  description: "Get in touch with Blue By Art Shop for custom orders, wholesale inquiries, gift subscriptions, or general support. Email us at hello@bluebyartshop.com. We respond within one business day.",
+  title: `Contact Us | ${BRAND_NAME} — Kids Art Subscription Boxes`,
+  description: `Get in touch with ${BRAND_NAME} for custom orders, wholesale inquiries, gift subscriptions, or general support.`,
   alternates: {
-    canonical: "https://bluebyartshop.com/contact",
+    canonical: `${SITE_URL}/contact`,
   },
   openGraph: {
-    title: "Contact Blue By Art Shop | Kids Art Subscription Boxes",
-    description: "Questions about subscriptions, orders, or wholesale? Contact us at hello@bluebyartshop.com. We respond within one business day.",
-    url: "https://bluebyartshop.com/contact",
+    title: `Contact ${BRAND_NAME} | Kids Art Subscription Boxes`,
+    description:
+      "Questions about subscriptions, orders, or wholesale? Use the contact form or email our team directly.",
+    url: `${SITE_URL}/contact`,
   },
 };
 
 const contactPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "@id": "https://bluebyartshop.com/contact",
-  "url": "https://bluebyartshop.com/contact",
-  "name": "Contact Blue By Art Shop",
-  "description": "Contact Blue By Art Shop for kids art subscription box inquiries, wholesale orders, and customer support.",
-  "publisher": { "@id": "https://bluebyartshop.com/#organization" },
+  "@id": `${SITE_URL}/contact`,
+  url: `${SITE_URL}/contact`,
+  name: `Contact ${BRAND_NAME}`,
+  description: `Contact ${BRAND_NAME} for kids art subscription box inquiries, wholesale orders, and customer support.`,
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
-const localBusinessJsonLd = {
+const supportContactJsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://bluebyartshop.com/#localbusiness",
-  "name": "Blue By Art Shop",
-  "url": "https://bluebyartshop.com",
-  "email": "hello@bluebyartshop.com",
-  "telephone": "+15550123456",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Chicago",
-    "addressRegion": "IL",
-    "addressCountry": "US",
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "09:00",
-    "closes": "17:00",
-  },
-  "contactPoint": [
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#contact-organization`,
+  name: BRAND_NAME,
+  url: SITE_URL,
+  email: BRAND_EMAIL,
+  contactPoint: [
     {
       "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "hello@bluebyartshop.com",
-      "telephone": "+15550123456",
+      contactType: "customer service",
+      email: BRAND_EMAIL,
     },
     {
       "@type": "ContactPoint",
-      "contactType": "sales",
-      "email": "wholesale@bluebyartshop.com",
+      contactType: "sales",
+      email: WHOLESALE_EMAIL,
     },
   ],
 };
@@ -62,9 +50,9 @@ const localBusinessJsonLd = {
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bluebyartshop.com" },
-    { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://bluebyartshop.com/contact" },
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Contact", item: `${SITE_URL}/contact` },
   ],
 };
 
@@ -72,7 +60,7 @@ export default function ContactLayout({ children }: { children: React.ReactNode 
   return (
     <>
       <JsonLd data={contactPageJsonLd} />
-      <JsonLd data={localBusinessJsonLd} />
+      <JsonLd data={supportContactJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
       {children}
     </>

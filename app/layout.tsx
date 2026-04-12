@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
 import { Fredoka, Baloo_2 } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { Navbar } from "@/components/Navbar";
+import {
+  BRAND_DESCRIPTION,
+  BRAND_EMAIL,
+  BRAND_LOGO_ALT,
+  BRAND_LOGO_PATH,
+  BRAND_NAME,
+  DEFAULT_OG_IMAGE_PATH,
+  SITE_URL,
+} from "@/lib/brand";
 
 const fredokaOne = Fredoka({
   weight: ["400", "600", "700"],
@@ -20,13 +29,12 @@ const baloo2 = Baloo_2({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bluebyartshop.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    template: "%s | Blue By Art Shop — Kids Art Kits & Subscriptions",
-    default: "Blue By Art Shop | Monthly Kids Art Subscription Boxes",
+    template: `%s | ${BRAND_NAME} — Kids Art Kits & Subscriptions`,
+    default: `${BRAND_NAME} | Monthly Kids Art Subscription Boxes`,
   },
-  description:
-    "Blue By Art Shop delivers premium monthly art subscription boxes for kids ages 5–12. Plaster figures, coloring books, 3D print kits, and party sets. Non-toxic, curated by educators. Start from $19.99/mo.",
+  description: BRAND_DESCRIPTION,
   keywords: [
     "kids art subscription box",
     "monthly art kit for kids",
@@ -49,32 +57,31 @@ export const metadata: Metadata = {
     "unicorn art kit for girls",
     "dinosaur painting kit kids",
   ],
-  authors: [{ name: "Blue By Art Shop", url: "https://bluebyartshop.com" }],
-  creator: "Blue By Art Shop",
-  publisher: "Blue By Art Shop",
+  authors: [{ name: BRAND_NAME, url: SITE_URL }],
+  creator: BRAND_NAME,
+  publisher: BRAND_NAME,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://bluebyartshop.com",
-    siteName: "Blue By Art Shop",
-    title: "Blue By Art Shop | Premium Kids Art Subscription Boxes",
-    description:
-      "Monthly art kits for kids 5–12. Plaster figures, coloring books, 3D prints & party kits. Non-toxic. Ships in 2-3 days. Join 400+ families.",
+    url: SITE_URL,
+    siteName: BRAND_NAME,
+    title: `${BRAND_NAME} | Premium Kids Art Subscription Boxes`,
+    description: BRAND_DESCRIPTION,
     images: [
       {
-        url: "/images/hero-kids-painting.jpg",
+        url: DEFAULT_OG_IMAGE_PATH,
         width: 1200,
         height: 630,
-        alt: "Happy children painting Blue By Art Shop art kits",
+        alt: BRAND_LOGO_ALT,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blue By Art Shop | Monthly Kids Art Kits",
+    title: `${BRAND_NAME} | Monthly Kids Art Kits`,
     description:
       "Curated art subscription boxes for kids 5-12. Start from $19.99/mo.",
-    images: ["/images/hero-kids-painting.jpg"],
+    images: [DEFAULT_OG_IMAGE_PATH],
   },
   robots: {
     index: true,
@@ -88,10 +95,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://bluebyartshop.com",
-  },
-  verification: {
-    google: "PLACEHOLDER_GOOGLE_SEARCH_CONSOLE_TOKEN",
+    canonical: SITE_URL,
   },
 };
 
@@ -100,53 +104,24 @@ const organizationJsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://bluebyartshop.com/#organization",
-      name: "Blueby",
-      url: "https://bluebyartshop.com",
+      "@id": `${SITE_URL}/#organization`,
+      name: BRAND_NAME,
+      url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: "https://bluebyartshop.com/images/hero-unboxing.jpg",
+        url: `${SITE_URL}${BRAND_LOGO_PATH}`,
       },
-      description:
-        "Blue By Art Shop creates premium monthly art subscription boxes for children ages 5–12, featuring plaster figures, coloring books, 3D printed figures, and party art kits.",
-      foundingDate: "2024",
-      email: "hello@bluebyartshop.com",
-      telephone: "+15550123456",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Chicago",
-        addressRegion: "IL",
-        addressCountry: "US",
-      },
-      sameAs: [
-        "https://instagram.com/bluebyartshop",
-        "https://facebook.com/bluebyartshop",
-      ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "customer service",
-        email: "hello@bluebyartshop.com",
-        telephone: "+15550123456",
-        availableLanguage: "English",
-      },
+      description: BRAND_DESCRIPTION,
+      email: BRAND_EMAIL,
     },
     {
       "@type": "WebSite",
-      "@id": "https://bluebyartshop.com/#website",
-      url: "https://bluebyartshop.com",
-      name: "Blue By Art Shop",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: BRAND_NAME,
       description:
         "Monthly kids art subscription boxes and one-time art kits for ages 5–12",
-      publisher: { "@id": "https://bluebyartshop.com/#organization" },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate:
-            "https://bluebyartshop.com/shop?q={search_term_string}",
-        },
-        "query-input": "required name=search_term_string",
-      },
+      publisher: { "@id": `${SITE_URL}/#organization` },
     },
   ],
 };

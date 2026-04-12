@@ -175,16 +175,23 @@ h1, h2, h3, h4 {
   font-family: var(--font-baloo-2), 'Baloo 2', sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  background: transparent;
-  border: 2px solid #FFFFFF;
-  color: #FFFFFF;
+  background: #FFFFFF;
+  border: 2px solid #2563EB;
+  color: #2563EB;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.14);
   transition: all 0.2s ease;
   text-decoration: none;
   cursor: pointer;
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: #EFF6FF;
+  transform: translateY(-1px);
+}
+
+.btn-outline:focus-visible {
+  outline: 3px solid #BFDBFE;
+  outline-offset: 3px;
 }
 
 /* Category cards hover */

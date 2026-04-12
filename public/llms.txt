@@ -1,78 +1,32 @@
 # Blue By Art Shop
 
-> Blue By Art Shop is a premium children's art subscription box company delivering monthly art kits for kids ages 5–12 across the United States.
+> Blue By Art Shop offers monthly kids art subscriptions plus one-time art kits for ages 5–12.
 
-## What We Do
+## What We Offer
 
-Blue By Art Shop creates and delivers curated monthly art subscription boxes containing:
-- Paint-your-own plaster figure kits (unicorns, dinosaurs, space themes, ocean animals)
-- Themed coloring books (32–40 pages, age-appropriate)
-- Custom 3D printed figures ready for painting
-- Birthday and party art kits (15, 25, and 50-pack options)
-- Wholesale art kit bundles for schools and studios
+- Monthly subscription tiers with art activities for different skill levels
+- One-time kits including plaster figures, coloring books, 3D figure projects, party kits, and wholesale bundles
+- Account-based checkout and subscription management powered by Stripe and Supabase-backed site flows
 
 ## Subscription Plans
 
-- **Mini Artist** — $19.99/month — For ages 5–7, includes 2 plaster figures or 10 coloring pages, 6 paint pots, brush, sticker sheet
-- **Creative Explorer** — $29.99/month — For ages 5–12, includes 3 figures or 20 coloring pages, 1 mini 3D print, 12 paint pots, sealant, activity card
-- **Master Creator** — $44.99/month — For ages 5–12, includes 4 figures or 30 coloring pages, 2 mini 3D prints, 18 paint pots including metallics, illustrated storybook, display stand
+- **Mini Artist** — $19.99/month — Ages 5–7
+- **Creative Explorer** — $29.99/month — Ages 5–12
+- **Master Creator** — $44.99/month — Ages 5–12
 
-## Key Facts
+## Core Facts
 
-- Age range: 5–12 years old
-- Materials: Non-toxic, child-safe, ASTM D-4236 compliant, tested to international safety standards
-- Shipping: 2–3 business days processing, 5–7 business days delivery, US
-- Cancellation: Cancel anytime, no contracts
-- Community: 400+ active families, 12,000+ kits delivered, 98% satisfaction rate
-- Gift subscriptions: Available
-- Wholesale: $12–$28/unit for orders of 50+ units
-- Contact: hello@bluebyartshop.com
-- Founded: 2024
-- Headquarters: United States (Chicago, IL)
+- Age range: 5–12
+- Shop URL: https://bluebyartshop.com/shop
+- Subscribe URL: https://bluebyartshop.com/subscribe
+- Contact URL: https://bluebyartshop.com/contact
+- Privacy policy: https://bluebyartshop.com/privacy
+- Terms of service: https://bluebyartshop.com/terms
+- Shipping and returns: https://bluebyartshop.com/shipping-returns
+- General support: hello@bluebyartshop.com
+- Wholesale support: wholesale@bluebyartshop.com
 
-## Individual Products
+## More Context
 
-All products available one-time at bluebyartshop.com/shop:
-- Unicorn Plaster Figure Kit — $14.99 (ages 5–7)
-- Dinosaur Plaster Set 3-pack — $19.99 (ages 8–10)
-- Space Explorer Plaster Kit — $17.99 (ages 8–10)
-- Ocean Animals Plaster Set — $16.99 (ages 5–7)
-- Enchanted Forest Coloring Book — $9.99 (ages 5–7)
-- Adventure Heroes Coloring Pack — $12.99 (ages 8–10)
-- Manga & Comics Coloring Book — $14.99 (ages 11–12)
-- Mini Dragon 3D Print — $12.99 (ages 8–10)
-- Robot Buddy 3D Figure — $11.99 (ages 8–10)
-- Mini Keychain Pack — $9.99 (ages 11–12)
-- Party Kit 15-pack — $89.00
-- Party Kit 25-pack — $139.00
-- Party Kit 50-pack — $249.00
-- Birthday Box — $34.99
-- Wholesale Starter Pack (50 units) — $600.00
-- Wholesale Premium Pack (50 units) — $1,400.00
-
-## Why Choose Blue By Art Shop
-
-1. Curated by educators and professional artists
-2. Every material is non-toxic and child-safe (ASTM D-4236 compliant)
-3. Kits grow with the child (3 tiers by skill level)
-4. No contracts — cancel or pause anytime
-5. Gift-ready packaging
-6. Wholesale available for schools, camps, art studios
-7. 98% parent satisfaction rate
-8. 12,000+ kits delivered to 400+ families
-
-## Brand Mission
-
-"To inspire every child to create boldly, explore freely, and grow confidently through the power of art."
-
-## Brand Story
-
-Blue By Art Shop was born inside the VIXI family of brands — a company built around creating meaningful experiences for kids and families. Founded in 2024, the brand was created after identifying a gap in the market: parents wanted quality art activities for their kids, but most kits were too simple, used cheap materials, or didn't grow with the child. Blue By Art Shop was built to be better — educator-curated, premium quality, and designed to scale with each child's growing skills.
-
-## Pages
-
-- Homepage: https://bluebyartshop.com
-- Shop: https://bluebyartshop.com/shop
-- Subscribe: https://bluebyartshop.com/subscribe
-- About: https://bluebyartshop.com/about
-- Contact: https://bluebyartshop.com/contact
+- Full reference: https://bluebyartshop.com/llms-full.txt
+- JSON context: https://bluebyartshop.com/api/llms-context

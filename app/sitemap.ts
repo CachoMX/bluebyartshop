@@ -1,64 +1,65 @@
 import type { MetadataRoute } from "next";
-
-const BASE_URL = "https://bluebyartshop.com";
-
-const productSlugs = [
-  "unicorn-plaster-figure-kit",
-  "dinosaur-plaster-set",
-  "space-explorer-plaster-kit",
-  "ocean-animals-plaster-set",
-  "enchanted-forest-coloring-book",
-  "adventure-heroes-coloring-pack",
-  "manga-comics-coloring-book",
-  "mini-dragon-3d-print",
-  "robot-buddy-3d-figure",
-  "mini-keychain-pack",
-  "party-kit-15-pack",
-  "party-kit-25-pack",
-  "party-kit-50-pack",
-  "birthday-box",
-  "wholesale-starter-pack",
-  "wholesale-premium-pack",
-];
+import { catalogProducts } from "@/lib/catalog";
+import { SITE_URL } from "@/lib/brand";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const productPages: MetadataRoute.Sitemap = productSlugs.map((slug) => ({
-    url: `${BASE_URL}/shop/${slug}`,
-    lastModified: new Date(),
+  const generatedAt = new Date();
+
+  const productPages: MetadataRoute.Sitemap = catalogProducts.map((product) => ({
+    url: `${SITE_URL}/shop/${product.slug}`,
+    lastModified: generatedAt,
     changeFrequency: "weekly",
     priority: 0.85,
   }));
 
   return [
     {
-      url: BASE_URL,
-      lastModified: new Date(),
+      url: SITE_URL,
+      lastModified: generatedAt,
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
-      url: `${BASE_URL}/subscribe`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/subscribe`,
+      lastModified: generatedAt,
       changeFrequency: "monthly",
       priority: 0.95,
     },
     {
-      url: `${BASE_URL}/shop`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/shop`,
+      lastModified: generatedAt,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/about`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/about`,
+      lastModified: generatedAt,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/contact`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/contact`,
+      lastModified: generatedAt,
       changeFrequency: "monthly",
       priority: 0.6,
+    },
+    {
+      url: `${SITE_URL}/privacy`,
+      lastModified: generatedAt,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
+    {
+      url: `${SITE_URL}/terms`,
+      lastModified: generatedAt,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
+    {
+      url: `${SITE_URL}/shipping-returns`,
+      lastModified: generatedAt,
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
     ...productPages,
   ];

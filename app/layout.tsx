@@ -142,6 +142,12 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <JsonLd data={organizationJsonLd} />
+        {/* Hyros universal tracking script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `var head=document.head,s=document.createElement('script');s.type='text/javascript';s.src="https://data.carlosaragon.online/v1/lst/universal-script?ph=664ad84e5a8d71d02e5f8fe74e28bfe1eca5b5a982655b75fac5513b98d326d3&tag=!blueby&ref_url="+encodeURI(document.URL);head.appendChild(s);`,
+          }}
+        />
       </head>
       <body
         className={`${fredokaOne.variable} ${baloo2.variable} antialiased`}

@@ -6,6 +6,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { MarketingImage } from "@/components/MarketingImage";
 import WaveDivider from '@/components/WaveDivider'
 import { BRAND_LOGO_PATH, BRAND_NAME, SITE_URL } from "@/lib/brand";
+import { getStoreShopUrl, getStoreUrl } from "@/lib/store-url";
+
+const storeShopHref = getStoreShopUrl("/shop");
+const storeSubscribeHref = getStoreShopUrl("/subscribe");
+const getTierCheckoutHref = (tierKey: string) =>
+  getStoreUrl(`/checkout?tier=${tierKey}`, `/subscribe/checkout?tier=${tierKey}`);
 
 export const metadata: Metadata = {
   title: `Kids Art Subscription Box | ${BRAND_NAME} — Monthly Art Kits Ages 5–12`,
@@ -112,10 +118,10 @@ const howItWorks = [
 ];
 
 const categories = [
-  { image: "/images/product-unicorn.jpg", label: "Plaster Figures", desc: "Paint-your-own 3D figures", href: "/shop?cat=plaster", emoji: "🪆" },
-  { image: "/images/product-coloring-book.jpg", label: "Coloring Books", desc: "Themed pages for all levels", href: "/shop?cat=coloring", emoji: "📚" },
-  { image: "/images/product-3d-dragon.jpg", label: "3D Print Figures", desc: "Custom minis to decorate", href: "/shop?cat=3d", emoji: "🖨️" },
-  { image: "/images/product-party-kit.jpg", label: "Party Kits", desc: "Perfect for birthdays & events", href: "/shop?cat=party", emoji: "🎉" },
+  { image: "/images/product-unicorn.jpg", label: "Plaster Figures", desc: "Paint-your-own 3D figures", href: getStoreUrl("/shop?cat=plaster", "/shop?cat=plaster"), emoji: "🪆" },
+  { image: "/images/product-coloring-book.jpg", label: "Coloring Books", desc: "Themed pages for all levels", href: getStoreUrl("/shop?cat=coloring", "/shop?cat=coloring"), emoji: "📚" },
+  { image: "/images/product-3d-dragon.jpg", label: "3D Print Figures", desc: "Custom minis to decorate", href: getStoreUrl("/shop?cat=3d", "/shop?cat=3d"), emoji: "🖨️" },
+  { image: "/images/product-party-kit.jpg", label: "Party Kits", desc: "Perfect for birthdays & events", href: getStoreUrl("/shop?cat=party", "/shop?cat=party"), emoji: "🎉" },
 ];
 
 const familyHighlights = [
@@ -194,10 +200,10 @@ export default function HomePage() {
             </p>
 
             <div className="hero-ctas flex flex-col sm:flex-row gap-4 mb-10">
-              <Link href="/subscribe" className="btn-primary" style={{ fontSize: "1.0625rem", padding: "16px 38px" }}>
+              <Link href={storeSubscribeHref} className="btn-primary" style={{ fontSize: "1.0625rem", padding: "16px 38px" }}>
                 Start Creating →
               </Link>
-              <Link href="/shop" className="btn-outline" style={{ fontSize: "1.0625rem" }}>
+              <Link href={storeShopHref} className="btn-outline" style={{ fontSize: "1.0625rem" }}>
                 Browse the Shop
               </Link>
             </div>
@@ -366,7 +372,7 @@ export default function HomePage() {
                   <Link href="/about" className="btn-primary" style={{ fontSize: "1rem" }}>
                     Our Story →
                   </Link>
-                  <Link href="/subscribe" className="btn-outline" style={{ fontSize: "1rem" }}>
+                  <Link href={storeSubscribeHref} className="btn-outline" style={{ fontSize: "1rem" }}>
                     Start Subscribing
                   </Link>
                 </div>
@@ -419,7 +425,7 @@ export default function HomePage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href={`/subscribe/checkout?tier=${tier.key}`} className="pricing-cta block text-center py-3.5 rounded-full font-semibold text-sm"
+                  <Link href={getTierCheckoutHref(tier.key)} className="pricing-cta block text-center py-3.5 rounded-full font-semibold text-sm"
                     style={{ backgroundColor: tier.popular ? "#C2410C" : "#2563EB", color: "#fff", fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif", letterSpacing: "0.02em", boxShadow: tier.popular ? "0 4px 14px rgba(194,65,12,0.4)" : "0 4px 14px rgba(37,99,235,0.3)" }}>
                     {tier.cta}
                   </Link>
@@ -589,7 +595,7 @@ export default function HomePage() {
             <p className="mb-10" style={{ color: "rgba(255,255,255,0.88)", fontSize: "1.0625rem" }}>
               Pick a subscription tier or browse one-time kits whenever your family is ready to create.
             </p>
-            <Link href="/subscribe" className="btn-primary" style={{ fontSize: "1.0625rem", padding: "16px 40px" }}>
+            <Link href={storeSubscribeHref} className="btn-primary" style={{ fontSize: "1.0625rem", padding: "16px 40px" }}>
               Start Your Subscription →
             </Link>
           </div>

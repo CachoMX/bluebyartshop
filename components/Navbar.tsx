@@ -4,12 +4,17 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { BRAND_NAME } from "@/lib/brand";
+import { getStoreAccountUrl, getStoreShopUrl } from "@/lib/store-url";
+
+const shopHref = getStoreShopUrl("/shop");
+const subscribeHref = getStoreShopUrl("/subscribe");
+const accountHref = getStoreAccountUrl("/account");
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Shop", href: "/shop" },
-  { label: "Subscribe", href: "/subscribe" },
-  { label: "Account", href: "/account" },
+  { label: "Shop", href: shopHref },
+  { label: "Subscribe", href: subscribeHref },
+  { label: "Account", href: accountHref },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -54,7 +59,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 className="px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-150"
                 style={{
@@ -74,7 +79,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="/subscribe"
+              href={subscribeHref}
               className="ml-3 btn-primary"
               style={{ padding: "10px 22px", fontSize: "0.875rem" }}
             >
@@ -114,7 +119,7 @@ export function Navbar() {
           <div className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="block px-4 py-3 rounded-xl text-base font-medium transition-colors duration-150"
@@ -127,7 +132,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="/subscribe"
+              href={subscribeHref}
               onClick={() => setOpen(false)}
               className="btn-primary mt-2 justify-center"
             >

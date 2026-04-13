@@ -1,5 +1,24 @@
 import type { NextConfig } from "next";
 
+const trimTrailingSlash = (value: string) => value.replace(/\/+$/, "");
+const resolveOrigin = (value: string) => {
+  try {
+    return new URL(value).origin.toLowerCase();
+  } catch {
+    return "";
+  }
+};
+
+const configuredStoreUrl = process.env.NEXT_PUBLIC_STORE_URL?.trim() ?? "";
+const appOrigin = resolveOrigin(
+  process.env.NEXT_PUBLIC_APP_URL?.trim() ?? "https://bluebyartshop.com",
+);
+const storeOrigin = resolveOrigin(configuredStoreUrl);
+const storeUrl =
+  configuredStoreUrl && storeOrigin && storeOrigin !== appOrigin
+    ? trimTrailingSlash(configuredStoreUrl)
+    : "";
+
 const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
@@ -25,12 +44,53 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
+    const legacyStoreRedirects = storeUrl
+      ? [
+          {
+            source: "/shop",
+            destination: `${storeUrl}/shop`,
+            permanent: false,
+          },
+          {
+            source: "/shop/:path*",
+            destination: `${storeUrl}/shop/:path*`,
+            permanent: false,
+          },
+          {
+            source: "/subscribe",
+            destination: `${storeUrl}/shop`,
+            permanent: false,
+          },
+          {
+            source: "/subscribe/checkout",
+            destination: `${storeUrl}/checkout`,
+            permanent: false,
+          },
+          {
+            source: "/subscribe/checkout/:path*",
+            destination: `${storeUrl}/checkout/:path*`,
+            permanent: false,
+          },
+          {
+            source: "/account",
+            destination: `${storeUrl}/my-account`,
+            permanent: false,
+          },
+          {
+            source: "/account/:path*",
+            destination: `${storeUrl}/my-account/:path*`,
+            permanent: false,
+          },
+        ]
+      : [];
+
     return [
       {
         source: "/index",
         destination: "/",
         permanent: true,
       },
+      ...legacyStoreRedirects,
     ];
   },
 };

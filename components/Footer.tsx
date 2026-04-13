@@ -6,6 +6,16 @@ import {
   BRAND_TAGLINE,
   WHOLESALE_EMAIL,
 } from "@/lib/brand";
+import { getStoreAccountUrl, getStoreShopUrl, getStoreUrl } from "@/lib/store-url";
+
+const storeShopHref = getStoreShopUrl("/shop");
+const storeSubscribeHref = getStoreShopUrl("/subscribe");
+const storeAccountHref = getStoreAccountUrl("/account");
+const plasterCategoryHref = getStoreUrl("/shop?cat=plaster", "/shop?cat=plaster");
+const coloringCategoryHref = getStoreUrl("/shop?cat=coloring", "/shop?cat=coloring");
+const print3dCategoryHref = getStoreUrl("/shop?cat=3d", "/shop?cat=3d");
+const partyCategoryHref = getStoreUrl("/shop?cat=party", "/shop?cat=party");
+const wholesaleCategoryHref = getStoreUrl("/shop?cat=wholesale", "/shop?cat=wholesale");
 
 export function Footer() {
   return (
@@ -35,12 +45,12 @@ export function Footer() {
               Shop
             </h4>
             <ul className="space-y-2 text-sm" style={{ color: "rgba(255,255,255,0.85)" }}>
-              <li><Link href="/shop" className="hover:text-white transition-colors">All Products</Link></li>
-              <li><Link href="/shop?cat=plaster" className="hover:text-white transition-colors">Plaster Kits</Link></li>
-              <li><Link href="/shop?cat=coloring" className="hover:text-white transition-colors">Coloring Books</Link></li>
-              <li><Link href="/shop?cat=3d" className="hover:text-white transition-colors">3D Print Figures</Link></li>
-              <li><Link href="/shop?cat=party" className="hover:text-white transition-colors">Party Kits</Link></li>
-              <li><Link href="/shop?cat=wholesale" className="hover:text-white transition-colors">Wholesale</Link></li>
+              <li><Link href={storeShopHref} className="hover:text-white transition-colors">All Products</Link></li>
+              <li><Link href={plasterCategoryHref} className="hover:text-white transition-colors">Plaster Kits</Link></li>
+              <li><Link href={coloringCategoryHref} className="hover:text-white transition-colors">Coloring Books</Link></li>
+              <li><Link href={print3dCategoryHref} className="hover:text-white transition-colors">3D Print Figures</Link></li>
+              <li><Link href={partyCategoryHref} className="hover:text-white transition-colors">Party Kits</Link></li>
+              <li><Link href={wholesaleCategoryHref} className="hover:text-white transition-colors">Wholesale</Link></li>
             </ul>
           </div>
 
@@ -54,7 +64,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm" style={{ color: "rgba(255,255,255,0.85)" }}>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/subscribe" className="hover:text-white transition-colors">Subscriptions</Link></li>
+              <li><Link href={storeSubscribeHref} className="hover:text-white transition-colors">Subscriptions</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -68,7 +78,7 @@ export function Footer() {
               Support
             </h4>
             <ul className="space-y-2 text-sm" style={{ color: "rgba(255,255,255,0.85)" }}>
-              <li><Link href="/account" className="hover:text-white transition-colors">Account Dashboard</Link></li>
+              <li><Link href={storeAccountHref} className="hover:text-white transition-colors">Account Dashboard</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
               <li><a href={`mailto:${BRAND_EMAIL}`} className="hover:text-white transition-colors">{BRAND_EMAIL}</a></li>
               <li><a href={`mailto:${WHOLESALE_EMAIL}`} className="hover:text-white transition-colors">{WHOLESALE_EMAIL}</a></li>

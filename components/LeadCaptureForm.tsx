@@ -45,7 +45,7 @@ export function LeadCaptureForm() {
       id="lead-capture-form"
       data-form="lead-optin"
       action={formAction}
-      className="flex flex-col sm:flex-row gap-3 w-full max-w-xl mx-auto"
+      className="flex w-full max-w-xl flex-col gap-3 mx-auto sm:flex-row sm:items-center"
       noValidate
     >
       <div className="sr-only" aria-hidden="true">
@@ -53,7 +53,7 @@ export function LeadCaptureForm() {
         <input id="lead-website" type="text" name="website" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <div className="flex flex-col gap-1 sm:basis-[160px]">
+      <div className="flex flex-col gap-1 sm:w-[180px] sm:flex-none">
         <label htmlFor="lead-first-name" className="sr-only">
           First name
         </label>
@@ -67,11 +67,13 @@ export function LeadCaptureForm() {
           autoComplete="given-name"
           placeholder="First name"
           style={{
-            flex: "0 0 140px",
-            padding: "14px 18px",
+            width: "100%",
+            height: "52px",
+            padding: "12px 18px",
             borderRadius: "999px",
             border: `2px solid ${firstNameError ? "#DC2626" : "#E2E8F0"}`,
             fontSize: "0.9375rem",
+            lineHeight: 1.2,
             fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif",
             outline: "none",
             color: "#1E293B",
@@ -100,11 +102,13 @@ export function LeadCaptureForm() {
           autoComplete="email"
           placeholder="Your email address"
           style={{
-            flex: 1,
-            padding: "14px 18px",
+            width: "100%",
+            height: "52px",
+            padding: "12px 18px",
             borderRadius: "999px",
             border: `2px solid ${emailError ? "#DC2626" : "#E2E8F0"}`,
             fontSize: "0.9375rem",
+            lineHeight: 1.2,
             fontFamily: "var(--font-baloo-2), 'Baloo 2', sans-serif",
             outline: "none",
             color: "#1E293B",
@@ -119,10 +123,12 @@ export function LeadCaptureForm() {
       </div>
 
       <PendingSubmitButton
+        className="w-full sm:w-auto"
         label="Join the List"
         pendingLabel="Saving..."
         style={{
-          padding: "14px 28px",
+          height: "52px",
+          padding: "0 28px",
           borderRadius: "999px",
           backgroundColor: "#C2410C",
           color: "#fff",

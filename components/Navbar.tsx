@@ -51,7 +51,7 @@ export function Navbar() {
             <BrandLogo
               width={135}
               priority
-              className="h-10 w-auto transition-transform duration-200 group-hover:scale-[1.02]"
+              className="h-auto w-[135px] transition-transform duration-200 group-hover:scale-[1.02]"
             />
           </Link>
 

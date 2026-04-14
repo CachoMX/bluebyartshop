@@ -1,7 +1,15 @@
 'use client';
 
 import Script from 'next/script';
-import { GA_AW_ID } from '@/lib/gtag';
+import { GA4_MEASUREMENT_ID, GA_AW_ID } from '@/lib/gtag';
+
+const primaryTagId = GA4_MEASUREMENT_ID || GA_AW_ID;
+const configCommands = [
+  GA4_MEASUREMENT_ID ? `gtag('config', '${GA4_MEASUREMENT_ID}');` : '',
+  `gtag('config', '${GA_AW_ID}');`,
+]
+  .filter(Boolean)
+  .join('\n');
 
 /**
  * GoogleAdsTag — loads the global gtag.js script.
@@ -11,7 +19,7 @@ export function GoogleAdsTag() {
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_AW_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${primaryTagId}`}
         strategy="afterInteractive"
       />
       <Script id="gtag-init" strategy="afterInteractive">
@@ -19,7 +27,7 @@ export function GoogleAdsTag() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_AW_ID}');
+          ${configCommands}
         `}
       </Script>
     </>

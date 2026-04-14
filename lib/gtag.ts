@@ -2,10 +2,13 @@
  * lib/gtag.ts — Google Ads conversion tracking helpers
  *
  * Tag ID: AW-18082837734
+ * GA4 Measurement ID (main site): G-D5X4QJHQYS
  * Conversion actions created 2026-04-11 via Google Ads API.
  */
 
 export const GA_AW_ID = 'AW-18082837734';
+export const GA4_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || 'G-D5X4QJHQYS';
 
 export const CONVERSION_LABELS = {
   purchase:      'QOSCCMOrtpocEObpyK5D',

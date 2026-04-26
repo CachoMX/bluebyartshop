@@ -5,7 +5,7 @@ import { BRAND_NAME, SITE_URL } from "@/lib/brand";
 import { faqs, buildFaqJsonLd } from "@/lib/faqs";
 
 export const metadata: Metadata = {
-  title: `FAQ — Subscriptions, Shipping & Materials | ${BRAND_NAME}`,
+  title: "FAQ — Subscriptions, Shipping & Materials",
   description:
     "Answers to the most common questions about Blueby Art Shop kids art subscriptions, plaster painting kits, shipping, age range, materials safety (ASTM D-4236), gifts, and wholesale.",
   alternates: {

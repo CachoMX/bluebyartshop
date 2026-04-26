@@ -9,7 +9,8 @@ import {
 import { getStoreAccountUrl, getStoreShopUrl, getStoreUrl } from "@/lib/store-url";
 
 const storeShopHref = getStoreShopUrl("/shop");
-const storeSubscribeHref = getStoreShopUrl("/subscribe");
+// Subscribe stays on the Next.js landing (with pricing tiers + FAQs).
+const storeSubscribeHref = "/subscribe";
 const storeAccountHref = getStoreAccountUrl("/account");
 const plasterCategoryHref = getStoreUrl("/shop?cat=plaster", "/shop?cat=plaster");
 const coloringCategoryHref = getStoreUrl("/shop?cat=coloring", "/shop?cat=coloring");
@@ -78,6 +79,8 @@ export function Footer() {
               Support
             </h4>
             <ul className="space-y-2 text-sm" style={{ color: "rgba(255,255,255,0.85)" }}>
+              <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link href="/shipping-returns" className="hover:text-white transition-colors">Shipping &amp; Returns</Link></li>
               <li><Link href={storeAccountHref} className="hover:text-white transition-colors">Account Dashboard</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
               <li><a href={`mailto:${BRAND_EMAIL}`} className="hover:text-white transition-colors">{BRAND_EMAIL}</a></li>

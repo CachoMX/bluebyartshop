@@ -1,8 +1,8 @@
-# Design System: Blue By Art Shop
+# Design System: Blueby Art Shop
 
 ## 1. Visual Theme & Atmosphere
 
-Blue By Art Shop is a warm, playful children's art subscription service. The design should feel like a premium children's brand — inviting, trustworthy, and joyful without being chaotic. Think "art studio meets boutique gift shop": clean white and warm off-white surfaces with pops of vibrant blue and coral-orange, photography and illustration driven, with generous whitespace that lets products breathe.
+Blueby Art Shop is a warm, playful children's art subscription service. The design should feel like a premium children's brand — inviting, trustworthy, and joyful without being chaotic. Think "art studio meets boutique gift shop": clean white and warm off-white surfaces with pops of vibrant blue and coral-orange, photography and illustration driven, with generous whitespace that lets products breathe.
 
 The visual system is built on **depth through layers**: subtle card shadows, soft section gradients, and a clear surface hierarchy that guides the eye from hero → features → pricing → trust. This is not a flat design. Every section has a distinct background treatment to create rhythm and forward motion.
 
@@ -249,7 +249,7 @@ Mid gray:        #64748B   (secondary text)
 ### Ready-to-Use Prompts for Stitch
 
 **Hero Section:**
-> "Design a hero section for a children's art subscription box called Blue By Art Shop. Use a gradient from #0390AC to #2563EB as background. Include a floating 'New Colors Every Month' pill badge in coral orange above the headline. Headline in Fredoka 64px white bold: 'Where Little Hands Create Big Wonders.' Subtitle in Baloo 2 20px white/80%: 'Curated art subscription boxes packed with safe, premium materials.' Two pill CTAs: coral orange 'Start Creating' and white outline 'Browse the Shop'. Below the CTAs, three trust badges in a row: '✓ No contracts', '✓ Ships in 2-3 days', '✓ 400+ subscriptions'. Decorative circle blobs in background at 30% opacity for depth."
+> "Design a hero section for a children's art subscription box called Blueby Art Shop. Use a gradient from #0390AC to #2563EB as background. Include a floating 'New Colors Every Month' pill badge in coral orange above the headline. Headline in Fredoka 64px white bold: 'Where Little Hands Create Big Wonders.' Subtitle in Baloo 2 20px white/80%: 'Curated art subscription boxes packed with safe, premium materials.' Two pill CTAs: coral orange 'Start Creating' and white outline 'Browse the Shop'. Below the CTAs, three trust badges in a row: '✓ No contracts', '✓ Ships in 2-3 days', '✓ 400+ subscriptions'. Decorative circle blobs in background at 30% opacity for depth."
 
 **Feature Card:**
 > "Design a feature card with a 64×64px rounded icon container in #EBF5FF background, a 32px emoji icon, bold Fredoka 24px heading in #1E293B, and Baloo 2 16px description in #64748B. White card, 20px radius, soft multi-layer shadow. Hover lifts 4px."

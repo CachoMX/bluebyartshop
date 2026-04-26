@@ -6,17 +6,20 @@ import { BrandLogo } from "@/components/BrandLogo";
 import { BRAND_NAME } from "@/lib/brand";
 import { getStoreAccountUrl, getStoreShopUrl } from "@/lib/store-url";
 
+// Shop links to the WooCommerce store (where products live).
 const shopHref = getStoreShopUrl("/shop");
-const subscribeHref = getStoreShopUrl("/subscribe");
+// Subscribe is the Next.js landing with pricing tiers — keep it INTERNAL.
+const subscribeHref = "/subscribe";
 const accountHref = getStoreAccountUrl("/account");
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Shop", href: shopHref },
   { label: "Subscribe", href: subscribeHref },
-  { label: "Account", href: accountHref },
+  { label: "Shop", href: shopHref },
+  { label: "FAQ", href: "/faq" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+  { label: "Account", href: accountHref },
 ];
 
 export function Navbar() {

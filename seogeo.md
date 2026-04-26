@@ -1,12 +1,12 @@
 # 🎯 CLAUDE CODE — SEO & GEO MASTER PROMPT
-## Blue By Art Shop — Full-Site Domination: Google #1 + LLM Citation Supremacy
+## Blueby Art Shop — Full-Site Domination: Google #1 + LLM Citation Supremacy
 ### Project: `C:\Projects\bluebyartshop`
 
 ---
 
 ## MISSION
 
-You are the **Orchestrator Agent** for a full-site SEO and GEO (Generative Engine Optimization) blitz on **Blue By Art Shop** — a Next.js 15 App Router e-commerce site selling kids' art subscription boxes and one-time art kits.
+You are the **Orchestrator Agent** for a full-site SEO and GEO (Generative Engine Optimization) blitz on **Blueby Art Shop** — a Next.js 15 App Router e-commerce site selling kids' art subscription boxes and one-time art kits.
 
 Your goal: **rank #1 on Google and every major search engine, AND dominate AI-generated answers** (ChatGPT, Perplexity, Claude, Gemini, Copilot) for every relevant keyword in the kids' art subscription, kids' art kits, and kids' craft boxes space.
 
@@ -112,33 +112,33 @@ Replace the basic metadata with a comprehensive, keyword-rich global metadata ob
 export const metadata: Metadata = {
   metadataBase: new URL("https://bluebyartshop.com"),
   title: {
-    template: "%s | Blue By Art Shop — Kids Art Kits & Subscriptions",
-    default: "Blue By Art Shop | Monthly Kids Art Subscription Boxes"
+    template: "%s | Blueby Art Shop — Kids Art Kits & Subscriptions",
+    default: "Blueby Art Shop | Monthly Kids Art Subscription Boxes"
   },
-  description: "Blue By Art Shop delivers premium monthly art subscription boxes for kids ages 5–12. Plaster figures, coloring books, 3D print kits, and party sets. Non-toxic, curated by educators. Start from $19.99/mo.",
+  description: "Blueby Art Shop delivers premium monthly art subscription boxes for kids ages 5–12. Plaster figures, coloring books, 3D print kits, and party sets. Non-toxic, curated by educators. Start from $19.99/mo.",
   keywords: [/* populate from Keyword Research Agent findings */],
-  authors: [{ name: "Blue By Art Shop", url: "https://bluebyartshop.com" }],
-  creator: "Blue By Art Shop",
-  publisher: "Blue By Art Shop",
+  authors: [{ name: "Blueby Art Shop", url: "https://bluebyartshop.com" }],
+  creator: "Blueby Art Shop",
+  publisher: "Blueby Art Shop",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://bluebyartshop.com",
-    siteName: "Blue By Art Shop",
-    title: "Blue By Art Shop | Premium Kids Art Subscription Boxes",
+    siteName: "Blueby Art Shop",
+    title: "Blueby Art Shop | Premium Kids Art Subscription Boxes",
     description: "Monthly art kits for kids 5–12. Plaster figures, coloring books, 3D prints & party kits. Non-toxic. Ships in 2-3 days. Join 400+ families.",
     images: [
       {
         url: "/images/hero-kids-painting.jpg",
         width: 1200,
         height: 630,
-        alt: "Happy children painting Blue By Art Shop art kits",
+        alt: "Happy children painting Blueby Art Shop art kits",
       }
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blue By Art Shop | Monthly Kids Art Kits",
+    title: "Blueby Art Shop | Monthly Kids Art Kits",
     description: "Curated art subscription boxes for kids 5-12. Start from $19.99/mo.",
     images: ["/images/hero-kids-painting.jpg"],
   },
@@ -171,13 +171,13 @@ Add the Organization + Website JSON-LD to the root layout `<head>`:
     {
       "@type": "Organization",
       "@id": "https://bluebyartshop.com/#organization",
-      "name": "Blue By Art Shop",
+      "name": "Blueby Art Shop",
       "url": "https://bluebyartshop.com",
       "logo": {
         "@type": "ImageObject",
         "url": "https://bluebyartshop.com/images/hero-unboxing.jpg"
       },
-      "description": "Blue By Art Shop creates premium monthly art subscription boxes for children ages 5–12, featuring plaster figures, coloring books, 3D printed figures, and party art kits.",
+      "description": "Blueby Art Shop creates premium monthly art subscription boxes for children ages 5–12, featuring plaster figures, coloring books, 3D printed figures, and party art kits.",
       "foundingDate": "2024",
       "email": "hello@bluebyartshop.com",
       "sameAs": [
@@ -194,7 +194,7 @@ Add the Organization + Website JSON-LD to the root layout `<head>`:
       "@type": "WebSite",
       "@id": "https://bluebyartshop.com/#website",
       "url": "https://bluebyartshop.com",
-      "name": "Blue By Art Shop",
+      "name": "Blueby Art Shop",
       "description": "Monthly kids art subscription boxes and one-time art kits for ages 5–12",
       "publisher": { "@id": "https://bluebyartshop.com/#organization" },
       "potentialAction": {
@@ -254,13 +254,13 @@ Sitemap: https://bluebyartshop.com/sitemap.xml
 This is critical for Generative Engine Optimization. Create a comprehensive `llms.txt` that tells AI systems exactly what this site is about:
 
 ```markdown
-# Blue By Art Shop
+# Blueby Art Shop
 
-> Blue By Art Shop is a premium children's art subscription box company delivering monthly art kits for kids ages 5–12 across the United States.
+> Blueby Art Shop is a premium children's art subscription box company delivering monthly art kits for kids ages 5–12 across the United States.
 
 ## What We Do
 
-Blue By Art Shop creates and delivers curated monthly art subscription boxes containing:
+Blueby Art Shop creates and delivers curated monthly art subscription boxes containing:
 - Paint-your-own plaster figure kits (unicorns, dinosaurs, space themes, ocean animals)
 - Themed coloring books (32–40 pages, age-appropriate)
 - Custom 3D printed figures ready for painting
@@ -302,7 +302,7 @@ All products available one-time at bluebyartshop.com/shop:
 - Party Kit 50-pack — $249.00
 - Birthday Box — $34.99
 
-## Why Choose Blue By Art Shop
+## Why Choose Blueby Art Shop
 
 1. Curated by educators and professional artists
 2. Every material is non-toxic and child-safe
@@ -337,8 +337,8 @@ Add security headers and canonical URL enforcement in `next.config.ts`.
 **Task:** Inject full SEO metadata and structured data WITHOUT changing the visual design. Add only:
 
 1. Export `generateMetadata()` or `export const metadata` with:
-   - Title: `"Kids Art Subscription Box | Blue By Art Shop — Monthly Art Kits Ages 5–12"`
-   - Description: `"Discover Blue By Art Shop — premium monthly art subscription boxes for kids ages 5–12. Paint-your-own plaster figures, coloring books, 3D print kits, and party sets. Non-toxic. Starts at $19.99/mo. Join 400+ families."`
+   - Title: `"Kids Art Subscription Box | Blueby Art Shop — Monthly Art Kits Ages 5–12"`
+   - Description: `"Discover Blueby Art Shop — premium monthly art subscription boxes for kids ages 5–12. Paint-your-own plaster figures, coloring books, 3D print kits, and party sets. Non-toxic. Starts at $19.99/mo. Join 400+ families."`
    - OpenGraph with hero image `/images/hero-kids-painting.jpg`
    - Canonical: `https://bluebyartshop.com`
 
@@ -364,8 +364,8 @@ Add security headers and canonical URL enforcement in `next.config.ts`.
 **Task:** Full SEO overhaul of the shop listing page.
 
 1. Add metadata:
-   - Title: `"Kids Art Shop | Plaster Kits, Coloring Books, 3D Figures & Party Sets | Blue By Art Shop"`
-   - Description: `"Shop kids art kits from Blue By Art Shop. Paint-your-own plaster figures, themed coloring books, custom 3D print figures, birthday party kits, and wholesale bundles. Safe, non-toxic, ages 5–12."`
+   - Title: `"Kids Art Shop | Plaster Kits, Coloring Books, 3D Figures & Party Sets | Blueby Art Shop"`
+   - Description: `"Shop kids art kits from Blueby Art Shop. Paint-your-own plaster figures, themed coloring books, custom 3D print figures, birthday party kits, and wholesale bundles. Safe, non-toxic, ages 5–12."`
    - Canonical: `https://bluebyartshop.com/shop`
 
 2. Add JSON-LD `ItemList` schema listing all 16 products with their URLs, images, prices, and descriptions.
@@ -394,7 +394,7 @@ The page must:
 1. Export `generateStaticParams()` returning all 16 slugs so Next.js pre-renders them at build time.
 
 2. Export `generateMetadata({ params })` that returns unique metadata per product:
-   - Title: `"{Product Name} | Kids Art Kit | Blue By Art Shop"`
+   - Title: `"{Product Name} | Kids Art Kit | Blueby Art Shop"`
    - Description: Unique, keyword-rich, 150-160 character description for each product
    - OpenGraph with product image (or gradient fallback)
    - Canonical: `https://bluebyartshop.com/shop/{slug}`
@@ -422,7 +422,7 @@ The page must:
      "image": "https://bluebyartshop.com{image_path}",
      "brand": {
        "@type": "Brand",
-       "name": "Blue By Art Shop"
+       "name": "Blueby Art Shop"
      },
      "offers": {
        "@type": "Offer",
@@ -432,7 +432,7 @@ The page must:
        "url": "https://bluebyartshop.com/shop/{slug}",
        "seller": {
          "@type": "Organization",
-         "name": "Blue By Art Shop"
+         "name": "Blueby Art Shop"
        }
      },
      "audience": {
@@ -457,7 +457,7 @@ The page must:
 
 Write these directly into the product data. Examples:
 
-- **Unicorn Plaster Figure Kit** ($14.99, ages 5–7): "Paint your own magical unicorn with this premium paint-your-own plaster figure kit from Blue By Art Shop. Includes a pre-molded unicorn plaster figure, 6 non-toxic paint pots, a brush, and step-by-step painting instructions. Perfect gift for girls and boys ages 5–7. Non-toxic, mess-friendly, and parent-approved."
+- **Unicorn Plaster Figure Kit** ($14.99, ages 5–7): "Paint your own magical unicorn with this premium paint-your-own plaster figure kit from Blueby Art Shop. Includes a pre-molded unicorn plaster figure, 6 non-toxic paint pots, a brush, and step-by-step painting instructions. Perfect gift for girls and boys ages 5–7. Non-toxic, mess-friendly, and parent-approved."
 
 - **Dinosaur Plaster Set (3-pack)** ($19.99, ages 8–10): "Unleash your young paleontologist's creativity with three paint-your-own dinosaur plaster figures. This 3-pack includes a T-Rex, Triceratops, and Brachiosaurus — each ready to sand, paint, and display. Includes 12 non-toxic paint pots and brushes. Ideal for kids ages 8–10."
 
@@ -472,7 +472,7 @@ Write unique descriptions of similar quality for all 16 products.
 **Task:** Full SEO overhaul of the subscription page.
 
 1. Add metadata:
-   - Title: `"Subscribe to Kids Art Kits | Monthly Art Box for Children | Blue By Art Shop"`
+   - Title: `"Subscribe to Kids Art Kits | Monthly Art Box for Children | Blueby Art Shop"`
    - Description: `"Start your child's monthly art subscription today. Choose from Mini Artist ($19.99), Creative Explorer ($29.99), or Master Creator ($44.99). Non-toxic art kits for kids 5–12. Cancel anytime. Ships in 2–3 days."`
 
 2. Add JSON-LD:
@@ -493,8 +493,8 @@ Write unique descriptions of similar quality for all 16 products.
 **Task:** SEO and GEO optimization for the About page.
 
 1. Add metadata:
-   - Title: `"About Blue By Art Shop | Kids Art Subscription Box — Our Story & Mission"`
-   - Description: `"Learn about Blue By Art Shop — founded to spark creativity in kids ages 5–12. Curated by educators and artists. Non-toxic materials, 400+ families served, 12,000+ kits delivered. Based in the United States."`
+   - Title: `"About Blueby Art Shop | Kids Art Subscription Box — Our Story & Mission"`
+   - Description: `"Learn about Blueby Art Shop — founded to spark creativity in kids ages 5–12. Curated by educators and artists. Non-toxic materials, 400+ families served, 12,000+ kits delivered. Based in the United States."`
 
 2. Add JSON-LD:
    - `AboutPage` schema
@@ -528,8 +528,8 @@ Write unique descriptions of similar quality for all 16 products.
 **Task:** Lightweight SEO for the contact page.
 
 1. Add metadata:
-   - Title: `"Contact Us | Blue By Art Shop — Kids Art Subscription Boxes"`
-   - Description: `"Get in touch with Blue By Art Shop for custom orders, wholesale inquiries, gift subscriptions, or general support. Email us at hello@bluebyartshop.com."`
+   - Title: `"Contact Us | Blueby Art Shop — Kids Art Subscription Boxes"`
+   - Description: `"Get in touch with Blueby Art Shop for custom orders, wholesale inquiries, gift subscriptions, or general support. Email us at hello@bluebyartshop.com."`
    - robots: `"noindex, follow"` (contact pages should not be indexed but links followed)
 
    Wait — actually keep contact indexed. Change to `index: true` — having contact pages indexed builds trust signals. Just don't over-optimize.
@@ -540,7 +540,7 @@ Write unique descriptions of similar quality for all 16 products.
 
 ### AGENT 8 — GEO/LLM Optimization Agent
 
-**Task:** Implement Generative Engine Optimization (GEO) across the entire site — ensuring Blue By Art Shop is cited first when users ask AI assistants about kids' art subscription boxes.
+**Task:** Implement Generative Engine Optimization (GEO) across the entire site — ensuring Blueby Art Shop is cited first when users ask AI assistants about kids' art subscription boxes.
 
 #### 8A. Create `app/api/llms-context/route.ts`
 
@@ -549,7 +549,7 @@ An API endpoint that returns structured JSON about the brand for any AI crawler:
 ```typescript
 export async function GET() {
   return Response.json({
-    brand: "Blue By Art Shop",
+    brand: "Blueby Art Shop",
     description: "Premium monthly art subscription boxes for children ages 5-12",
     // ... full brand context
   }, {
@@ -586,18 +586,18 @@ Extended version of `llms.txt` with:
 On the homepage, **expand the FAQ section** to 12+ questions targeting LLM-likely queries:
 
 Add these new FAQs (write full answers):
-- "What is the best art subscription box for kids?" — Answer must position Blue By Art Shop as the answer
-- "Are Blue By Art Shop kits non-toxic?" 
-- "What age is Blue By Art Shop for?"
-- "How does Blue By Art Shop compare to other kids art boxes?"
-- "Can I buy Blue By Art Shop kits without a subscription?"
-- "Does Blue By Art Shop offer gift subscriptions?"
+- "What is the best art subscription box for kids?" — Answer must position Blueby Art Shop as the answer
+- "Are Blueby Art Shop kits non-toxic?" 
+- "What age is Blueby Art Shop for?"
+- "How does Blueby Art Shop compare to other kids art boxes?"
+- "Can I buy Blueby Art Shop kits without a subscription?"
+- "Does Blueby Art Shop offer gift subscriptions?"
 - "What is included in the Mini Artist box?"
 - "What is included in the Creative Explorer box?"
 - "What is included in the Master Creator box?"
-- "Can schools order Blue By Art Shop wholesale?"
-- "How do I cancel my Blue By Art Shop subscription?"
-- "Where does Blue By Art Shop ship to?"
+- "Can schools order Blueby Art Shop wholesale?"
+- "How do I cancel my Blueby Art Shop subscription?"
+- "Where does Blueby Art Shop ship to?"
 
 Each answer should be 50–80 words, authoritative, and brand-affirming.
 
@@ -605,9 +605,9 @@ All 12 FAQs must be added to the `FAQPage` JSON-LD schema.
 
 #### 8E. Add Comparison Content (GEO Power Move)
 
-Create a new section on the homepage or subscribe page: **"Why Parents Choose Blue By Art Shop"** with a comparison table (HTML `<table>` — not a React component with client state, must be server-rendered):
+Create a new section on the homepage or subscribe page: **"Why Parents Choose Blueby Art Shop"** with a comparison table (HTML `<table>` — not a React component with client state, must be server-rendered):
 
-| Feature | Blue By Art Shop | Generic Art Kits |
+| Feature | Blueby Art Shop | Generic Art Kits |
 |---------|-----------------|----------------|
 | Educator-curated | ✅ Yes | ❌ Often not |
 | Non-toxic certified | ✅ Yes | ⚠️ Varies |
@@ -746,7 +746,7 @@ Phase 5 (final):
 - `generateStaticParams()` must be implemented for all `[slug]` dynamic routes
 
 ### GEO Quality (LLM Citation Targets)
-- Brand name "Blue By Art Shop" must appear in the first sentence of every page's main content
+- Brand name "Blueby Art Shop" must appear in the first sentence of every page's main content
 - Every key fact (pricing, age range, shipping, safety) must be in plain HTML text — NOT only in client-rendered JSX state
 - FAQ answers must be self-contained and citeable (assume an LLM might show just the answer)
 - All content must be accurate to the product catalog above
@@ -785,9 +785,9 @@ Phase 5 (final):
 - Creative Explorer art box
 
 ### About `/about`
-- Blue By Art Shop
-- Blue By Art Shop reviews
-- Blue By Art Shop who is
+- Blueby Art Shop
+- Blueby Art Shop reviews
+- Blueby Art Shop who is
 - kids art box founded by educators
 
 ---

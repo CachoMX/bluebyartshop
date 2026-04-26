@@ -44,23 +44,11 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
+    // Only redirect to the WooCommerce store the routes that MUST live there
+    // (real account dashboard + Stripe-backed checkout). Keep informational
+    // pages (/, /subscribe, /shop, /faq, /about, /contact, etc.) on Next.js.
     const legacyStoreRedirects = storeUrl
       ? [
-          {
-            source: "/shop",
-            destination: `${storeUrl}/shop`,
-            permanent: false,
-          },
-          {
-            source: "/shop/:path*",
-            destination: `${storeUrl}/shop/:path*`,
-            permanent: false,
-          },
-          {
-            source: "/subscribe",
-            destination: `${storeUrl}/shop`,
-            permanent: false,
-          },
           {
             source: "/subscribe/checkout",
             destination: `${storeUrl}/checkout`,

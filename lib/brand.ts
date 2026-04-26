@@ -1,6 +1,6 @@
 export const SITE_URL = "https://bluebyartshop.com";
 
-export const BRAND_NAME = "Blue By Art Shop";
+export const BRAND_NAME = "Blueby Art Shop";
 export const BRAND_LOGO_PATH = "/brand/logo.png";
 export const BRAND_LOGO_ALT = `${BRAND_NAME} logo`;
 export const BRAND_LOGO_WIDTH = 413;

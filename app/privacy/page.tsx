@@ -21,7 +21,7 @@ const sections = [
     title: "How We Use It",
     body: [
       "We use submitted information to respond to questions, manage subscriptions, support orders, and operate the website experience.",
-      "We may also use lead-form submissions to follow up about welcome offers, launch updates, and product information related to Blue By Art Shop.",
+      "We may also use lead-form submissions to follow up about welcome offers, launch updates, and product information related to Blueby Art Shop.",
     ],
   },
   {

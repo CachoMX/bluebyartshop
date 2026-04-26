@@ -6,24 +6,26 @@ import { JsonLd } from "@/components/JsonLd";
 import { MarketingImage } from "@/components/MarketingImage";
 import WaveDivider from '@/components/WaveDivider'
 import { BRAND_LOGO_PATH, BRAND_NAME, SITE_URL } from "@/lib/brand";
+import { faqs } from "@/lib/faqs";
 import { getStoreShopUrl, getStoreUrl } from "@/lib/store-url";
 
 const storeShopHref = getStoreShopUrl("/shop");
-const storeSubscribeHref = getStoreShopUrl("/subscribe");
+// Subscribe stays on the Next.js landing (with pricing tiers + FAQs).
+const storeSubscribeHref = "/subscribe";
 const getTierCheckoutHref = (tierKey: string) =>
   getStoreUrl(`/checkout?tier=${tierKey}`, `/subscribe/checkout?tier=${tierKey}`);
 
 export const metadata: Metadata = {
   title: `Kids Art Subscription Box | ${BRAND_NAME} — Monthly Art Kits Ages 4 and Up`,
   description:
-    "Discover Blue By Art Shop monthly art subscription boxes for kids ages 4 and up. Paint-your-own plaster figurines, themed kits, and creative tools starting at $24.99/month. Made in Texas, shipped nationwide.",
+    "Discover Blueby Art Shop monthly art subscription boxes for kids ages 4 and up. Paint-your-own plaster figurines, themed kits, and creative tools starting at $24.99/month. Made in Texas, shipped nationwide.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     title: `Kids Art Subscription Box | ${BRAND_NAME} — Monthly Art Kits Ages 4 and Up`,
     description:
-      "Discover Blue By Art Shop monthly art subscription boxes for kids ages 4 and up. Paint-your-own plaster figurines, themed kits, and creative tools starting at $24.99/month. Made in Texas, shipped nationwide.",
+      "Discover Blueby Art Shop monthly art subscription boxes for kids ages 4 and up. Paint-your-own plaster figurines, themed kits, and creative tools starting at $24.99/month. Made in Texas, shipped nationwide.",
     url: SITE_URL,
     images: [
       {
@@ -91,7 +93,7 @@ const howItWorks = [
   {
     num: "1",
     image: "/images/hero-unboxing.jpg",
-    alt: "Blue By Art Shop kit contents laid out",
+    alt: "Blueby Art Shop kit contents laid out",
     title: "Choose Your Tier",
     desc: "Pick the plan that fits your little artist — Mini, Explorer, or Master Creator. New themes every month.",
     color: "#2563EB",
@@ -142,23 +144,6 @@ const familyHighlights = [
   },
 ];
 
-const faqs = [
-  { q: "What kind of art subscription box does Blue By Art Shop offer?", a: "Blue By Art Shop offers monthly art kits for kids ages 4 and up with three subscription tiers. Plans start at $24.99/month and focus on paint-your-own plaster figurines, themed kits, and hands-on creative activities crafted in Texas." },
-  { q: "How fast does it ship?", a: "All subscriptions ship within 2–3 business days of your billing date. Standard delivery takes 5–7 business days. Expedited options are available at checkout for faster delivery." },
-  { q: "What age range is this for?", a: "Our kits are designed for kids ages 4 and up. Mini Artist is the perfect first kit, Creative Explorer offers more variety and pieces, and Master Creator delivers the most premium experience. Each tier includes age-appropriate materials and instructions." },
-  { q: "Are Blue By Art Shop kits non-toxic?", a: "Yes — every material in every Blue By Art Shop kit is non-toxic, child-safe, and ASTM D-4236 compliant. All paints are washable and certified safe for children ages 4 and up. We source only from eco-conscious, safety-compliant suppliers." },
-  { q: "Can I cancel anytime?", a: "Absolutely — no lock-in contracts. You can pause or cancel your subscription at any time from your account dashboard. Cancellations take effect the following billing cycle with no fees or penalties." },
-  { q: "Does Blue By Art Shop offer gift subscriptions?", a: "Gift subscriptions can be arranged across all three tiers. If you need help choosing the right plan or order format, contact the team and we&apos;ll point you in the right direction." },
-  { q: "What is included in the Mini Artist box?", a: "Mini Artist ($24.99/month + $4.99 shipping) is the perfect start for ages 4 and up. Each box includes 6 plaster figurines to paint, 3 non-toxic acrylic paints, 1 soft-bristle brush, 2 themed stickers, an illustrated instruction card, and a monthly collectible theme card — all presented in our signature white gift box with glossy wrap." },
-  { q: "What is included in the Creative Explorer box?", a: "Creative Explorer ($39.99/month + $4.99 shipping) is our most popular tier for ages 4 and up. Each box includes 8–12 plaster figurines in varied sizes, 6 non-toxic acrylic paints, 2 brushes (detail + background), 2 themed sticker sheets (4×4 in.), a technique-of-the-month guide, and a collectible monthly theme card — all in a reusable transparent bucket." },
-  { q: "What is included in the Master Creator box?", a: "Master Creator ($69.99/month with FREE shipping) is our premium tier. Each box includes 10–14 plaster figurines plus an exclusive XL piece (bear, dinosaur, or unicorn depending on theme), 8 premium acrylic paints plus 2 glitter paints, 2 brushes and a texturing sponge, a canvas with pre-molded figure for framing, a mini 25-page coloring book, a complete themed sticker set, a collectible certificate with official seal, and a monthly theme card — all in a premium magnetic-closure gift box." },
-  { q: "Why should I choose Creative Explorer over Mini Artist?", a: "Creative Explorer ($39.99) offers double the figurines (8–12 vs 6), double the paints (6 vs 3), two brushes for different techniques, four times the stickers, a reusable bucket, and a monthly technique guide to teach a new skill. Most Blueby families choose this tier." },
-  { q: "Do you charge shipping?", a: "Mini Artist and Creative Explorer have a flat $4.99 shipping fee. Master Creator includes FREE shipping. All boxes ship via USPS Ground Advantage and arrive in 5–7 business days within the continental United States." },
-  { q: "Can I change tiers later?", a: "Yes. You can upgrade or downgrade your subscription anytime from your account dashboard. Changes take effect on your next billing cycle. Many families start with Mini Artist and upgrade to Creative Explorer after a few months." },
-  { q: "Can I buy Blue By Art Shop kits without a subscription?", a: "Yes! All 16 individual products are available as one-time purchases at our shop — no subscription required. From plaster figure kits starting at $14.99 to party kits and wholesale bundles, you can buy exactly what you need." },
-  { q: "Can schools order Blue By Art Shop wholesale?", a: "Yes. We offer wholesale pricing for schools, art studios, camps, and event planners. Starter Pack: 50 units at $12/unit. Premium Pack: 50 units at $28/unit. Custom branding available. Contact wholesale@bluebyartshop.com for details." },
-  { q: "Where does Blue By Art Shop ship to?", a: "We currently ship within the United States. All orders process within 2–3 business days. Standard delivery takes 5–7 business days. Expedited shipping options are available at checkout." },
-];
 
 export default function HomePage() {
   return (
@@ -260,7 +245,7 @@ export default function HomePage() {
           </p>
           <LeadCaptureForm />
           <p className="mt-4" style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.8125rem" }}>
-            We only use this information for Blue By Art Shop updates and offer follow-up.
+            We only use this information for Blueby Art Shop updates and offer follow-up.
           </p>
         </div>
       </section>
@@ -446,7 +431,7 @@ export default function HomePage() {
             <div className="rounded-3xl overflow-hidden relative" style={{ height: "320px" }}>
               <MarketingImage
                 src="/images/shop-supplies-flatlay.jpg"
-                alt="Colorful art supplies from Blue By Art Shop"
+                alt="Colorful art supplies from Blueby Art Shop"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1152px) 100vw, 1152px"
@@ -505,13 +490,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── COMPARISON TABLE — Why Parents Choose Blue By Art Shop ── */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F0F7FF" }} aria-label="Why Parents Choose Blue By Art Shop">
+      {/* ── COMPARISON TABLE — Why Parents Choose Blueby Art Shop ── */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F0F7FF" }} aria-label="Why Parents Choose Blueby Art Shop">
         <div className="max-w-4xl mx-auto">
           <AnimateIn className="text-center mb-12">
-            <span className="eyebrow eyebrow-blue">Why Blue By Art Shop</span>
+            <span className="eyebrow eyebrow-blue">Why Blueby Art Shop</span>
             <h2 className="mb-4" style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "clamp(2rem, 4vw, 2.75rem)", color: "#1E293B", fontWeight: 600 }}>
-              Why Parents Choose Blue By Art Shop
+              Why Parents Choose Blueby Art Shop
             </h2>
             <p style={{ color: "#64748B", fontSize: "1.0625rem" }}>See how we compare to generic art kits on the market</p>
           </AnimateIn>
@@ -521,7 +506,7 @@ export default function HomePage() {
                 <thead>
                   <tr style={{ backgroundColor: "#2563EB", color: "#fff" }}>
                     <th style={{ padding: "16px 20px", textAlign: "left", fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontWeight: 600 }}>Feature</th>
-                    <th style={{ padding: "16px 20px", textAlign: "center", fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontWeight: 600 }}>Blue By Art Shop</th>
+                    <th style={{ padding: "16px 20px", textAlign: "center", fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontWeight: 600 }}>Blueby Art Shop</th>
                     <th style={{ padding: "16px 20px", textAlign: "center", fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontWeight: 600 }}>Generic Art Kits</th>
                   </tr>
                 </thead>
@@ -610,31 +595,31 @@ export default function HomePage() {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-          { "@type": "Question", "name": "What kind of art subscription box does Blue By Art Shop offer?", "acceptedAnswer": { "@type": "Answer", "text": "Blue By Art Shop offers monthly art kits for kids ages 4 and up with three subscription tiers. Plans start at $24.99/month and focus on paint-your-own plaster figurines, themed kits, and hands-on creative activities crafted in Texas." } },
+          { "@type": "Question", "name": "What kind of art subscription box does Blueby Art Shop offer?", "acceptedAnswer": { "@type": "Answer", "text": "Blueby Art Shop offers monthly art kits for kids ages 4 and up with three subscription tiers. Plans start at $24.99/month and focus on paint-your-own plaster figurines, themed kits, and hands-on creative activities crafted in Texas." } },
           { "@type": "Question", "name": "How fast does it ship?", "acceptedAnswer": { "@type": "Answer", "text": "All subscriptions ship within 2–3 business days of your billing date. Standard delivery takes 5–7 business days. Expedited options are available at checkout." } },
           { "@type": "Question", "name": "What age range is this for?", "acceptedAnswer": { "@type": "Answer", "text": "Our kits are designed for kids ages 4 and up. Mini Artist is the perfect first kit, Creative Explorer offers more variety, and Master Creator delivers the most premium experience." } },
-          { "@type": "Question", "name": "Are Blue By Art Shop kits non-toxic?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — every material is non-toxic, child-safe, and ASTM D-4236 compliant. All paints are washable and certified safe for children ages 4 and up." } },
+          { "@type": "Question", "name": "Are Blueby Art Shop kits non-toxic?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — every material is non-toxic, child-safe, and ASTM D-4236 compliant. All paints are washable and certified safe for children ages 4 and up." } },
           { "@type": "Question", "name": "Can I cancel anytime?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely — no lock-in contracts. You can pause or cancel your subscription at any time. Cancellations take effect the following billing cycle with no fees." } },
-          { "@type": "Question", "name": "Does Blue By Art Shop offer gift subscriptions?", "acceptedAnswer": { "@type": "Answer", "text": "Gift subscriptions can be arranged across all three tiers. If you need help choosing the right plan or order format, contact the team for help." } },
+          { "@type": "Question", "name": "Does Blueby Art Shop offer gift subscriptions?", "acceptedAnswer": { "@type": "Answer", "text": "Gift subscriptions can be arranged across all three tiers. If you need help choosing the right plan or order format, contact the team for help." } },
           { "@type": "Question", "name": "What is included in the Mini Artist box?", "acceptedAnswer": { "@type": "Answer", "text": "Mini Artist ($24.99/month + $4.99 shipping) includes 6 plaster figurines, 3 non-toxic acrylic paints, 1 brush, 2 themed stickers, instruction card, and monthly theme card in a premium white gift box." } },
           { "@type": "Question", "name": "What is included in the Creative Explorer box?", "acceptedAnswer": { "@type": "Answer", "text": "Creative Explorer ($39.99/month + $4.99 shipping) includes 8–12 plaster figurines, 6 acrylic paints, 2 brushes, 2 sticker sheets (4×4 in.), technique-of-the-month guide, and monthly theme card in a reusable transparent bucket." } },
           { "@type": "Question", "name": "What is included in the Master Creator box?", "acceptedAnswer": { "@type": "Answer", "text": "Master Creator ($69.99/month with FREE shipping) includes 10–14 plaster figurines plus 1 exclusive XL piece, 8 premium acrylic paints plus 2 glitter paints, 2 brushes plus texturing sponge, canvas, 25-page coloring book, sticker set, collectible certificate, and theme card in a magnetic-closure gift box." } },
-          { "@type": "Question", "name": "Can I buy Blue By Art Shop kits without a subscription?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — all 16 individual products are available as one-time purchases at our shop with no subscription required, starting from $9.99." } },
-          { "@type": "Question", "name": "Can schools order Blue By Art Shop wholesale?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Wholesale pricing available: Starter Pack 50 units at $12/unit, Premium Pack 50 units at $28/unit. Contact wholesale@bluebyartshop.com." } },
-          { "@type": "Question", "name": "Where does Blue By Art Shop ship to?", "acceptedAnswer": { "@type": "Answer", "text": "We ship within the United States. Processing takes 2–3 business days, standard delivery 5–7 business days. Expedited options available." } },
+          { "@type": "Question", "name": "Can I buy Blueby Art Shop kits without a subscription?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — all 16 individual products are available as one-time purchases at our shop with no subscription required, starting from $9.99." } },
+          { "@type": "Question", "name": "Can schools order Blueby Art Shop wholesale?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Wholesale pricing available: Starter Pack 50 units at $12/unit, Premium Pack 50 units at $28/unit. Contact wholesale@bluebyartshop.com." } },
+          { "@type": "Question", "name": "Where does Blueby Art Shop ship to?", "acceptedAnswer": { "@type": "Answer", "text": "We ship within the United States. Processing takes 2–3 business days, standard delivery 5–7 business days. Expedited options available." } },
         ]
       }} />
 
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "Blue By Art Shop Subscription Plans",
+        "name": "Blueby Art Shop Subscription Plans",
         "description": "Monthly art subscription boxes for kids ages 4 and up",
         "numberOfItems": 3,
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "Mini Artist Subscription Box", "description": "Monthly art subscription box for kids ages 4 and up. Includes 6 plaster figurines, 3 non-toxic acrylic paints, brush, 2 themed stickers, instruction card, and a monthly collectible theme card. Cancel anytime.", "url": "https://bluebyartshop.com/subscribe", "brand": { "@type": "Brand", "name": "Blue By Art Shop" }, "offers": { "@type": "Offer", "price": "24.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "24.99", "priceCurrency": "USD", "billingIncrement": 1, "unitCode": "MON" } }, "audience": { "@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 12 } } },
-          { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "Creative Explorer Subscription Box", "description": "Most popular monthly art subscription box for kids ages 4 and up. Includes 8–12 plaster figurines, 6 non-toxic acrylic paints, 2 brushes, 2 sticker sheets, technique-of-the-month guide, and a monthly collectible theme card. Cancel anytime.", "url": "https://bluebyartshop.com/subscribe", "brand": { "@type": "Brand", "name": "Blue By Art Shop" }, "offers": { "@type": "Offer", "price": "39.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "39.99", "priceCurrency": "USD", "billingIncrement": 1, "unitCode": "MON" } }, "audience": { "@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 12 } } },
-          { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "Master Creator Subscription Box", "description": "Premium monthly art subscription box for kids ages 4 and up. Includes 10–14 plaster figurines plus an exclusive XL piece, 8 premium acrylic paints plus 2 glitter paints, brushes and texturing sponge, canvas, 25-page coloring book, sticker set, and collectible certificate. Free shipping. Cancel anytime.", "url": "https://bluebyartshop.com/subscribe", "brand": { "@type": "Brand", "name": "Blue By Art Shop" }, "offers": { "@type": "Offer", "price": "69.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "69.99", "priceCurrency": "USD", "billingIncrement": 1, "unitCode": "MON" } }, "audience": { "@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 12 } } },
+          { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "Mini Artist Subscription Box", "description": "Monthly art subscription box for kids ages 4 and up. Includes 6 plaster figurines, 3 non-toxic acrylic paints, brush, 2 themed stickers, instruction card, and a monthly collectible theme card. Cancel anytime.", "url": "https://bluebyartshop.com/subscribe", "brand": { "@type": "Brand", "name": "Blueby Art Shop" }, "offers": { "@type": "Offer", "price": "24.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "24.99", "priceCurrency": "USD", "billingIncrement": 1, "unitCode": "MON" } }, "audience": { "@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 12 } } },
+          { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "Creative Explorer Subscription Box", "description": "Most popular monthly art subscription box for kids ages 4 and up. Includes 8–12 plaster figurines, 6 non-toxic acrylic paints, 2 brushes, 2 sticker sheets, technique-of-the-month guide, and a monthly collectible theme card. Cancel anytime.", "url": "https://bluebyartshop.com/subscribe", "brand": { "@type": "Brand", "name": "Blueby Art Shop" }, "offers": { "@type": "Offer", "price": "39.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "39.99", "priceCurrency": "USD", "billingIncrement": 1, "unitCode": "MON" } }, "audience": { "@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 12 } } },
+          { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "Master Creator Subscription Box", "description": "Premium monthly art subscription box for kids ages 4 and up. Includes 10–14 plaster figurines plus an exclusive XL piece, 8 premium acrylic paints plus 2 glitter paints, brushes and texturing sponge, canvas, 25-page coloring book, sticker set, and collectible certificate. Free shipping. Cancel anytime.", "url": "https://bluebyartshop.com/subscribe", "brand": { "@type": "Brand", "name": "Blueby Art Shop" }, "offers": { "@type": "Offer", "price": "69.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "69.99", "priceCurrency": "USD", "billingIncrement": 1, "unitCode": "MON" } }, "audience": { "@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 12 } } },
         ]
       }} />
 

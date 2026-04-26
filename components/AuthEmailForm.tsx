@@ -23,7 +23,7 @@ const copyByMode: Record<
 > = {
   "sign-in": {
     actionLabel: "Email Me a Sign-In Link",
-    helperText: "Use the email address tied to your Blue By Art Shop account.",
+    helperText: "Use the email address tied to your Blueby Art Shop account.",
     pendingLabel: "Sending Sign-In Link...",
     successText:
       "If that email matches an account, check your inbox for a secure sign-in link.",

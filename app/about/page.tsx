@@ -13,14 +13,14 @@ import {
 export const metadata: Metadata = {
   title: `About ${BRAND_NAME} | Kids Art Subscription Box — Our Story & Mission`,
   description:
-    "Learn how Blue By Art Shop approaches kids art subscriptions, one-time creative kits, and hands-on project-based art time for ages 4 and up.",
+    "Learn how Blueby Art Shop approaches kids art subscriptions, one-time creative kits, and hands-on project-based art time for ages 4 and up.",
   alternates: {
     canonical: `${SITE_URL}/about`,
   },
   openGraph: {
     title: `About ${BRAND_NAME} | Our Story, Mission & Team`,
     description:
-      "Blue By Art Shop focuses on kids art subscriptions, one-time creative kits, and project-based art experiences for ages 4 and up.",
+      "Blueby Art Shop focuses on kids art subscriptions, one-time creative kits, and project-based art experiences for ages 4 and up.",
     url: `${SITE_URL}/about`,
     images: [{ url: BRAND_LOGO_PATH, width: 1200, height: 630, alt: `${BRAND_NAME} logo` }],
   },
@@ -60,7 +60,7 @@ export default function AboutPage() {
             className="hero-title text-white mb-4"
             style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "clamp(2.5rem, 5vw, 3.75rem)", fontWeight: 700 }}
           >
-            About Blue By Art Shop
+            About Blueby Art Shop
           </h1>
           <p className="hero-subtitle max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.0625rem" }}>
             We believe every child is an artist. Our mission is to give them the tools to prove it.
@@ -88,7 +88,7 @@ export default function AboutPage() {
           <AnimateIn className="text-center mb-8">
             <span className="eyebrow eyebrow-blue">By the Numbers</span>
             <h2 style={{ fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", color: "#1E293B", fontWeight: 600 }}>
-              Blue By Art Shop at a Glance
+              Blueby Art Shop at a Glance
             </h2>
           </AnimateIn>
           <AnimateIn>
@@ -127,7 +127,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4" style={{ color: "#334155", lineHeight: 1.75, fontSize: "0.9375rem" }}>
                 <p>
-                  Blue By Art Shop was created to make it easier for families to
+                  Blueby Art Shop was created to make it easier for families to
                   find art projects that feel fun, hands-on, and age-appropriate
                   without piecing together materials from multiple places.
                 </p>

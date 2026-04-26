@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Page Not Found | Blue By Art Shop",
+  title: "Page Not Found | Blueby Art Shop",
   description: "The page you were looking for doesn't exist. Browse our kids art kits or return home.",
   robots: { index: false, follow: true },
 };

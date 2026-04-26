@@ -13,7 +13,7 @@ const sections = [
   {
     title: "Shipping",
     body: [
-      "Blue By Art Shop is currently set up to fulfill orders within the United States.",
+      "Blueby Art Shop is currently set up to fulfill orders within the United States.",
       "Most orders are prepared after successful payment, and subscription shipments begin after the related renewal or first checkout is completed.",
     ],
   },

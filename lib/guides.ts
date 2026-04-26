@@ -13,6 +13,17 @@ export type GuideMeta = {
 
 export const guides: GuideMeta[] = [
   {
+    slug: "plaster-painting-ideas-for-kids",
+    title:
+      "15 Plaster Painting Ideas for Kids (Ages 4–10): Easy Projects, Tips & Safety",
+    description:
+      "15 tested plaster painting ideas for kids ages 4–10 — by age group, season and use-case. Includes step-by-step tips, ASTM D-4236 paint safety, mess control, drying times and a printable supply list from Blueby Art Shop.",
+    publishedDate: "2026-04-25",
+    modifiedDate: "2026-04-25",
+    readingTimeMinutes: 13,
+    heroEyebrow: "Plaster Crafts Ideas",
+  },
+  {
     slug: "best-plaster-art-kits-2026",
     title:
       "Best Plaster Art Kits for Kids in 2026: Honest Buyer's Guide & Comparison",

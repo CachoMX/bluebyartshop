@@ -847,6 +847,36 @@ export default function PlasterGuidePage() {
         </ol>
       </Section>
 
+      {/* Cross-link to ideas guide */}
+      <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+        <div
+          className="card p-6"
+          style={{ backgroundColor: "#FEF3C7", borderColor: "#FCD34D" }}
+        >
+          <p
+            className="text-base"
+            style={{
+              color: "#92400E",
+              fontWeight: 700,
+              fontFamily: "var(--font-fredoka-one), 'Fredoka One', cursive",
+            }}
+          >
+            Looking for project ideas, not a kit comparison?
+          </p>
+          <p className="mt-2 text-sm" style={{ color: "#78350F" }}>
+            Read our companion guide with 15 plaster painting ideas for kids
+            ages 4–10 — by age group, season and use-case, with mess-control
+            and ASTM D-4236 paint safety tips.
+          </p>
+          <Link
+            href="/guide/plaster-painting-ideas-for-kids"
+            className="mt-3 inline-block link-primary"
+          >
+            See 15 plaster painting ideas →
+          </Link>
+        </div>
+      </section>
+
       {/* FAQ section */}
       <Section heading="Frequently asked questions">
         <div className="space-y-4">

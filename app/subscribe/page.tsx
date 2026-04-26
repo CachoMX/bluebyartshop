@@ -12,6 +12,7 @@ import {
   SITE_URL,
   SUBSCRIPTION_OG_IMAGE_PATH,
 } from "@/lib/brand";
+import { buildFaqJsonLd } from "@/lib/faqs";
 
 const tierPriceSummary = subscriptionTiers
   .map((tier) => `${tier.name} ($${tier.monthlyPrice.toFixed(2)})`)
@@ -93,6 +94,43 @@ const breadcrumbJsonLd = {
     },
   ],
 };
+
+// Service schema with AggregateOffer — strong GEO signal: lets LLMs and
+// Google answer "how much does Blueby Art Shop cost?" with one number range.
+const minPrice = Math.min(...subscriptionTiers.map((t) => t.monthlyPrice));
+const maxPrice = Math.max(...subscriptionTiers.map((t) => t.monthlyPrice));
+
+const subscriptionServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: `${BRAND_NAME} Monthly Art Subscription`,
+  serviceType: "Kids art subscription box",
+  provider: {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: BRAND_NAME,
+    url: SITE_URL,
+  },
+  areaServed: { "@type": "Country", name: "United States" },
+  audience: {
+    "@type": "PeopleAudience",
+    suggestedMinAge: 4,
+    suggestedMaxAge: 12,
+  },
+  description:
+    `${BRAND_NAME} delivers monthly paint-your-own plaster figurine art kits for kids ages 4 and up. Three subscription tiers from $${minPrice.toFixed(2)}/mo to $${maxPrice.toFixed(2)}/mo. Non-toxic, ASTM D-4236 certified materials, made in Texas, cancel anytime.`,
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    lowPrice: minPrice.toFixed(2),
+    highPrice: maxPrice.toFixed(2),
+    offerCount: subscriptionTiers.length,
+    availability: "https://schema.org/InStock",
+  },
+  termsOfService: `${SITE_URL}/terms`,
+};
+
+const faqJsonLd = buildFaqJsonLd();
 
 export default function SubscribePage() {
   return (
@@ -253,6 +291,8 @@ export default function SubscribePage() {
       </section>
 
       <JsonLd data={subscriptionItemListJsonLd} />
+      <JsonLd data={subscriptionServiceJsonLd} />
+      <JsonLd data={faqJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
 
     </div>

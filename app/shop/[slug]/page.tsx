@@ -205,7 +205,7 @@ export default async function ProductPage({
                   className="px-3 py-1 rounded-full text-xs font-semibold"
                   style={{ backgroundColor: "#FFF4ED", color: "#FB923C" }}
                 >
-                  Ages {product.age === "all" ? "5–12" : product.age}
+                  Ages {product.age === "all" ? "4 and up" : product.age}
                 </span>
                 <span
                   className="px-3 py-1 rounded-full text-xs font-semibold"
@@ -466,7 +466,7 @@ export default async function ProductPage({
             style={{ color: "rgba(255,255,255,0.85)", fontSize: "1rem" }}
           >
             Subscribe to {BRAND_NAME} and receive a curated monthly art kit
-            — including products like this — starting at just $19.99/month.
+            — including products like this — starting at just $24.99/month.
             Cancel anytime.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

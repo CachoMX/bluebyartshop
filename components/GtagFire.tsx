@@ -17,7 +17,7 @@ interface Props {
  * Renders nothing. Drop it into any server component page.
  *
  * Example:
- *   <GtagFire event="subscribe" value={19.99} currency="USD" />
+ *   <GtagFire event="subscribe" value={24.99} currency="USD" />
  */
 export function GtagFire({ event, value, currency, transactionId }: Props) {
   useEffect(() => {

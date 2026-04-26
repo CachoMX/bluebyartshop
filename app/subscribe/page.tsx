@@ -19,14 +19,14 @@ const tierPriceSummary = subscriptionTiers
 
 export const metadata: Metadata = {
   title: "Subscribe to Kids Art Kits | Monthly Art Box for Children",
-  description: `Start your child's monthly art subscription today. Choose from ${tierPriceSummary}. Non-toxic art kits for kids 5–12. Cancel anytime. Ships in 2–3 days.`,
+  description: `Start your child's monthly art subscription today. Choose from ${tierPriceSummary}. Non-toxic art kits for kids ages 4 and up. Cancel anytime. Ships in 2–3 days.`,
   alternates: {
     canonical: `${SITE_URL}/subscribe`,
   },
   openGraph: {
     title: `Kids Art Subscription Box | ${BRAND_NAME} - Choose Your Plan`,
     description:
-      "Monthly art boxes for kids 5–12 starting at $19.99/mo. Plaster figures, coloring books, 3D projects, and flexible monthly plans.",
+      "Monthly art boxes for kids ages 4 and up starting at $24.99/mo. Paint-your-own plaster figurines, themed kits, and flexible monthly plans crafted in Texas.",
     url: `${SITE_URL}/subscribe`,
     images: [
       {
@@ -115,10 +115,10 @@ export default function SubscribePage() {
             Choose Your Art Adventure
           </h1>
           <p className="hero-subtitle max-w-xl mx-auto mb-6" style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.0625rem" }}>
-            Monthly art boxes for kids 5–12. Safe materials, expert-curated, no contracts.
+            Monthly art boxes for kids ages 4 and up. Safe materials, expert-curated, no contracts.
           </p>
           <div className="hero-trust flex flex-wrap justify-center gap-6">
-            {["✓ Free shipping on all plans", "✓ Cancel or pause anytime", "✓ Gift subscriptions available"].map((t) => (
+            {["✓ Free shipping on Master Creator", "✓ Cancel or pause anytime", "✓ Made with love in Texas"].map((t) => (
               <span key={t} style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.875rem", fontWeight: 500 }}>{t}</span>
             ))}
           </div>

@@ -13,13 +13,13 @@ const productCount = catalogProducts.length;
 export const metadata: Metadata = {
   title: "Kids Art Shop | Plaster Kits, Coloring Books, 3D Figures & Party Sets",
   description:
-    `Shop kids art kits from ${BRAND_NAME}. Paint-your-own plaster figures, themed coloring books, custom 3D print figures, birthday party kits, and wholesale bundles. Safe, non-toxic, ages 5–12.`,
+    `Shop kids art kits from ${BRAND_NAME}. Paint-your-own plaster figures, themed coloring books, custom 3D print figures, birthday party kits, and wholesale bundles. Safe, non-toxic, ages 4 and up.`,
   alternates: {
     canonical: `${SITE_URL}/shop`,
   },
   openGraph: {
     title: `Kids Art Shop | ${BRAND_NAME} — Plaster Kits, Coloring Books & More`,
-    description: `Browse ${productCount} kids art kits: plaster figures, coloring books, 3D print figures, party kits & wholesale. Non-toxic. Ages 5–12. Free shipping on subscriptions.`,
+    description: `Browse ${productCount} kids art kits: plaster figures, coloring books, 3D print figures, party kits & wholesale. Non-toxic. Ages 4 and up. Free shipping on Master Creator.`,
     url: `${SITE_URL}/shop`,
     images: [
       {

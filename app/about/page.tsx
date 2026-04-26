@@ -13,14 +13,14 @@ import {
 export const metadata: Metadata = {
   title: `About ${BRAND_NAME} | Kids Art Subscription Box — Our Story & Mission`,
   description:
-    "Learn how Blue By Art Shop approaches kids art subscriptions, one-time creative kits, and hands-on project-based art time for ages 5–12.",
+    "Learn how Blue By Art Shop approaches kids art subscriptions, one-time creative kits, and hands-on project-based art time for ages 4 and up.",
   alternates: {
     canonical: `${SITE_URL}/about`,
   },
   openGraph: {
     title: `About ${BRAND_NAME} | Our Story, Mission & Team`,
     description:
-      "Blue By Art Shop focuses on kids art subscriptions, one-time creative kits, and project-based art experiences for ages 5–12.",
+      "Blue By Art Shop focuses on kids art subscriptions, one-time creative kits, and project-based art experiences for ages 4 and up.",
     url: `${SITE_URL}/about`,
     images: [{ url: BRAND_LOGO_PATH, width: 1200, height: 630, alt: `${BRAND_NAME} logo` }],
   },
@@ -42,7 +42,7 @@ const values = [
 const stats = [
   { value: "3", label: "Subscription Plans" },
   { value: "16", label: "One-Time Products" },
-  { value: "5-12", label: "Age Range" },
+  { value: "4+", label: "Age Range" },
   { value: "Online", label: "Storefront Support" },
 ];
 
@@ -94,11 +94,11 @@ export default function AboutPage() {
           <AnimateIn>
             <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { dt: "Age Range Served", dd: "5–12 years old" },
+                { dt: "Age Range Served", dd: "4 and up" },
                 { dt: "Subscription Plans", dd: "Mini Artist, Creative Explorer, Master Creator" },
                 { dt: "Catalog Size", dd: "16 one-time products across five categories" },
                 { dt: "Support Model", dd: "Online account, checkout, and contact flows" },
-                { dt: "Pricing", dd: "Subscriptions from $19.99/month" },
+                { dt: "Pricing", dd: "Subscriptions from $24.99/month" },
                 { dt: "Contact", dd: BRAND_EMAIL },
                 { dt: "Subscription Tiers", dd: "Mini Artist, Creative Explorer, Master Creator" },
                 { dt: "Policy Pages", dd: "Privacy, terms, and shipping/returns are published on-site" },
@@ -293,14 +293,14 @@ export default function AboutPage() {
         "@id": `${SITE_URL}/about`,
         "url": `${SITE_URL}/about`,
         "name": `About ${BRAND_NAME}`,
-        "description": `${BRAND_NAME} creates monthly art subscriptions and one-time creative kits for kids ages 5-12.`,
+        "description": `${BRAND_NAME} creates monthly art subscriptions and one-time creative kits for kids ages 4 and up.`,
         "publisher": { "@id": `${SITE_URL}/#organization` },
         "mainEntity": {
           "@type": "Organization",
           "@id": `${SITE_URL}/#organization`,
           "name": BRAND_NAME,
           "url": SITE_URL,
-          "description": `${BRAND_NAME} offers monthly art subscription boxes, one-time creative kits, party packs, and wholesale bundles for kids ages 5-12.`,
+          "description": `${BRAND_NAME} offers monthly art subscription boxes, one-time creative kits, party packs, and wholesale bundles for kids ages 4 and up.`,
           "email": BRAND_EMAIL,
           "slogan": "To inspire every child to create boldly, explore freely, and grow confidently through the power of art.",
           "knowsAbout": ["children's art education", "plaster figure kits", "coloring books for kids", "3D print figures", "art subscription boxes"],

@@ -72,7 +72,7 @@ export default function ShopPage() {
             <strong>{BRAND_NAME}</strong> — from paint-your-own plaster figures
             to themed coloring books, custom 3D print figures, birthday party
             art kits, and wholesale bundles for schools and studios. All
-            materials are non-toxic and safe for children ages 5–12.
+            materials are non-toxic and safe for children ages 4 and up.
           </p>
         </div>
 
@@ -258,7 +258,7 @@ export default function ShopPage() {
             {catalogProducts.map((p) => (
               <div key={p.id}>
                 <h3><a href={`/shop/${p.slug}`}>{p.name}</a></h3>
-                <p>${p.price.toFixed(2)} — Ages {p.age === "all" ? "5–12" : p.age} — {p.shortDesc}</p>
+                <p>${p.price.toFixed(2)} — Ages {p.age === "all" ? "4 and up" : p.age} — {p.shortDesc}</p>
               </div>
             ))}
           </div>

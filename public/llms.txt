@@ -1,6 +1,6 @@
 # Blue By Art Shop
 
-> Blue By Art Shop offers monthly kids art subscriptions plus one-time art kits for ages 5–12.
+> Blue By Art Shop offers monthly kids art subscriptions plus one-time art kits for ages 4 and up.
 
 ## What We Offer
 
@@ -10,13 +10,13 @@
 
 ## Subscription Plans
 
-- **Mini Artist** — $19.99/month — Ages 5–7
-- **Creative Explorer** — $29.99/month — Ages 5–12
-- **Master Creator** — $44.99/month — Ages 5–12
+- **Mini Artist** — $24.99/month + $4.99 shipping — Ages 4 and up
+- **Creative Explorer** — $39.99/month + $4.99 shipping — Ages 4 and up (Most Popular)
+- **Master Creator** — $69.99/month, free shipping — Ages 4 and up (Coming Soon)
 
 ## Core Facts
 
-- Age range: 5–12
+- Age range: 4 and up
 - Shop URL: https://bluebyartshop.com/shop
 - Subscribe URL: https://bluebyartshop.com/subscribe
 - Contact URL: https://bluebyartshop.com/contact

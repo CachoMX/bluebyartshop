@@ -13,6 +13,28 @@ export type GuideMeta = {
 
 export const guides: GuideMeta[] = [
   {
+    slug: "astm-d4236-art-supplies-parent-guide",
+    title:
+      "ASTM D-4236 Art Supplies: A Parent's Safety Guide for Kids Art Materials (2026)",
+    description:
+      "What 'Conforms to ASTM D-4236' really means on a kids paint label, plus LHAMA, the ACMI AP seal, CPSIA lead and phthalate limits, recent recalls and a 9-point checklist parents can save before buying.",
+    publishedDate: "2026-04-25",
+    modifiedDate: "2026-04-25",
+    readingTimeMinutes: 12,
+    heroEyebrow: "Parent Safety Guide",
+  },
+  {
+    slug: "birthday-party-craft-kits-for-kids",
+    title:
+      "Best Birthday Party Craft Kits for Kids (Ages 5–10): 2026 Buyer's Guide",
+    description:
+      "The 8 best birthday party craft kits for kids ages 5–10, ranked by age, price per child, prep time and mess level. Plus a comparison table, party-size math, 10 setup tips and FAQ from the Blueby Art Shop editorial team.",
+    publishedDate: "2026-04-25",
+    modifiedDate: "2026-04-25",
+    readingTimeMinutes: 14,
+    heroEyebrow: "Party Planning Guide",
+  },
+  {
     slug: "plaster-painting-ideas-for-kids",
     title:
       "15 Plaster Painting Ideas for Kids (Ages 4–10): Easy Projects, Tips & Safety",

@@ -689,18 +689,179 @@ export const subscriptionTiers: SubscriptionTier[] = [
 
 export const subscriptionTrustItems: SubscriptionTrustItem[] = [
   {
-    icon: "🔒",
-    title: "No Commitment",
-    desc: "Cancel or pause anytime - no questions asked.",
+    icon: "🛡️",
+    title: "ASTM D-4236 certified",
+    desc: "Non-toxic acrylic paints safe for kids 4 and up.",
   },
   {
-    icon: "🚚",
-    title: "Fast Shipping",
-    desc: "Boxes ship within 2-3 business days of your billing date.",
+    icon: "🇺🇸",
+    title: "Hand-packed in Texas",
+    desc: "Small-batch quality control on every single box.",
   },
   {
-    icon: "🎁",
-    title: "Gift Options",
-    desc: "Buy as a gift with a custom message card included.",
+    icon: "📦",
+    title: "Ships in 2–3 days",
+    desc: "Free over $50, USPS tracked, cancel anytime.",
+  },
+];
+
+export interface SubscriptionHowToStep {
+  position: number;
+  emoji: string;
+  title: string;
+  description: string;
+}
+
+export const subscriptionHowItWorks: SubscriptionHowToStep[] = [
+  {
+    position: 1,
+    emoji: "📋",
+    title: "Pick a plan",
+    description:
+      "Choose Mini Artist, Creative Explorer or Master Creator — switch tiers any month.",
+  },
+  {
+    position: 2,
+    emoji: "📦",
+    title: "Your box ships",
+    description:
+      "Hand-packed in Texas with USPS tracking. Arrives in 2–3 business days.",
+  },
+  {
+    position: 3,
+    emoji: "🎨",
+    title: "Paint, smile, repeat",
+    description:
+      "A new themed box arrives every month. Pause or cancel anytime from your account.",
+  },
+];
+
+export interface SubscriptionComparisonRow {
+  feature: string;
+  miniArtist: string;
+  creativeExplorer: string;
+  masterCreator: string;
+}
+
+export const subscriptionComparisonRows: SubscriptionComparisonRow[] = [
+  {
+    feature: "Monthly price",
+    miniArtist: "$24.99",
+    creativeExplorer: "$39.99",
+    masterCreator: "$69.99",
+  },
+  {
+    feature: "Recommended ages",
+    miniArtist: "4–6",
+    creativeExplorer: "7–10",
+    masterCreator: "8–12",
+  },
+  {
+    feature: "Plaster figurines per box",
+    miniArtist: "6",
+    creativeExplorer: "8–12",
+    masterCreator: "10–14 + XL piece",
+  },
+  {
+    feature: "Acrylic paint pots",
+    miniArtist: "3 non-toxic",
+    creativeExplorer: "6 non-toxic",
+    masterCreator: "8 premium + 2 glitter",
+  },
+  {
+    feature: "Brushes",
+    miniArtist: "1 soft-bristle",
+    creativeExplorer: "2 (detail + background)",
+    masterCreator: "2 + texturing sponge",
+  },
+  {
+    feature: "Themed stickers",
+    miniArtist: "2 stickers",
+    creativeExplorer: "2 sticker sheets (4×4 in.)",
+    masterCreator: "Complete themed set",
+  },
+  {
+    feature: "Coloring book",
+    miniArtist: "—",
+    creativeExplorer: "—",
+    masterCreator: "25-page mini",
+  },
+  {
+    feature: "Canvas with pre-molded figure",
+    miniArtist: "—",
+    creativeExplorer: "—",
+    masterCreator: "✓",
+  },
+  {
+    feature: "Technique-of-the-month guide",
+    miniArtist: "—",
+    creativeExplorer: "✓",
+    masterCreator: "✓",
+  },
+  {
+    feature: "Reusable transparent bucket",
+    miniArtist: "—",
+    creativeExplorer: "✓",
+    masterCreator: "—",
+  },
+  {
+    feature: "Premium magnetic gift box",
+    miniArtist: "White glossy",
+    creativeExplorer: "—",
+    masterCreator: "Magnetic-closure",
+  },
+  {
+    feature: "Free shipping",
+    miniArtist: "Over $50",
+    creativeExplorer: "Over $50",
+    masterCreator: "Always",
+  },
+  {
+    feature: "Cancel or pause anytime",
+    miniArtist: "✓",
+    creativeExplorer: "✓",
+    masterCreator: "✓",
+  },
+];
+
+export interface SubscribeFaqItem {
+  q: string;
+  a: string;
+}
+
+// 8 questions specifically tuned to subscribe-page conversion intent.
+// These are also rendered into FAQPage JSON-LD on /subscribe.
+export const subscribeFaqs: SubscribeFaqItem[] = [
+  {
+    q: "How does the Blueby Art Shop subscription work?",
+    a: "Pick a plan, your first box ships within 2–3 business days, then a new themed box arrives the first week of every month. You can change tiers, swap themes, pause or cancel anytime from your account dashboard. Subscriptions renew on the same day each month and you are billed before the box ships.",
+  },
+  {
+    q: "When does my box ship?",
+    a: "Your first box ships within 2–3 business days of checkout. After that, monthly boxes are packed and shipped during the first week of every calendar month. All shipments use USPS with tracking. You will receive an email with the tracking number the moment your box leaves our Texas studio.",
+  },
+  {
+    q: "Can I change the theme each month?",
+    a: "Yes. Themes (animals, dinosaurs, holidays, vehicles, garden, etc.) can be swapped from your account dashboard up to 5 days before your renewal date. If you do nothing, you get the current monthly theme by default.",
+  },
+  {
+    q: "Are the paints and plaster non-toxic?",
+    a: "Yes. Every paint, brush and plaster figure ships ASTM D-4236 certified and CPSIA compliant — the U.S. standards for art-material safety required by federal law (LHAMA). All paints are water-based acrylics with no heavy metals, lead, or solvents. Suitable for kids ages 4 and up.",
+  },
+  {
+    q: "Can I cancel or pause anytime?",
+    a: "Absolutely. There is no contract, no cancellation fee and no minimum number of months. From your account dashboard you can pause for 1–3 months, switch tiers, or cancel completely with one click. Anything you cancel before your renewal date will not be charged.",
+  },
+  {
+    q: "Do you ship outside the United States?",
+    a: "Right now we only ship within the 50 U.S. states. We are evaluating Canada and Mexico for late 2026. If you have a U.S. forwarding address, our boxes ship there normally.",
+  },
+  {
+    q: "Can I buy this as a gift subscription?",
+    a: "Yes — gift subscriptions are one of our most popular options. Pick a 3-month or 6-month fixed plan (these do not auto-renew, so the recipient is never surprised by a charge), add a custom message card at checkout, and we will time the first box to arrive 1–2 days before the birthday or holiday you specify.",
+  },
+  {
+    q: "What if my child outgrows the box?",
+    a: "Two options: switch to the next tier with one click in your account, or pause and resume later. Mini Artist tends to fit best for ages 4–6, Creative Explorer for 7–10, and Master Creator for 8–12. Many families upgrade once their child finishes 3–4 boxes comfortably without help.",
   },
 ];

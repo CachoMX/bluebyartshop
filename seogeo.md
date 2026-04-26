@@ -52,9 +52,9 @@ public/
 ### Subscription Tiers (on `/subscribe`)
 | Tier | Price | Target Age |
 |------|-------|-----------|
-| Mini Artist | $19.99/mo | 5-7 |
-| Creative Explorer | $29.99/mo | 5-12 |
-| Master Creator | $44.99/mo | 5-12 |
+| Mini Artist | $24.99/mo + $4.99 ship | 4+ |
+| Creative Explorer | $39.99/mo + $4.99 ship | 4+ |
+| Master Creator | $69.99/mo, free shipping | 4+ (Coming Soon) |
 
 ### Individual Products (on `/shop` — need individual pages)
 | ID | Name | Category | Price | Age |

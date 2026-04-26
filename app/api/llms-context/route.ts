@@ -20,15 +20,17 @@ export async function GET() {
       subscriptionPlans: subscriptionTiers.map((tier) => ({
         name: tier.name,
         price: tier.monthlyPrice,
+        shipping: tier.shippingPrice,
         currency: "USD",
         billingCycle: "monthly",
-        ageRange: `${tier.suggestedMinAge}-${tier.suggestedMaxAge}`,
+        ageRange: `${tier.suggestedMinAge} and up`,
+        comingSoon: tier.comingSoon ?? false,
         includes: tier.features
           .filter((feature) => feature.included)
           .map((feature) => feature.label),
       })),
       keyFacts: {
-        ageRange: "5-12 years old",
+        ageRange: "4 and up",
         subscriptionCount: subscriptionTiers.length,
         cancellation: "Manage billing and cancellations from the account dashboard and Stripe billing portal when available.",
         policyPages: {

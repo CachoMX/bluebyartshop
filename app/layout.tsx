@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   keywords: [
     "kids art subscription box",
     "monthly art kit for kids",
-    "art subscription box ages 5-12",
+    "art subscription box ages 4 and up",
     "children's art kit delivery",
     "paint your own plaster figures",
     "best kids art subscription 2026",
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
     "non-toxic art kits kids",
     "monthly art box for children",
     "kids craft subscription box",
-    "art activities kids 5-7 year olds",
-    "kids art gifts ages 5-12",
+    "art activities kids 4 year olds",
+    "kids art gifts ages 4 and up",
     "birthday art kit kids",
     "plaster crafts to paint kids",
     "unicorn art kit for girls",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${BRAND_NAME} | Monthly Kids Art Kits`,
     description:
-      "Curated art subscription boxes for kids 5-12. Start from $19.99/mo.",
+      "Curated art subscription boxes for kids ages 4 and up. Start from $24.99/mo.",
     images: [DEFAULT_OG_IMAGE_PATH],
   },
   robots: {
@@ -121,7 +121,7 @@ const organizationJsonLd = {
       url: SITE_URL,
       name: BRAND_NAME,
       description:
-        "Monthly kids art subscription boxes and one-time art kits for ages 5–12",
+        "Monthly kids art subscription boxes and one-time art kits for ages 4 and up",
       publisher: { "@id": `${SITE_URL}/#organization` },
     },
   ],

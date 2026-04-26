@@ -1,6 +1,6 @@
 # Blue By Art Shop — Complete Reference
 
-> Blue By Art Shop offers monthly kids art subscriptions plus one-time art kits for ages 5–12.
+> Blue By Art Shop offers monthly kids art subscriptions plus one-time art kits for ages 4 and up.
 
 ---
 
@@ -20,29 +20,33 @@
 
 ## Subscription Plans
 
-### Mini Artist — $19.99/month (Ages 5–7)
-- 2 plaster figures OR 10 coloring pages
-- 6 paint pots or colored pencils
-- 1 brush or pencil
-- Step-by-step instructions
-- Sticker sheet
+### Mini Artist — $24.99/month + $4.99 shipping (Ages 4 and up)
+The perfect start for your mini artist.
+- 6 plaster figurines
+- 3 non-toxic acrylic paints
+- 1 brush
+- 2 themed stickers
+- Instruction card
+- Monthly collectible theme card
 
-### Creative Explorer — $29.99/month (Ages 5–12)
-- 3 plaster figures OR 20 coloring pages
-- 12 paint pots or color set
-- Full brush set
-- Sealant + activity card
-- 1 digital banner template
-- 1 mini 3D print figure
+### Creative Explorer — $39.99/month + $4.99 shipping (Ages 4 and up) — Most Popular
+More colors, more pieces, more room to explore.
+- 8–12 plaster figurines
+- 6 non-toxic acrylic paints
+- 2 brushes
+- 2 sticker sheets
+- Technique-of-the-month guide
+- Monthly collectible theme card
 
-### Master Creator — $44.99/month (Ages 5–12)
-- 4 plaster figures OR 30 coloring pages
-- 18 paint pots + metallics + full color set
-- Premium brush set
-- Sealant + activity card
-- Digital banner template
-- Illustrated storybook
-- Display stand + resell kit
+### Master Creator — $69.99/month, free shipping (Ages 4 and up) — Coming Soon
+When art becomes a craft.
+- 10–14 plaster figurines plus an exclusive XL piece
+- 8 premium acrylic paints plus 2 glitter paints
+- Brushes and texturing sponge
+- Canvas
+- 25-page coloring book
+- Sticker set
+- Collectible certificate
 
 ---
 
@@ -87,7 +91,7 @@ The one-time catalog is available at https://bluebyartshop.com/shop and includes
 
 Blue By Art Shop focuses on hands-on art kits and subscription-based creative activities for kids. The public site currently emphasizes:
 
-- project-based art time for ages 5–12
+- project-based art time for ages 4 and up
 - recurring monthly subscription plans
 - one-time kits for gifting, parties, and wholesale
 - account-based billing and support flows

@@ -32,7 +32,7 @@ export function Footer() {
               <BrandLogo width={152} className="h-12 w-auto" />
             </Link>
             <p style={{ color: "rgba(255,255,255,0.88)", fontSize: "0.875rem", lineHeight: 1.65 }}>
-              {BRAND_TAGLINE} Safe, fun art kits for kids 5–12, delivered monthly.
+              {BRAND_TAGLINE} Safe, fun art kits for kids ages 4 and up, delivered monthly.
             </p>
           </div>
 

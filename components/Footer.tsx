@@ -80,6 +80,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm" style={{ color: "rgba(255,255,255,0.85)" }}>
               <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link href="/guide" className="hover:text-white transition-colors">Buyer&apos;s Guides</Link></li>
               <li><Link href="/shipping-returns" className="hover:text-white transition-colors">Shipping &amp; Returns</Link></li>
               <li><Link href={storeAccountHref} className="hover:text-white transition-colors">Account Dashboard</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { catalogProducts } from "@/lib/catalog";
 import { SITE_URL } from "@/lib/brand";
+import { guides } from "@/lib/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const generatedAt = new Date();
@@ -10,6 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: generatedAt,
     changeFrequency: "weekly",
     priority: 0.85,
+  }));
+
+  const guidePages: MetadataRoute.Sitemap = guides.map((g) => ({
+    url: `${SITE_URL}/guide/${g.slug}`,
+    lastModified: new Date(g.modifiedDate),
+    changeFrequency: "monthly",
+    priority: 0.9,
   }));
 
   return [
@@ -36,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: generatedAt,
       changeFrequency: "monthly",
       priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/guide`,
+      lastModified: generatedAt,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${SITE_URL}/about`,
@@ -67,6 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    ...guidePages,
     ...productPages,
   ];
 }

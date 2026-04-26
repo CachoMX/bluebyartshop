@@ -105,6 +105,17 @@ h1, h2, h3, h4 {
   transform: translateY(-4px);
 }
 
+/* Inline link helper used in long-form guides */
+.link-primary {
+  color: #2563EB;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.link-primary:hover {
+  color: #1D4ED8;
+}
+
 /* Button base */
 .btn-primary {
   display: inline-flex;
